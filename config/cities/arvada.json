@@ -1,0 +1,23 @@
+{
+  "name": "Arvada",
+  "state": "CO",
+  "youtube_channel_handle": "@cityofarvada",
+  "rss_feeds": {
+    "agenda": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=65&CID=All-0",
+    "news": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+    "calendar_council": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=58&CID=City-Council-45",
+    "calendar_govt": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=58&CID=Government-Meetings-23",
+    "alerts": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=63&CID=All-0"
+  },
+  "council_members": [
+    { "name": "Lauren Simpson", "title": "Mayor" },
+    { "name": "Randy Moorman", "title": "Mayor Pro Tem, District 1" },
+    { "name": "Shawna Ambrose", "title": "Councilmember, District 2" },
+    { "name": "Rebecka Lovisone", "title": "Councilmember, District 3" },
+    { "name": "Bob Fifer", "title": "Councilmember, District 4" },
+    { "name": "Sharon Davis", "title": "Councilmember At-Large" },
+    { "name": "Michael Griffith", "title": "Councilmember At-Large" }
+  ],
+  "meeting_keywords": ["City Council Meeting", "Special City Council"],
+  "timezone": "America/Denver"
+}

@@ -1,0 +1,77 @@
+"""
+Fetches and cleans a transcript from a YouTube video.
+
+Usage:
+    python -m pipeline.fetch_transcript <video_url_or_id>
+
+Returns the transcript as a list of timed segments and a joined plain-text string.
+"""
+
+import re
+import sys
+from dataclasses import dataclass
+
+from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
+
+
+def extract_video_id(url_or_id: str) -> str:
+    """Accept a full YouTube URL or a bare video ID and return the video ID."""
+    patterns = [
+        r"(?:v=|youtu\.be/|/embed/)([A-Za-z0-9_-]{11})",
+        r"^([A-Za-z0-9_-]{11})$",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, url_or_id)
+        if match:
+            return match.group(1)
+    raise ValueError(f"Could not extract video ID from: {url_or_id}")
+
+
+@dataclass
+class Segment:
+    start: float
+    duration: float
+    text: str
+
+
+def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
+    """
+    Fetch the transcript for a YouTube video.
+
+    Returns:
+        segments: list of Segment objects with timing
+        full_text: plain-text transcript joined with spaces
+    """
+    video_id = extract_video_id(video_url_or_id)
+
+    try:
+        raw = YouTubeTranscriptApi.get_transcript(video_id, languages=["en"])
+    except TranscriptsDisabled:
+        raise RuntimeError(f"Transcripts are disabled for video {video_id}")
+    except NoTranscriptFound:
+        # Fall back to auto-generated transcript in any available language
+        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        transcript = transcript_list.find_generated_transcript(["en"])
+        raw = transcript.fetch()
+
+    segments = [
+        Segment(start=entry["start"], duration=entry["duration"], text=entry["text"].strip())
+        for entry in raw
+    ]
+
+    full_text = " ".join(s.text for s in segments)
+    # Clean up common auto-caption artifacts
+    full_text = re.sub(r"\[.*?\]", "", full_text)       # remove [Music], [Applause], etc.
+    full_text = re.sub(r"\s+", " ", full_text).strip()
+
+    return segments, full_text
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python -m pipeline.fetch_transcript <video_url_or_id>")
+        sys.exit(1)
+
+    segs, text = fetch_transcript(sys.argv[1])
+    print(f"Fetched {len(segs)} segments ({len(text)} chars)\n")
+    print(text[:2000], "..." if len(text) > 2000 else "")
