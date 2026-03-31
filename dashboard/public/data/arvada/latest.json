@@ -1,0 +1,107 @@
+{
+  "city": "Arvada",
+  "state": "CO",
+  "meeting_date": "2025-03-25",
+  "generated_at": "2025-03-25T21:00:00Z",
+  "meeting_summary": "The Arvada City Council held its regular meeting on March 25, 2025. The council approved a $2.4 million infrastructure contract for the 64th Avenue road reconstruction project and heard a presentation on the city's 2025 water conservation plan in response to the Stage 1 drought declaration. A contested rezoning request for a mixed-use development near Olde Town Arvada was tabled pending additional community input.\n\nCouncil members engaged in extended debate over the proposed short-term rental ordinance, with members Fifer and Griffith expressing concerns about enforcement capacity. The ordinance was ultimately passed 5-2, establishing registration requirements and occupancy limits for platforms like Airbnb operating within city limits.",
+  "alerts": [
+    {
+      "title": "Stage 1 Drought Declaration in Effect",
+      "body": "The City has declared a drought and will be aligning with Denver Water's Stage 1 watering restrictions. Assigned watering days are now in effect.",
+      "severity": "warning"
+    }
+  ],
+  "key_decisions": [
+    {
+      "motion": "64th Avenue Road Reconstruction Contract — $2.4M award to Penhall International",
+      "result": "Passed",
+      "vote_breakdown": "6-1",
+      "votes": {
+        "Lauren Simpson": "Yes",
+        "Randy Moorman": "Yes",
+        "Shawna Ambrose": "Yes",
+        "Rebecka Lovisone": "Yes",
+        "Bob Fifer": "No",
+        "Sharon Davis": "Yes",
+        "Michael Griffith": "Yes"
+      },
+      "significance": "Largest infrastructure contract of the year; construction expected to begin May 2025 with completion in October."
+    },
+    {
+      "motion": "Short-Term Rental Ordinance — First Reading",
+      "result": "Passed",
+      "vote_breakdown": "5-2",
+      "votes": {
+        "Lauren Simpson": "Yes",
+        "Randy Moorman": "Yes",
+        "Shawna Ambrose": "Yes",
+        "Rebecka Lovisone": "Yes",
+        "Bob Fifer": "No",
+        "Sharon Davis": "Yes",
+        "Michael Griffith": "No"
+      },
+      "significance": "Establishes registration requirements and a 2-guest-per-bedroom cap for all short-term rentals. Second reading expected April 8."
+    },
+    {
+      "motion": "Rezoning Request — 5600 Olde Wadsworth Blvd (mixed-use, 4 stories)",
+      "result": "Tabled",
+      "vote_breakdown": "4-3",
+      "votes": {
+        "Lauren Simpson": "Yes",
+        "Randy Moorman": "No",
+        "Shawna Ambrose": "No",
+        "Rebecka Lovisone": "Yes",
+        "Bob Fifer": "No",
+        "Sharon Davis": "Yes",
+        "Michael Griffith": "Yes"
+      },
+      "significance": "Developer must hold additional community meetings before returning to council. Several residents cited concerns about traffic and building height."
+    }
+  ],
+  "notable_quotes": [
+    {
+      "speaker": "Bob Fifer",
+      "quote": "We don't have the staff to enforce this. We're going to pass an ordinance and then have no way to back it up.",
+      "context": "Fifer voted against the short-term rental ordinance, citing concerns about the city's enforcement capacity."
+    },
+    {
+      "speaker": "Lauren Simpson",
+      "quote": "The data from other Front Range cities is clear — registration alone reduces complaints by 40%. We can't wait for perfect enforcement to start.",
+      "context": "Mayor Simpson pushed back on Fifer's argument, citing data from comparable ordinances in Fort Collins and Lakewood."
+    },
+    {
+      "speaker": "Shawna Ambrose",
+      "quote": "The neighbors who showed up tonight deserve to be heard before we change the character of that block forever.",
+      "context": "Ambrose voted to table the Olde Wadsworth rezoning, arguing the community engagement process was insufficient."
+    }
+  ],
+  "topics_discussed": ["Infrastructure", "Water Conservation", "Short-Term Rentals", "Rezoning", "Drought Response", "Budget"],
+  "consistency_flags": [
+    {
+      "council_member": "Michael Griffith",
+      "observation": "Voted No on the short-term rental ordinance, though he co-sponsored a housing availability resolution in January that cited STR proliferation as a housing affordability concern."
+    }
+  ],
+  "on_the_horizon": "The April 8 meeting will include the second reading of the short-term rental ordinance and a public hearing on the 2025-2026 Capital Improvement Plan. The Parks Advisory Board is also presenting its annual report. The Olde Wadsworth rezoning may return if the developer completes the required community engagement sessions.",
+  "council_members": [
+    { "name": "Lauren Simpson", "title": "Mayor", "district": null },
+    { "name": "Randy Moorman", "title": "Mayor Pro Tem", "district": "District 1" },
+    { "name": "Shawna Ambrose", "title": "Councilmember", "district": "District 2" },
+    { "name": "Rebecka Lovisone", "title": "Councilmember", "district": "District 3" },
+    { "name": "Bob Fifer", "title": "Councilmember", "district": "District 4" },
+    { "name": "Sharon Davis", "title": "Councilmember", "district": "At-Large" },
+    { "name": "Michael Griffith", "title": "Councilmember", "district": "At-Large" }
+  ],
+  "upcoming": [
+    "April 8: Second reading — Short-Term Rental Ordinance",
+    "April 8: Public hearing — 2025-2026 Capital Improvement Plan",
+    "April 8: Parks Advisory Board annual report",
+    "April 22: Regular city council meeting"
+  ],
+  "recent_news": [
+    "Bulky Item Drop-Off Event — April 25 at Arvada Transfer Station",
+    "Pavement program underway on major corridors",
+    "Kite Festival returns April 12 at Stenger Sports Complex",
+    "Water main flushing ongoing in west Arvada"
+  ]
+}

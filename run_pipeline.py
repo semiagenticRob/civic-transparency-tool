@@ -69,6 +69,7 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
 
         # Step 2: Fetch RSS feeds
         rss_context = ""
+        feeds = {}
         if not skip_rss:
             task = progress.add_task("Fetching RSS feeds...", total=None)
             from pipeline.fetch_rss import fetch_all_feeds, format_for_prompt
@@ -97,11 +98,30 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
             console.print(f"\n[red]Fatal:[/red] {e}")
             sys.exit(1)
 
-        # Step 4: Generate draft
+        # Step 4: Generate newsletter draft
         task = progress.add_task("Generating newsletter draft...", total=None)
         from pipeline.generate_draft import generate_draft
         draft = generate_draft(analysis, city_config, meeting_date, Path(output_dir))
         progress.update(task, description="[green]✓[/green] Draft generated")
+        progress.stop_task(task)
+
+        # Step 5: Save dashboard data
+        task = progress.add_task("Updating dashboard data...", total=None)
+        from pipeline.save_dashboard_data import save_dashboard_data, enrich_with_rss
+        dashboard_payload = {
+            "city": city_config["name"],
+            "state": city_config["state"],
+            "meeting_date": meeting_date.strftime("%Y-%m-%d"),
+        }
+        if feeds:
+            from pipeline.save_dashboard_data import enrich_with_rss
+        latest_path = save_dashboard_data(analysis, city_config, meeting_date)
+        if feeds:
+            import json
+            payload = json.loads(latest_path.read_text())
+            payload = enrich_with_rss(payload, feeds)
+            latest_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+        progress.update(task, description=f"[green]✓[/green] Dashboard data saved → {latest_path}")
         progress.stop_task(task)
 
     console.print()
