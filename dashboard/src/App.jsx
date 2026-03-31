@@ -79,6 +79,7 @@ export default function App() {
               summary={data.meeting_summary}
               date={data.meeting_date}
               topics={data.topics_discussed}
+              videoUrl={data.video_url}
             />
 
             {/* Votes */}

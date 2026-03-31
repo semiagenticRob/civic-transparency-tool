@@ -34,6 +34,30 @@ class Segment:
     text: str
 
 
+def _seconds_to_hms(seconds: float) -> str:
+    s = int(seconds)
+    h, rem = divmod(s, 3600)
+    m, s = divmod(rem, 60)
+    return f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
+
+
+def format_with_timestamps(segments: list[Segment], interval_seconds: int = 30) -> str:
+    """
+    Return a transcript string with periodic timestamps injected, e.g.:
+        [00:05:32] We need to consider the budget implications...
+    Timestamps are inserted at roughly every `interval_seconds`.
+    This lets Claude return approximate timestamp_seconds for quotes.
+    """
+    lines = []
+    last_stamp = -interval_seconds
+    for seg in segments:
+        if seg.start - last_stamp >= interval_seconds:
+            lines.append(f"\n[{_seconds_to_hms(seg.start)}]")
+            last_stamp = seg.start
+        lines.append(seg.text)
+    return " ".join(lines)
+
+
 def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
     """
     Fetch the transcript for a YouTube video.

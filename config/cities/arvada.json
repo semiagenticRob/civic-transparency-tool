@@ -10,13 +10,13 @@
     "alerts": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=63&CID=All-0"
   },
   "council_members": [
-    { "name": "Lauren Simpson", "title": "Mayor" },
-    { "name": "Randy Moorman", "title": "Mayor Pro Tem, District 1" },
-    { "name": "Shawna Ambrose", "title": "Councilmember, District 2" },
-    { "name": "Rebecka Lovisone", "title": "Councilmember, District 3" },
-    { "name": "Bob Fifer", "title": "Councilmember, District 4" },
-    { "name": "Sharon Davis", "title": "Councilmember At-Large" },
-    { "name": "Michael Griffith", "title": "Councilmember At-Large" }
+    { "name": "Lauren Simpson",   "title": "Mayor",          "district": null,        "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1" },
+    { "name": "Randy Moorman",    "title": "Mayor Pro Tem",  "district": "District 1","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2" },
+    { "name": "Shawna Ambrose",   "title": "Councilmember",  "district": "District 2","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3" },
+    { "name": "Rebecka Lovisone", "title": "Councilmember",  "district": "District 3","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4" },
+    { "name": "Bob Fifer",        "title": "Councilmember",  "district": "District 4","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5" },
+    { "name": "Sharon Davis",     "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=6" },
+    { "name": "Michael Griffith", "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7" }
   ],
   "meeting_keywords": ["City Council Meeting", "Special City Council"],
   "timezone": "America/Denver"

@@ -54,11 +54,14 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
 
     with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
 
-        # Step 1: Fetch transcript
+        # Step 1: Fetch transcript (with timestamps for Claude)
         task = progress.add_task("Fetching transcript from YouTube...", total=None)
-        from pipeline.fetch_transcript import fetch_transcript
+        from pipeline.fetch_transcript import fetch_transcript, extract_video_id, format_with_timestamps
         try:
+            video_id = extract_video_id(video)
+            video_url = f"https://www.youtube.com/watch?v={video_id}"
             segments, transcript = fetch_transcript(video)
+            timestamped_transcript = format_with_timestamps(segments)
             progress.update(task, description=f"[green]✓[/green] Transcript fetched ({len(segments)} segments, {len(transcript):,} chars)")
             progress.stop_task(task)
         except Exception as e:
@@ -87,7 +90,7 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
         task = progress.add_task("Analyzing meeting with Claude...", total=None)
         from pipeline.analyze_meeting import analyze_meeting
         try:
-            analysis = analyze_meeting(transcript, city_config, rss_context)
+            analysis = analyze_meeting(timestamped_transcript, city_config, rss_context, video_id=video_id)
             n_decisions = len(analysis.key_decisions)
             n_quotes = len(analysis.notable_quotes)
             progress.update(task, description=f"[green]✓[/green] Analysis complete ({n_decisions} decisions, {n_quotes} quotes)")
@@ -108,16 +111,8 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
         # Step 5: Save dashboard data
         task = progress.add_task("Updating dashboard data...", total=None)
         from pipeline.save_dashboard_data import save_dashboard_data, enrich_with_rss
-        dashboard_payload = {
-            "city": city_config["name"],
-            "state": city_config["state"],
-            "meeting_date": meeting_date.strftime("%Y-%m-%d"),
-        }
+        latest_path = save_dashboard_data(analysis, city_config, meeting_date, video_url=video_url)
         if feeds:
-            from pipeline.save_dashboard_data import enrich_with_rss
-        latest_path = save_dashboard_data(analysis, city_config, meeting_date)
-        if feeds:
-            import json
             payload = json.loads(latest_path.read_text())
             payload = enrich_with_rss(payload, feeds)
             latest_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))

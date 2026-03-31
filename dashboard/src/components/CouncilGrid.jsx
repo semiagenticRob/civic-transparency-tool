@@ -3,15 +3,17 @@ function initials(name) {
 }
 
 function MemberCard({ member, votes }) {
-  const yeas  = Object.values(votes).filter((v) => v === "Yes").length
-  const nays  = Object.values(votes).filter((v) => v === "No").length
-  const total = yeas + nays
-
   const memberVote = votes[member.name]
   const voteColor = {
     Yes: "bg-green-100 text-green-800",
     No:  "bg-red-100 text-red-800",
   }[memberVote] || "bg-gray-100 text-gray-500"
+
+  const nameEl = (
+    <p className="text-sm font-semibold text-gray-900 truncate">
+      {member.name}
+    </p>
+  )
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col gap-2">
@@ -19,8 +21,17 @@ function MemberCard({ member, votes }) {
         <div className="w-10 h-10 rounded-full bg-civic-500 flex items-center justify-center text-white text-sm font-bold shrink-0">
           {initials(member.name)}
         </div>
-        <div className="min-w-0">
-          <p className="text-sm font-semibold text-gray-900 truncate">{member.name}</p>
+        <div className="min-w-0 flex-1">
+          {member.profile_url ? (
+            <a
+              href={member.profile_url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-semibold text-civic-600 hover:underline truncate block"
+            >
+              {member.name}
+            </a>
+          ) : nameEl}
           <p className="text-xs text-gray-500 truncate">
             {member.title}{member.district ? ` · ${member.district}` : ""}
           </p>
@@ -36,7 +47,6 @@ function MemberCard({ member, votes }) {
 }
 
 export default function CouncilGrid({ members, decisions }) {
-  // Aggregate all votes across decisions into a single map of name → last vote
   const aggregateVotes = {}
   decisions?.forEach((d) => {
     if (d.votes) Object.assign(aggregateVotes, d.votes)

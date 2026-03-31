@@ -58,7 +58,8 @@ Please respond with a JSON object containing exactly these fields:
     {{
       "speaker": "Name or 'Unidentified council member'",
       "quote": "Exact or near-exact quote",
-      "context": "Brief context for why this quote is notable"
+      "context": "Brief context for why this quote is notable",
+      "timestamp_seconds": 3642
     }}
   ],
   "topics_discussed": ["list", "of", "policy", "topics"],
@@ -71,6 +72,10 @@ Please respond with a JSON object containing exactly these fields:
   "on_the_horizon": "2-3 sentences on upcoming items from the RSS/agenda feeds worth watching",
   "editors_note_prompts": ["Suggested angles or follow-up questions for the editor to consider adding"]
 }}
+
+The transcript includes periodic timestamps in [MM:SS] or [HH:MM:SS] format. Use these to estimate
+timestamp_seconds for each notable quote (convert to total seconds from the start of the video).
+If a quote appears near [01:02:30], timestamp_seconds would be 3750. If you cannot estimate it, use null.
 
 If you cannot confidently attribute a statement or vote to a specific person, use "Unidentified" rather than guessing.
 Return only valid JSON. Do not include markdown code fences."""
@@ -93,6 +98,7 @@ def analyze_meeting(
     city_config: dict,
     rss_context: str = "",
     model: str = "claude-sonnet-4-6",
+    video_id: str = "",
 ) -> MeetingAnalysis:
     """
     Send the transcript to Claude and return a structured MeetingAnalysis.
@@ -138,10 +144,18 @@ def analyze_meeting(
         else:
             raise ValueError(f"Could not parse Claude response as JSON:\n{raw[:500]}")
 
+    # Enrich quotes with YouTube deep-link URLs using timestamp_seconds
+    quotes = data.get("notable_quotes", [])
+    if video_id:
+        for q in quotes:
+            ts = q.get("timestamp_seconds")
+            if isinstance(ts, (int, float)) and ts >= 0:
+                q["video_url"] = f"https://www.youtube.com/watch?v={video_id}&t={int(ts)}s"
+
     return MeetingAnalysis(
         meeting_summary=data.get("meeting_summary", ""),
         key_decisions=data.get("key_decisions", []),
-        notable_quotes=data.get("notable_quotes", []),
+        notable_quotes=quotes,
         topics_discussed=data.get("topics_discussed", []),
         consistency_flags=data.get("consistency_flags", []),
         on_the_horizon=data.get("on_the_horizon", ""),

@@ -20,6 +20,7 @@ def save_dashboard_data(
     city_config: dict,
     meeting_date: Optional[datetime] = None,
     dashboard_dir: Optional[Path] = None,
+    video_url: str = "",
 ) -> Path:
     """
     Serialize a MeetingAnalysis to JSON and write it to the dashboard data directory.
@@ -35,21 +36,41 @@ def save_dashboard_data(
 
     date_str = (meeting_date or datetime.now()).strftime("%Y-%m-%d")
 
+    # Attach profile_url to each council member from config
+    council_members = [
+        {
+            "name": m["name"],
+            "title": m["title"],
+            "district": m.get("district"),
+            "profile_url": m.get("profile_url"),
+        }
+        for m in city_config.get("council_members", [])
+    ]
+
+    # Attach speaker profile_url to each quote where the speaker matches a council member
+    member_profiles = {m["name"]: m.get("profile_url") for m in city_config.get("council_members", [])}
+    quotes = []
+    for q in analysis.notable_quotes:
+        q = dict(q)
+        q.setdefault("speaker_profile_url", member_profiles.get(q.get("speaker")))
+        quotes.append(q)
+
     payload = {
         "city": city_config["name"],
         "state": city_config["state"],
         "meeting_date": date_str,
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "video_url": video_url or None,
         "meeting_summary": analysis.meeting_summary,
-        "alerts": [],  # populated from RSS alerts if present
+        "alerts": [],
         "key_decisions": analysis.key_decisions,
-        "notable_quotes": analysis.notable_quotes,
+        "notable_quotes": quotes,
         "topics_discussed": analysis.topics_discussed,
         "consistency_flags": analysis.consistency_flags,
         "on_the_horizon": analysis.on_the_horizon,
-        "upcoming": [],   # populated from RSS calendar feeds
-        "recent_news": [], # populated from RSS news feed
-        "council_members": city_config.get("council_members", []),
+        "upcoming": [],
+        "recent_news": [],
+        "council_members": council_members,
     }
 
     # Write latest.json (overwritten each run)
@@ -68,19 +89,28 @@ def save_dashboard_data(
 def enrich_with_rss(payload: dict, feeds: dict) -> dict:
     """
     Merge RSS feed data into a dashboard payload dict.
-    Call this before save_dashboard_data if RSS data is available.
+    Stores {title, url} objects so the frontend can render hyperlinks.
     """
-    from .fetch_rss import FeedItem
-
     news_items = feeds.get("news", [])
-    payload["recent_news"] = [item.title for item in news_items[:6]]
+    payload["recent_news"] = [
+        {"title": item.title, "url": item.link or None}
+        for item in news_items[:6]
+    ]
 
     calendar_items = feeds.get("calendar_council", []) + feeds.get("calendar_govt", [])
-    payload["upcoming"] = [item.title for item in calendar_items[:8]]
+    payload["upcoming"] = [
+        {"title": item.title, "url": item.link or None}
+        for item in calendar_items[:8]
+    ]
 
     alert_items = feeds.get("alerts", [])
     payload["alerts"] = [
-        {"title": item.title, "body": item.summary[:200] if item.summary else "", "severity": "warning"}
+        {
+            "title": item.title,
+            "body": item.summary[:200] if item.summary else "",
+            "severity": "warning",
+            "url": item.link or None,
+        }
         for item in alert_items[:3]
     ]
 

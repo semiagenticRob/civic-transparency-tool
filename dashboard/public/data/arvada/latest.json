@@ -3,12 +3,14 @@
   "state": "CO",
   "meeting_date": "2025-03-25",
   "generated_at": "2025-03-25T21:00:00Z",
+  "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   "meeting_summary": "The Arvada City Council held its regular meeting on March 25, 2025. The council approved a $2.4 million infrastructure contract for the 64th Avenue road reconstruction project and heard a presentation on the city's 2025 water conservation plan in response to the Stage 1 drought declaration. A contested rezoning request for a mixed-use development near Olde Town Arvada was tabled pending additional community input.\n\nCouncil members engaged in extended debate over the proposed short-term rental ordinance, with members Fifer and Griffith expressing concerns about enforcement capacity. The ordinance was ultimately passed 5-2, establishing registration requirements and occupancy limits for platforms like Airbnb operating within city limits.",
   "alerts": [
     {
       "title": "Stage 1 Drought Declaration in Effect",
       "body": "The City has declared a drought and will be aligning with Denver Water's Stage 1 watering restrictions. Assigned watering days are now in effect.",
-      "severity": "warning"
+      "severity": "warning",
+      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?AID=1"
     }
   ],
   "key_decisions": [
@@ -25,7 +27,8 @@
         "Sharon Davis": "Yes",
         "Michael Griffith": "Yes"
       },
-      "significance": "Largest infrastructure contract of the year; construction expected to begin May 2025 with completion in October."
+      "significance": "Largest infrastructure contract of the year; construction expected to begin May 2025 with completion in October.",
+      "agenda_url": null
     },
     {
       "motion": "Short-Term Rental Ordinance — First Reading",
@@ -40,7 +43,8 @@
         "Sharon Davis": "Yes",
         "Michael Griffith": "No"
       },
-      "significance": "Establishes registration requirements and a 2-guest-per-bedroom cap for all short-term rentals. Second reading expected April 8."
+      "significance": "Establishes registration requirements and a 2-guest-per-bedroom cap for all short-term rentals. Second reading expected April 8.",
+      "agenda_url": null
     },
     {
       "motion": "Rezoning Request — 5600 Olde Wadsworth Blvd (mixed-use, 4 stories)",
@@ -55,24 +59,34 @@
         "Sharon Davis": "Yes",
         "Michael Griffith": "Yes"
       },
-      "significance": "Developer must hold additional community meetings before returning to council. Several residents cited concerns about traffic and building height."
+      "significance": "Developer must hold additional community meetings before returning to council. Several residents cited concerns about traffic and building height.",
+      "agenda_url": null
     }
   ],
   "notable_quotes": [
     {
       "speaker": "Bob Fifer",
       "quote": "We don't have the staff to enforce this. We're going to pass an ordinance and then have no way to back it up.",
-      "context": "Fifer voted against the short-term rental ordinance, citing concerns about the city's enforcement capacity."
+      "context": "Fifer voted against the short-term rental ordinance, citing concerns about the city's enforcement capacity.",
+      "timestamp_seconds": 4210,
+      "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=4210s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
     },
     {
       "speaker": "Lauren Simpson",
       "quote": "The data from other Front Range cities is clear — registration alone reduces complaints by 40%. We can't wait for perfect enforcement to start.",
-      "context": "Mayor Simpson pushed back on Fifer's argument, citing data from comparable ordinances in Fort Collins and Lakewood."
+      "context": "Mayor Simpson pushed back on Fifer's argument, citing data from comparable ordinances in Fort Collins and Lakewood.",
+      "timestamp_seconds": 4380,
+      "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=4380s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1"
     },
     {
       "speaker": "Shawna Ambrose",
       "quote": "The neighbors who showed up tonight deserve to be heard before we change the character of that block forever.",
-      "context": "Ambrose voted to table the Olde Wadsworth rezoning, arguing the community engagement process was insufficient."
+      "context": "Ambrose voted to table the Olde Wadsworth rezoning, arguing the community engagement process was insufficient.",
+      "timestamp_seconds": 6042,
+      "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=6042s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3"
     }
   ],
   "topics_discussed": ["Infrastructure", "Water Conservation", "Short-Term Rentals", "Rezoning", "Drought Response", "Budget"],
@@ -84,24 +98,24 @@
   ],
   "on_the_horizon": "The April 8 meeting will include the second reading of the short-term rental ordinance and a public hearing on the 2025-2026 Capital Improvement Plan. The Parks Advisory Board is also presenting its annual report. The Olde Wadsworth rezoning may return if the developer completes the required community engagement sessions.",
   "council_members": [
-    { "name": "Lauren Simpson", "title": "Mayor", "district": null },
-    { "name": "Randy Moorman", "title": "Mayor Pro Tem", "district": "District 1" },
-    { "name": "Shawna Ambrose", "title": "Councilmember", "district": "District 2" },
-    { "name": "Rebecka Lovisone", "title": "Councilmember", "district": "District 3" },
-    { "name": "Bob Fifer", "title": "Councilmember", "district": "District 4" },
-    { "name": "Sharon Davis", "title": "Councilmember", "district": "At-Large" },
-    { "name": "Michael Griffith", "title": "Councilmember", "district": "At-Large" }
+    { "name": "Lauren Simpson", "title": "Mayor", "district": null, "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1" },
+    { "name": "Randy Moorman", "title": "Mayor Pro Tem", "district": "District 1", "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2" },
+    { "name": "Shawna Ambrose", "title": "Councilmember", "district": "District 2", "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3" },
+    { "name": "Rebecka Lovisone", "title": "Councilmember", "district": "District 3", "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4" },
+    { "name": "Bob Fifer", "title": "Councilmember", "district": "District 4", "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5" },
+    { "name": "Sharon Davis", "title": "Councilmember", "district": "At-Large", "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=6" },
+    { "name": "Michael Griffith", "title": "Councilmember", "district": "At-Large", "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7" }
   ],
   "upcoming": [
-    "April 8: Second reading — Short-Term Rental Ordinance",
-    "April 8: Public hearing — 2025-2026 Capital Improvement Plan",
-    "April 8: Parks Advisory Board annual report",
-    "April 22: Regular city council meeting"
+    { "title": "April 8: Second reading — Short-Term Rental Ordinance", "url": "https://www.arvadaco.gov/AgendaCenter" },
+    { "title": "April 8: Public hearing — 2025-2026 Capital Improvement Plan", "url": "https://www.arvadaco.gov/AgendaCenter" },
+    { "title": "April 8: Parks Advisory Board annual report", "url": "https://www.arvadaco.gov/AgendaCenter" },
+    { "title": "April 22: Regular city council meeting", "url": "https://www.arvadaco.gov/706/City-Council-Meeting-Videos" }
   ],
   "recent_news": [
-    "Bulky Item Drop-Off Event — April 25 at Arvada Transfer Station",
-    "Pavement program underway on major corridors",
-    "Kite Festival returns April 12 at Stenger Sports Complex",
-    "Water main flushing ongoing in west Arvada"
+    { "title": "Bulky Item Drop-Off Event — April 25 at Arvada Transfer Station", "url": "https://www.arvadaco.gov/CivicAlerts.aspx" },
+    { "title": "Pavement program underway on major corridors", "url": "https://www.arvadaco.gov/pavementprogram" },
+    { "title": "Kite Festival returns April 12 at Stenger Sports Complex", "url": "https://www.arvadaco.gov" },
+    { "title": "Water main flushing ongoing in west Arvada", "url": "https://www.arvadaco.gov/watermainflushing" }
   ]
 }

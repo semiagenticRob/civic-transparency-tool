@@ -16,8 +16,21 @@ export default function AlertBanner({ alerts }) {
             {alert.severity === "warning" ? "⚠️" : "🚨"}
           </span>
           <div>
-            <span className="font-semibold">{alert.title}</span>
-            {alert.body && <span className="font-normal ml-2 text-amber-800">{alert.body}</span>}
+            {alert.url ? (
+              <a
+                href={alert.url}
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold hover:underline"
+              >
+                {alert.title}
+              </a>
+            ) : (
+              <span className="font-semibold">{alert.title}</span>
+            )}
+            {alert.body && (
+              <span className="font-normal ml-2 text-amber-800">{alert.body}</span>
+            )}
           </div>
         </div>
       ))}

@@ -1,4 +1,4 @@
-export default function MeetingSummary({ summary, date, topics }) {
+export default function MeetingSummary({ summary, date, topics, videoUrl }) {
   const formatted = new Date(date + "T12:00:00").toLocaleDateString("en-US", {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   })
@@ -12,9 +12,24 @@ export default function MeetingSummary({ summary, date, topics }) {
           </p>
           <h2 className="text-xl font-bold text-gray-900">{formatted}</h2>
         </div>
-        <span className="shrink-0 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-          Meeting Complete
-        </span>
+        <div className="flex flex-col items-end gap-2 shrink-0">
+          <span className="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+            Meeting Complete
+          </span>
+          {videoUrl && (
+            <a
+              href={videoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-civic-600 hover:text-civic-700 transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Watch full meeting
+            </a>
+          )}
+        </div>
       </div>
 
       {topics?.length > 0 && (

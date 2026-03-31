@@ -1,3 +1,23 @@
+function LinkedItem({ item, className = "" }) {
+  // Accepts either a string (legacy) or {title, url} object
+  const title = typeof item === "string" ? item : item.title
+  const url   = typeof item === "string" ? null  : item.url
+
+  if (url) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className={`hover:underline hover:text-civic-600 transition-colors ${className}`}
+      >
+        {title}
+      </a>
+    )
+  }
+  return <span className={className}>{title}</span>
+}
+
 export default function Sidebar({ upcoming, recentNews, consistencyFlags }) {
   return (
     <div className="space-y-5">
@@ -11,7 +31,7 @@ export default function Sidebar({ upcoming, recentNews, consistencyFlags }) {
           {upcoming?.map((item, i) => (
             <li key={i} className="flex gap-2 text-sm text-gray-700">
               <span className="text-civic-500 mt-0.5 shrink-0">›</span>
-              {item}
+              <LinkedItem item={item} />
             </li>
           ))}
         </ul>
@@ -42,7 +62,7 @@ export default function Sidebar({ upcoming, recentNews, consistencyFlags }) {
         <ul className="space-y-2">
           {recentNews?.map((item, i) => (
             <li key={i} className="text-sm text-gray-600 border-b border-gray-50 pb-2 last:border-0 last:pb-0">
-              {item}
+              <LinkedItem item={item} className="text-gray-600" />
             </li>
           ))}
         </ul>
