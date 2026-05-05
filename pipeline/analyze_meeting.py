@@ -174,7 +174,10 @@ def analyze_meeting(
 
     response = client.chat.completions.create(
         model=model,
-        max_tokens=4096,
+        # 8192 is enough to comfortably fit a long meeting's analysis with
+        # multiple workshop_topics + per-member positions; 4096 truncated
+        # mid-JSON for a 2-hour Arvada meeting.
+        max_tokens=8192,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": prompt},
