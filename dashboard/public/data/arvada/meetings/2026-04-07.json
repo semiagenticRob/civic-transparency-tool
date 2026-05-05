@@ -1,0 +1,191 @@
+{
+  "city": "Arvada",
+  "state": "CO",
+  "meeting_date": "2026-04-07",
+  "generated_at": "2026-05-05T20:15:17.376791+00:00",
+  "video_url": "https://www.youtube.com/watch?v=XnbZFIFcXfw",
+  "meeting_summary": "The Arvada City Council met on April 7, 2026, and approved three formal items unanimously: acceptance of donations to the Majestic View Nature Center, an amendment to a maintenance agreement with Jefferson County Public Library for the Rocky Mountain Greenway Trail Head at Stanley Lake, and a new code of conduct for the city's golf course facilities. The council also approved first reading of a budget appropriation ordinance for fiscal year 2026, with a public hearing set for April 21. Mayor Lauren Simpson returned to the dais after a cancer-related absence and announced she is cancer free following successful tumor removal surgery.\n\nPublic comment covered a range of issues including concerns about water rate disparities for multifamily housing complexes, support for the city's pending Climate and Sustainability Action Plan (CASSAP), a question about contaminated land at 51st and Marshall, and ongoing concerns about unsafe e-bike riding by minors. Council members discussed the Jefferson County comprehensive master plan and its potential impacts on traffic along the McIntyre corridor in West Arvada.\n\nDuring council committee reports, several informal topics surfaced without votes: a request for staff to research stronger ordinance language around minors and e-bikes (with apparent broad council support), questions about whether Arvada's zoning code adequately addresses data center setbacks near mixed-use residential areas, and updates on the city audit process, the Oldtown street sealing project, and Stage 1 drought water restrictions. An informal meeting continued after adjournment.",
+  "alerts": [],
+  "key_decisions": [
+    {
+      "motion": "R26-026: Resolution authorizing acceptance of donations made to the Majestic View Nature Center in 2025",
+      "result": "Passed",
+      "vote_breakdown": "7-0",
+      "votes": {
+        "Lauren Simpson": "Yes",
+        "Randy Moorman": "Yes",
+        "Shawna Ambrose": "Yes",
+        "Rebecka Lovisone": "Yes",
+        "Bob Fifer": "Yes",
+        "Sharon Davis": "Yes",
+        "Michael Griffith": "Yes"
+      },
+      "significance": "Formally accepts charitable donations made to the Majestic View Nature Center in 2025, valued in part by over 2,200 volunteer hours worth nearly $86,000."
+    },
+    {
+      "motion": "R26-027: Resolution authorizing a first amendment to an intergovernmental agreement between the city of Arvada and Jefferson County Public Library designating maintenance responsibilities for the Rocky Mountain Greenway Trail Head at Stanley Lake Library",
+      "result": "Passed",
+      "vote_breakdown": "7-0",
+      "votes": {
+        "Lauren Simpson": "Yes",
+        "Randy Moorman": "Yes",
+        "Shawna Ambrose": "Yes",
+        "Rebecka Lovisone": "Yes",
+        "Bob Fifer": "Yes",
+        "Sharon Davis": "Yes",
+        "Michael Griffith": "Yes"
+      },
+      "significance": "Transfers long-term maintenance responsibility for a nearly $875,000 trail head facility—built on Jefferson County Public Library property—to JCPL effective December 31, 2026. The city retains certain cooperative rights under the existing IGA."
+    },
+    {
+      "motion": "R26-028: Resolution adopting a golf course facility visitor code of conduct",
+      "result": "Passed",
+      "vote_breakdown": "7-0",
+      "votes": {
+        "Lauren Simpson": "Yes",
+        "Randy Moorman": "Yes",
+        "Shawna Ambrose": "Yes",
+        "Rebecka Lovisone": "Yes",
+        "Bob Fifer": "Yes",
+        "Sharon Davis": "Yes",
+        "Michael Griffith": "Yes"
+      },
+      "significance": "Establishes formal behavioral standards and enforcement procedures at Arvada's publicly owned golf courses, including a director's authority to issue trespass notices of up to six months, with an appeal process through Arvada Municipal Court."
+    },
+    {
+      "motion": "CB26-015: Ordinance authorizing an additional appropriation for fiscal year 2026 — approved on first reading, ordered published in full, and a public hearing set for April 21, 2026 at 6:15 p.m.",
+      "result": "Passed",
+      "vote_breakdown": "7-0",
+      "votes": {
+        "Lauren Simpson": "Yes",
+        "Randy Moorman": "Yes",
+        "Shawna Ambrose": "Yes",
+        "Rebecka Lovisone": "Yes",
+        "Bob Fifer": "Yes",
+        "Sharon Davis": "Yes",
+        "Michael Griffith": "Yes"
+      },
+      "significance": "First reading of a mid-year budget adjustment; full public hearing and final vote scheduled for April 21."
+    }
+  ],
+  "notable_quotes": [
+    {
+      "speaker": "Bob Fifer",
+      "quote": "What prevents them from closing the trail head? ... I feel like there's no control to keep that open. I mean, there was a big splash about this trail head. And so if we transfer everything over to them, which it's their property, I get it, but it's also almost a million dollars of taxpayer money.",
+      "context": "Fifer raised concern that transferring maintenance of the Stanley Lake trail head to Jefferson County Public Library left the city with no leverage to prevent the library from closing or degrading the facility.",
+      "timestamp_seconds": 1952,
+      "video_url": "https://www.youtube.com/watch?v=XnbZFIFcXfw&t=1952s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "speaker": "Janelle Strickler (City Attorney)",
+      "quote": "Arvada still does get a say in kind of how that property is utilized and we'll still work with Jefferson County to make sure the trail remains open.",
+      "context": "City attorney clarified that the original IGA—not just the amendment—still requires both parties to cooperate on development, construction, maintenance, and preservation of the trail, partially addressing Fifer's concern.",
+      "timestamp_seconds": 2109,
+      "video_url": "https://www.youtube.com/watch?v=XnbZFIFcXfw&t=2109s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Bob Fifer",
+      "quote": "The golf is operating as a business. Let's just be clear about that. And they can make the rules.",
+      "context": "Fifer pushed back on public commenter Mike Rollick's due-process argument by distinguishing the golf course—a pay-to-use enterprise fund—from a free public park.",
+      "timestamp_seconds": 3618,
+      "video_url": "https://www.youtube.com/watch?v=XnbZFIFcXfw&t=3618s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "speaker": "Lauren Simpson",
+      "quote": "Staff does not deserve to suffer the abuse just because it happens to be a government facility. Behave and there won't be an issue.",
+      "context": "Mayor Simpson summarized council's rationale for supporting the golf course code of conduct before the vote.",
+      "timestamp_seconds": 3992,
+      "video_url": "https://www.youtube.com/watch?v=XnbZFIFcXfw&t=3992s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1"
+    },
+    {
+      "speaker": "Lauren Simpson",
+      "quote": "The doctors were successful. We have removed the tumors. They are gone. I'm at a very low risk of recurrence. It's never zero, but I have about the best prognosis possible, and I'm very excited to say that in layman's terms, I am cancer free.",
+      "context": "Mayor Simpson, returning after a medical absence, shared news of successful cancer treatment with the council and community.",
+      "timestamp_seconds": 5301,
+      "video_url": "https://www.youtube.com/watch?v=XnbZFIFcXfw&t=5301s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1"
+    },
+    {
+      "speaker": "Debbie Bacon",
+      "quote": "We do not use the amount of water that a standard resident would use for a single family home on a per person basis—we use on average almost half of what they would use. So to charge us the higher rates that businesses would have to pay just because we are a larger complex and have one water bill seems unfair.",
+      "context": "Resident of a multifamily HOA asked the city to review and equalize water rates for multifamily housing, which she said are currently tiered at commercial rates.",
+      "timestamp_seconds": 1261,
+      "video_url": "https://www.youtube.com/watch?v=XnbZFIFcXfw&t=1261s",
+      "speaker_profile_url": null
+    }
+  ],
+  "topics_discussed": [
+    "National Kite Month proclamation / Arvada Kite Festival",
+    "Rocky Mountain Greenway Trail Head maintenance agreement with JCPL",
+    "Golf course visitor code of conduct and trespass authority",
+    "FY2026 budget appropriation (first reading)",
+    "Dieldrin contamination at city-owned property at 51st and Marshall",
+    "Water rate disparities for multifamily housing",
+    "Climate and Sustainability Action Plan (CASSAP) — public comment support",
+    "Jefferson County comprehensive master plan and McIntyre corridor traffic",
+    "E-bike safety for minors",
+    "Data center zoning gaps and sustainability requirements",
+    "Stage 1 drought water restrictions",
+    "Oldtown street sealing / BID strategic reinvestment plan",
+    "City audit update",
+    "Adams County open space sales tax collaboration",
+    "Mayor Simpson's return after cancer treatment"
+  ],
+  "consistency_flags": [
+    {
+      "council_member": "Bob Fifer",
+      "observation": "Fifer voted yes on the Stanley Lake Library trail head maintenance amendment (R26-027) after raising significant concerns that transferring maintenance to JCPL left the city without control to prevent closure of a facility built with nearly $875,000 in public funds. He accepted the city attorney's assurance that cooperation obligations remain in the IGA, but his concern about historical precedent (citing Wolf Park on non-city land) was not fully resolved before the vote."
+    }
+  ],
+  "on_the_horizon": "A public hearing on the FY2026 supplemental budget appropriation (CB26-015) is scheduled for April 21, 2026. The Climate and Sustainability Action Plan (CASSAP), which drew strong public support at this meeting, has not yet been formally voted on and will likely appear on a future agenda. Additionally, the city is under a Stage 1 drought declaration with mandatory water restrictions taking effect April 15, 2026—a topic that intersected with public comment on multifamily water rates and council discussion of splash pads and irrigation practices.",
+  "upcoming": [],
+  "recent_news": [],
+  "council_members": [
+    {
+      "name": "Lauren Simpson",
+      "title": "Mayor",
+      "district": null,
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1"
+    },
+    {
+      "name": "Randy Moorman",
+      "title": "Mayor Pro Tem",
+      "district": "District 1",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2"
+    },
+    {
+      "name": "Shawna Ambrose",
+      "title": "Councilmember",
+      "district": "District 2",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3"
+    },
+    {
+      "name": "Rebecka Lovisone",
+      "title": "Councilmember",
+      "district": "District 3",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4"
+    },
+    {
+      "name": "Bob Fifer",
+      "title": "Councilmember",
+      "district": "District 4",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "name": "Sharon Davis",
+      "title": "Councilmember",
+      "district": "At-Large",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=6"
+    },
+    {
+      "name": "Michael Griffith",
+      "title": "Councilmember",
+      "district": "At-Large",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7"
+    }
+  ]
+}

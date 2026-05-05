@@ -1,0 +1,187 @@
+{
+  "city": "Arvada",
+  "state": "CO",
+  "meeting_date": "2026-04-14",
+  "generated_at": "2026-05-05T20:16:56.278058+00:00",
+  "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A",
+  "meeting_summary": "The Arvada City Council held two workshop sessions on April 14, 2026 — no formal votes were taken. The first workshop was the City Attorney's Office annual update, the first such presentation ever given by that office. City Attorney Rachel Morris and her team presented an overview of their three divisions (civil, criminal, and risk/safety), highlighting 616 contracts completed, 19 active lawsuits, 7,760 citations processed, and $250,000 recovered for the city in 2025. The second workshop featured Municipal Court Judge Katie Curts, who presented the court's annual update, including a transition to paperless case management, rising caseloads projected to reach nearly 11,000 cases in 2026 due to a fully staffed police department, and significant successes in the One Small Step (OSS) homeless diversion court program.\n\nJudge Curts raised urgent concerns about the lack of a permanent court marshal, showing three videos of courtroom incidents including a defendant walking out during sentencing, a juvenile who had to be physically removed and later charged with felonies, and another individual who approached the bench in a threatening manner. She also noted that without a court marshal to fingerprint convicted defendants, none of Arvada Municipal Court's criminal convictions are currently being recorded in the state database — a significant public safety gap. Council member Fifer raised concern that a court marshal position had previously been approved and then disappeared, and asked staff to investigate what happened.\n\nCity Manager Wick provided brief staff updates, announcing that the Kitefest drew 10,000–12,000 attendees, and that Canyon Pines has officially been incorporated into the Arvada Fire Protection District after a years-long effort. The council's next meeting on April 21 will include public hearings and a 4 p.m. executive session, and a strategic planning retreat is scheduled for Saturday.",
+  "alerts": [],
+  "key_decisions": [
+    {
+      "motion": "No formal motions or votes were taken. Both agenda items were workshop sessions only.",
+      "result": "No vote",
+      "vote_breakdown": "N/A",
+      "votes": {
+        "Lauren Simpson": "Absent from vote",
+        "Randy Moorman": "Absent from vote",
+        "Shawna Ambrose": "Absent from vote",
+        "Rebecka Lovisone": "Absent from vote",
+        "Bob Fifer": "Absent from vote",
+        "Sharon Davis": "Absent from vote",
+        "Michael Griffith": "Absent from vote"
+      },
+      "significance": "This was a workshop-only meeting. No policy decisions were made, but discussions on court staffing, marshal funding, fines and fees, and rising caseloads signal likely future action items."
+    }
+  ],
+  "notable_quotes": [
+    {
+      "speaker": "Judge Katie Curts",
+      "quote": "Currently none of our criminal convictions are recorded. We don't have a court marshal to do that fingerprinting.",
+      "context": "Explaining that without a court marshal to take fingerprints at sentencing, convictions cannot be linked to individuals in the state database, meaning serious offenses like assault and repeat theft are not appearing on defendants' records.",
+      "timestamp_seconds": 4973,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=4973s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Judge Katie Curts",
+      "quote": "Just in January alone with moving traffic violations, in January 2025 we had 530 cases. In January 2026, we had a thousand cases. So it almost doubled just in moving traffic violations.",
+      "context": "Illustrating the rapid growth in caseload heading into 2026, driven partly by a fully staffed police department.",
+      "timestamp_seconds": 3038,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=3038s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Judge Katie Curts",
+      "quote": "When the city of Thornton saw their police department fully staffed, their case numbers ran from about 8,000 a year to 13,000 a year within a one-year period. So that's when I say buckle up.",
+      "context": "Warning council that Arvada may see a dramatic case volume surge now that APD is fully staffed.",
+      "timestamp_seconds": 3067,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=3067s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Bob Fifer",
+      "quote": "We intentionally give these FTEs, we just expect they're doing exactly what you need, which is the security you need. So maybe we can find out about what happened at Marshall and make sure that if we do this again, the marshal position doesn't go away. It stays.",
+      "context": "Expressing frustration that a court marshal position had been previously approved but apparently eliminated, and asking for an investigation before approving another one.",
+      "timestamp_seconds": 5178,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=5178s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "speaker": "Judge Katie Curts",
+      "quote": "Someone just asked me the other day... 'Is anyone ever mean to you?' And I said, 'Every single day. Every single day.'",
+      "context": "Describing the daily reality of courtroom security threats faced by herself and court staff.",
+      "timestamp_seconds": 5739,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=5739s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Judge Katie Curts",
+      "quote": "We have not had a single case on him since then. That is a miracle for him.",
+      "context": "Describing the outcome for a chronically homeless individual with 26 cases since 2021 who was accepted into permanent supportive housing and has had no new municipal court cases since November 2025.",
+      "timestamp_seconds": 4197,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=4197s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Randy Moorman",
+      "quote": "When I came on council, we didn't feel that way. It felt like we were really struggling and not making the difference. And now we are really gaining ground in the work and the investments we're making and that's paying off.",
+      "context": "Reflecting on the One Small Step program's progress after hearing case success stories from Judge Curts.",
+      "timestamp_seconds": 4942,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=4942s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2"
+    },
+    {
+      "speaker": "Bob Fifer",
+      "quote": "I don't necessarily agree from the fines perspective because I think it needs to hurt. Some of these folks do not feel the hurt.",
+      "context": "Pushing back on the idea that fines should be capped or purely cost-neutral, arguing that deterrence requires meaningful financial penalties.",
+      "timestamp_seconds": 5240,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=5240s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "speaker": "Rachel Morris (City Attorney)",
+      "quote": "Please don't try that at home.",
+      "context": "Responding humorously to Risk Director Drew Shiveley's suggestion that council members seek out a fire to practice with fire extinguishers.",
+      "timestamp_seconds": 1731,
+      "video_url": "https://www.youtube.com/watch?v=9MRFVxO9J4A&t=1731s",
+      "speaker_profile_url": null
+    }
+  ],
+  "topics_discussed": [
+    "City attorney staffing and office structure",
+    "Civil litigation outcomes",
+    "Contract volume and types",
+    "Legislative advocacy and bill testimony",
+    "Risk management and insurance coverage",
+    "Workers' compensation claims",
+    "Subrogation and restitution recovery",
+    "Employee safety program and safety technicians",
+    "Municipal court caseload growth",
+    "Paperless court case management transition",
+    "One Small Step homeless diversion court program",
+    "Juvenile probation and diversion programs",
+    "Adult probation supervision",
+    "Court security and marshal position",
+    "Criminal conviction recording gap (fingerprinting)",
+    "Fines and fees schedule revision",
+    "Live streaming of court proceedings",
+    "Court facility space constraints",
+    "E-bike enforcement and juvenile penalties",
+    "Marijuana in schools",
+    "North Arvada Middle School fight trends",
+    "FullCourt software replacement",
+    "Canyon Pines fire district inclusion",
+    "Kitefest attendance and outcomes",
+    "Water restrictions Stage 1 drought",
+    "Motor vehicle registration violations (HB 25-1112)",
+    "Fireworks and open burning violations",
+    "Axon Justice case management for prosecution"
+  ],
+  "consistency_flags": [
+    {
+      "council_member": "Bob Fifer",
+      "observation": "Fifer stated the council had previously approved a court marshal position — implying it was an institutional commitment — but expressed surprise and frustration that it disappeared. If true, this suggests council approvals of staffing positions may not be consistently tracked or enforced through budget cycles. Fifer's call for accountability on this is consistent with his expressed position tonight, but raises a question about whether the council was informed when the position was eliminated."
+    },
+    {
+      "council_member": "Bob Fifer",
+      "observation": "Fifer said he agrees courts should not be revenue generators, yet argued fines should 'hurt' and have no ceiling. He distinguished between fees (cost recovery) and fines (deterrence/punishment), which is a coherent position, but his framing that he 'doesn't necessarily agree from the fines perspective' with the revenue-neutral goal could be read as in tension with the court's legal obligation not to set fines for revenue purposes — a constraint the judge acknowledged."
+    }
+  ],
+  "on_the_horizon": "Water Stage 1 drought restrictions took effect April 15, 2026 — the day after this meeting — and Judge Curts mentioned the court may soon handle water restriction violation appeals, which could add to its already-rising caseload. The April 21 council meeting will include public hearings and a 4 p.m. executive session, making it a significant agenda to watch. A council strategic planning retreat is scheduled for the Saturday following this meeting, which may shape budget priorities including the court marshal position and court expansion.",
+  "upcoming": [],
+  "recent_news": [],
+  "council_members": [
+    {
+      "name": "Lauren Simpson",
+      "title": "Mayor",
+      "district": null,
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1"
+    },
+    {
+      "name": "Randy Moorman",
+      "title": "Mayor Pro Tem",
+      "district": "District 1",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2"
+    },
+    {
+      "name": "Shawna Ambrose",
+      "title": "Councilmember",
+      "district": "District 2",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3"
+    },
+    {
+      "name": "Rebecka Lovisone",
+      "title": "Councilmember",
+      "district": "District 3",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4"
+    },
+    {
+      "name": "Bob Fifer",
+      "title": "Councilmember",
+      "district": "District 4",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "name": "Sharon Davis",
+      "title": "Councilmember",
+      "district": "At-Large",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=6"
+    },
+    {
+      "name": "Michael Griffith",
+      "title": "Councilmember",
+      "district": "At-Large",
+      "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7"
+    }
+  ]
+}
