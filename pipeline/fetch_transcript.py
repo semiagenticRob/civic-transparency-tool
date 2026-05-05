@@ -121,9 +121,13 @@ def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
         "ignore_no_formats_error": True,
         "quiet": True,
         "no_warnings": True,
-        # The 'android' player_client reliably returns caption URLs even from
-        # data-center IPs; the default 'web' client does not.
-        "extractor_args": {"youtube": {"player_client": ["android"]}},
+        # Try multiple YouTube client extractors — different ones return
+        # different metadata depending on the request's IP and auth state.
+        # 'web' honors session cookies (authenticated requests); 'android'
+        # works without auth on residential IPs but returns empty captions
+        # from data-center IPs even with cookies. Order matters: yt-dlp
+        # tries them in sequence and merges available data.
+        "extractor_args": {"youtube": {"player_client": ["web", "android", "tv_simply"]}},
     }
 
     # Pass YouTube cookies if available — needed for data-center IPs (like
