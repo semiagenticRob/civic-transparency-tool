@@ -110,6 +110,10 @@ def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
 
     ydl_opts = {
         "skip_download": True,
+        # We only want the captions metadata. Some player_clients return no
+        # downloadable video formats (especially when authenticated) — skip
+        # the format-availability check so extraction doesn't fail there.
+        "ignore_no_formats_error": True,
         "quiet": True,
         "no_warnings": True,
         # The 'android' player_client reliably returns caption URLs even from
