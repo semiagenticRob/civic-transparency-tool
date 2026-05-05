@@ -90,23 +90,25 @@ def run_for_video(
     except Exception:
         pass  # dashboard write is not critical to newsletter delivery
 
-    # 6. Beehiiv draft
+    # 6. Beehiiv draft (best-effort — gated behind enterprise plan as of
+    #    2026-05; if it 403s, we still deliver via email below)
     draft_id = ""
     draft_url = ""
-    error = None
+    publish_error = None
     if publish:
-        try:
-            publication_id = os.environ["BEEHIIV_PUBLICATION_ID"]
-            draft = beehiiv.create_draft(
-                publication_id=publication_id,
-                subject=rendered.subject,
-                subtitle=rendered.subtitle,
-                body_html=rendered.body_html,
-            )
-            draft_id = draft.draft_id
-            draft_url = draft.draft_url
-        except Exception as e:
-            error = str(e)
+        publication_id = os.environ.get("BEEHIIV_PUBLICATION_ID")
+        if publication_id:
+            try:
+                draft = beehiiv.create_draft(
+                    publication_id=publication_id,
+                    subject=rendered.subject,
+                    subtitle=rendered.subtitle,
+                    body_html=rendered.body_html,
+                )
+                draft_id = draft.draft_id
+                draft_url = draft.draft_url
+            except Exception as e:
+                publish_error = str(e)
 
     return RunResult(
         video_id=video_id,
@@ -116,5 +118,5 @@ def run_for_video(
         subtitle=rendered.subtitle,
         body_html=rendered.body_html,
         meeting_date=meeting_date.strftime("%Y-%m-%d"),
-        error=error,
+        error=publish_error,
     )

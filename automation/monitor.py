@@ -75,32 +75,37 @@ def process_video(
         print(f"    subject: {result.subject}")
         return result
 
-    if result.error:
-        print(f"  ✗ Beehiiv publish failed: {result.error}")
+    if result.draft_url:
+        print(f"  ✓ Beehiiv draft posted: {result.draft_url}")
+    elif result.error:
+        print(f"  ⚠ Beehiiv publish skipped: {result.error[:120]}")
+    else:
+        print("  ⚠ Beehiiv not configured — delivering via email only")
+
+    # Email delivery is the canonical handoff to the editor — the rendered
+    # HTML lands in their inbox with an attached file for Beehiiv paste-in.
+    notify_email = os.environ.get("NOTIFY_EMAIL")
+    if not notify_email:
+        print("  ✗ NOTIFY_EMAIL not set — no way to deliver draft, marking failed")
         return result
 
-    print(f"  ✓ draft posted: {result.draft_url}")
-
-    # Notify editor
-    notify_email = os.environ.get("NOTIFY_EMAIL")
-    if notify_email:
-        try:
-            notifier.notify_draft_ready(
-                to_email=notify_email,
-                draft_url=result.draft_url,
-                subject_line=result.subject,
-                lede_excerpt=result.subtitle,
-            )
-            print(f"  ✓ editor notified at {notify_email}")
-        except Exception as e:
-            print(f"  ⚠ email failed: {e}")
-    else:
-        print("  ⚠ NOTIFY_EMAIL not set — skipping email")
+    try:
+        notifier.deliver_draft(
+            to_email=notify_email,
+            subject_line=result.subject,
+            body_html=result.body_html,
+            draft_url=result.draft_url or None,
+            publish_error=result.error,
+        )
+        print(f"  ✓ draft emailed to {notify_email}")
+    except Exception as e:
+        print(f"  ✗ email delivery failed: {e}")
+        return result
 
     state.mark_processed(
         video_id=video.video_id,
-        draft_id=result.draft_id,
-        draft_url=result.draft_url,
+        draft_id=result.draft_id or "email-only",
+        draft_url=result.draft_url or "",
         meeting_date=result.meeting_date,
     )
     return result
