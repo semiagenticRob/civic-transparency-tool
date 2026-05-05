@@ -10,9 +10,11 @@ which sails through.
 Returns a list of timed Segment objects plus a joined plain-text string.
 """
 
+import os
 import re
 import sys
 from dataclasses import dataclass
+from pathlib import Path
 
 import requests
 import yt_dlp
@@ -114,6 +116,13 @@ def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
         # data-center IPs; the default 'web' client does not.
         "extractor_args": {"youtube": {"player_client": ["android"]}},
     }
+
+    # Pass YouTube cookies if available — needed for data-center IPs (like
+    # GitHub Actions runners) that hit "Sign in to confirm you're not a bot".
+    # Locally, just set YT_COOKIES_FILE=/path/to/cookies.txt.
+    cookie_file = os.environ.get("YT_COOKIES_FILE")
+    if cookie_file and Path(cookie_file).exists():
+        ydl_opts["cookiefile"] = cookie_file
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=False)

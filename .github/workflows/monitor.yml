@@ -29,6 +29,20 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      - name: Stage YouTube cookies
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
+        run: |
+          if [ -n "$YT_COOKIES" ]; then
+            COOKIES_PATH="$RUNNER_TEMP/yt-cookies.txt"
+            printf '%s' "$YT_COOKIES" > "$COOKIES_PATH"
+            chmod 600 "$COOKIES_PATH"
+            echo "YT_COOKIES_FILE=$COOKIES_PATH" >> "$GITHUB_ENV"
+            echo "Cookies staged ($(wc -l < "$COOKIES_PATH") lines)"
+          else
+            echo "YT_COOKIES secret not set — yt-dlp will run without cookies (likely to fail on data-center IPs)"
+          fi
+
       - name: Run monitor
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -36,6 +50,7 @@ jobs:
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          # YT_COOKIES_FILE flows in from $GITHUB_ENV set above
         run: |
           if [ "$DRY_RUN" = "true" ]; then
             python -m automation.monitor --dry-run
