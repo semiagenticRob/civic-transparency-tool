@@ -42,6 +42,11 @@ def create_draft(
     if not api_key:
         raise BeehiivError("BEEHIIV_API_KEY not set")
 
+    # Beehiiv expects publication IDs in the form `pub_<uuid>`. Accept either
+    # form so the caller can paste the raw UUID from their dashboard URL.
+    if not publication_id.startswith("pub_"):
+        publication_id = f"pub_{publication_id}"
+
     url = f"https://api.beehiiv.com/v2/publications/{publication_id}/posts"
     headers = {
         "Authorization": f"Bearer {api_key}",
