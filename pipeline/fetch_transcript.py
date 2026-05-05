@@ -67,20 +67,19 @@ def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
         full_text: plain-text transcript joined with spaces
     """
     video_id = extract_video_id(video_url_or_id)
+    api = YouTubeTranscriptApi()
 
     try:
-        raw = YouTubeTranscriptApi.get_transcript(video_id, languages=["en"])
+        fetched = api.fetch(video_id, languages=["en"])
     except TranscriptsDisabled:
         raise RuntimeError(f"Transcripts are disabled for video {video_id}")
     except NoTranscriptFound:
-        # Fall back to auto-generated transcript in any available language
-        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-        transcript = transcript_list.find_generated_transcript(["en"])
-        raw = transcript.fetch()
+        transcript = api.list(video_id).find_generated_transcript(["en"])
+        fetched = transcript.fetch()
 
     segments = [
-        Segment(start=entry["start"], duration=entry["duration"], text=entry["text"].strip())
-        for entry in raw
+        Segment(start=snip.start, duration=snip.duration, text=snip.text.strip())
+        for snip in fetched
     ]
 
     full_text = " ".join(s.text for s in segments)
