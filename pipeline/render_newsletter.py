@@ -86,12 +86,10 @@ def render_newsletter(
         })
     remaining_quotes = quotes  # any leftover
 
-    # Auto-stub for editor's note section
-    if analysis.editors_note_prompts:
-        editor_stub_lines = [f"• {p}" for p in analysis.editors_note_prompts]
-        editor_stub = "\n".join(editor_stub_lines)
-    else:
-        editor_stub = "[Add your editorial take here before sending.]"
+    # Note: analysis.editors_note_prompts is intentionally NOT rendered into the
+    # newsletter — Eyes on Arvada is positioned as nonpartisan, so editorial
+    # commentary doesn't belong in the published email. The field still flows
+    # through the dashboard JSON for internal use.
 
     template = env.get_template("newsletter.html.j2")
     body_html = template.render(
@@ -104,7 +102,6 @@ def render_newsletter(
         lead_pull_quote=lead_pull_quote,
         workshop_sections=workshop_sections,
         remaining_quotes=remaining_quotes,
-        editor_stub=editor_stub,
     )
 
     subject = analysis.lead_headline or f"{city_config['newsletter']['name']} — {meeting_date.strftime('%B %d')}"
