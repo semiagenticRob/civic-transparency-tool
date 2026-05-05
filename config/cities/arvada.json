@@ -2,6 +2,11 @@
   "name": "Arvada",
   "state": "CO",
   "youtube_channel_handle": "@cityofarvada",
+  "youtube_playlist_id": "PLJq_TITOXij3LbNGKMmgS8uqolIBz5bye",
+  "civicclerk": {
+    "subdomain": "arvadaco",
+    "category_id": 26
+  },
   "rss_feeds": {
     "agenda": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=65&CID=All-0",
     "news": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
@@ -9,14 +14,23 @@
     "calendar_govt": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=58&CID=Government-Meetings-23",
     "alerts": "https://www.arvadaco.gov/RSSFeed.aspx?ModID=63&CID=All-0"
   },
+  "newsletter": {
+    "name": "Eyes on Arvada",
+    "tagline": "A nonpartisan read on what your city council actually did this week.",
+    "subscribe_url": null,
+    "photo_base_url": "https://raw.githubusercontent.com/semiagenticRob/civic-transparency-tool/main/docs/design/assets/council"
+  },
+  "llm": {
+    "model": "anthropic/claude-sonnet-4.6"
+  },
   "council_members": [
-    { "name": "Lauren Simpson",   "title": "Mayor",          "district": null,        "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1" },
-    { "name": "Randy Moorman",    "title": "Mayor Pro Tem",  "district": "District 1","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2" },
-    { "name": "Shawna Ambrose",   "title": "Councilmember",  "district": "District 2","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3" },
-    { "name": "Rebecka Lovisone", "title": "Councilmember",  "district": "District 3","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4" },
-    { "name": "Bob Fifer",        "title": "Councilmember",  "district": "District 4","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5" },
-    { "name": "Sharon Davis",     "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=6" },
-    { "name": "Michael Griffith", "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7" }
+    { "name": "Lauren Simpson",   "title": "Mayor",          "district": null,        "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1", "phone": "720-961-3779", "photo_filename": "simpson.jpg" },
+    { "name": "Randy Moorman",    "title": "Mayor Pro Tem",  "district": "District 1","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2", "phone": "720-772-6651", "photo_filename": "moorman.jpg" },
+    { "name": "Shawna Ambrose",   "title": "Councilmember",  "district": "District 2","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3", "phone": "970-425-3060", "photo_filename": "ambrose.jpg" },
+    { "name": "Rebecka Lovisone", "title": "Councilmember",  "district": "District 3","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4", "phone": "720-898-7000", "photo_filename": "lovisone.jpg" },
+    { "name": "Bob Fifer",        "title": "Councilmember",  "district": "District 4","profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5", "phone": "303-929-4278", "photo_filename": "fifer.jpg" },
+    { "name": "Sharon Davis",     "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=6", "phone": "720-450-4825", "photo_filename": "davis.jpg" },
+    { "name": "Michael Griffith", "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7", "phone": "720-898-7000", "photo_filename": "griffith.jpg" }
   ],
   "meeting_keywords": ["City Council Meeting", "Special City Council"],
   "timezone": "America/Denver"

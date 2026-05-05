@@ -1,0 +1,323 @@
+{# Eyes on Arvada newsletter — inline-CSS HTML for Beehiiv.
+   Beehiiv strips <style>/<link>; every style is on the element.
+   Width capped at 680px for email-client safety. #}
+{%- set serif = "'Newsreader', Georgia, 'Times New Roman', serif" -%}
+{%- set display = "'Playfair Display', Georgia, 'Times New Roman', serif" -%}
+{%- set sans = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" -%}
+{%- set body_color = "#374151" -%}
+{%- set heading_color = "#111827" -%}
+{%- set civic_900 = "#111e5c" -%}
+{%- set civic_500 = "#3b5bdb" -%}
+{%- set muted = "#6b7280" -%}
+{%- set subtle = "#9ca3af" -%}
+{%- set border = "#e5e7eb" -%}
+{%- set cream_bg = "#f8f5ed" -%}
+{%- set cream_border = "#d4cdb5" -%}
+{%- set page_bg = "#fefdf8" -%}
+
+<div style="font-family: {{ serif }}; background: {{ page_bg }}; color: {{ body_color }}; max-width: 680px; margin: 0 auto; padding: 40px 24px;">
+
+  {# ─── MASTHEAD ───────────────────────────────────────────────── #}
+  <div style="text-align: center; padding-bottom: 24px; border-bottom: 3px solid {{ civic_900 }};">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ subtle }}; margin-bottom: 12px;">
+      {{ formatted_date }}
+    </div>
+    <div style="font-family: {{ display }}; font-size: 44px; font-weight: 800; letter-spacing: -1px; color: {{ civic_900 }}; line-height: 1.1; margin-bottom: 8px;">
+      {{ newsletter.name|upper }}
+    </div>
+    <div style="font-family: {{ serif }}; font-style: italic; font-size: 15px; color: {{ muted }};">
+      {{ newsletter.tagline }}
+    </div>
+  </div>
+
+  {# ─── META LINE ──────────────────────────────────────────────── #}
+  <div style="text-align: center; padding: 20px 0 32px; font-family: {{ sans }}; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: {{ muted }};">
+    6 MIN READ
+    {%- for q in [lead_pull_quote] if q and q.video_url %}
+      &nbsp;·&nbsp;<a href="{{ q.video_url }}" style="color: {{ civic_500 }}; text-decoration: none;">WATCH THE MEETING ↗</a>
+    {%- endfor %}
+  </div>
+
+  {# ─── LEAD STORY ─────────────────────────────────────────────── #}
+  {% if analysis.lead_headline or lead_decision %}
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ civic_500 }}; margin-bottom: 12px;">
+      LEAD STORY
+    </div>
+    <h1 style="font-family: {{ display }}; font-size: 30px; font-weight: 700; line-height: 1.2; color: {{ heading_color }}; margin: 0 0 18px 0;">
+      {{ analysis.lead_headline or (lead_decision.motion if lead_decision else 'This week in council') }}
+    </h1>
+    {% if analysis.meeting_summary %}
+    {% for para in analysis.meeting_summary.split('\n\n') %}
+    <p style="font-family: {{ serif }}; font-size: 17px; line-height: 1.65; color: {{ body_color }}; margin: 0 0 16px 0;">
+      {{ para }}
+    </p>
+    {% endfor %}
+    {% endif %}
+
+    {# Vote block — only when there's a formal lead decision #}
+    {% if lead_decision %}
+    <div style="background: {{ cream_bg }}; border-left: 4px solid {{ civic_900 }}; padding: 20px 24px; margin: 20px 0;">
+      <div style="font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: {{ subtle }}; margin-bottom: 8px;">
+        THE MOTION
+      </div>
+      <div style="font-family: {{ serif }}; font-size: 17px; font-weight: 600; line-height: 1.4; color: {{ heading_color }}; margin-bottom: 12px;">
+        {{ lead_decision.motion }}
+      </div>
+      {% set votes = lead_decision.votes or {} %}
+      {% set yes_names = [] %}{% set no_names = [] %}{% set excused_names = [] %}{% set abstain_names = [] %}
+      {% for n, v in votes.items() %}
+        {% if v == 'Yes' %}{% set _ = yes_names.append(n.split()[-1]) %}
+        {% elif v == 'No' %}{% set _ = no_names.append(n.split()[-1]) %}
+        {% elif v == 'Excused' %}{% set _ = excused_names.append(n.split()[-1]) %}
+        {% elif v == 'Abstain' %}{% set _ = abstain_names.append(n.split()[-1]) %}
+        {% endif %}
+      {% endfor %}
+      {% if yes_names %}
+      <div style="font-family: {{ serif }}; font-size: 14px; margin: 4px 0;">
+        <span style="font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #166534;">YES · {{ yes_names|length }}</span>
+        &nbsp;&nbsp;{{ yes_names|join('  ·  ') }}
+      </div>
+      {% endif %}
+      {% if no_names %}
+      <div style="font-family: {{ serif }}; font-size: 14px; margin: 4px 0;">
+        <span style="font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #991b1b;">NO · {{ no_names|length }}</span>
+        &nbsp;&nbsp;{{ no_names|join('  ·  ') }}
+      </div>
+      {% endif %}
+      {% if excused_names %}
+      <div style="font-family: {{ serif }}; font-size: 14px; margin: 4px 0;">
+        <span style="font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: {{ subtle }};">EXCUSED</span>
+        &nbsp;&nbsp;{{ excused_names|join('  ·  ') }}
+      </div>
+      {% endif %}
+      {% if lead_decision.significance %}
+      <div style="font-family: {{ serif }}; font-size: 14px; line-height: 1.55; color: {{ muted }}; margin-top: 12px; padding-top: 12px; border-top: 1px solid {{ cream_border }};">
+        {{ lead_decision.significance }}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {# Pull quote for the lead story #}
+    {% if lead_pull_quote %}
+    <div style="padding: 16px 32px; margin: 24px 0;">
+      <div style="font-family: {{ display }}; font-style: italic; font-size: 22px; line-height: 1.35; color: {{ civic_900 }}; margin-bottom: 12px;">
+        “{{ lead_pull_quote.quote }}”
+      </div>
+      <div style="font-family: {{ sans }}; font-size: 12px; font-weight: 600; letter-spacing: 1px; color: {{ muted }};">
+        — {{ lead_pull_quote.speaker }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {# ─── WORKSHOP SECTIONS ──────────────────────────────────────── #}
+  {% for section in workshop_sections %}
+    {% set topic = section.topic %}
+    <hr style="border: none; border-top: 1px solid {{ border }}; margin: 32px 0;">
+    <div style="margin-bottom: 32px;">
+      <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ civic_500 }}; margin-bottom: 12px;">
+        WORKSHOP · {{ topic.title|upper }}
+      </div>
+      {% if topic.tagline %}
+      <h2 style="font-family: {{ display }}; font-size: 26px; font-weight: 700; line-height: 1.2; color: {{ heading_color }}; margin: 0 0 18px 0;">
+        {{ topic.tagline }}
+      </h2>
+      {% endif %}
+
+      {% if topic.options %}
+      <div style="background: {{ cream_bg }}; border-top: 2px solid {{ civic_900 }}; border-bottom: 2px solid {{ civic_900 }}; padding: 24px 28px; margin: 18px 0;">
+        <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ subtle }}; margin-bottom: 4px;">
+          THE OPTIONS · AT A GLANCE
+        </div>
+        {% for opt in topic.options %}
+        <div style="padding: 16px 0; {% if not loop.last %}border-bottom: 1px solid {{ cream_border }};{% endif %}">
+          <div style="margin-bottom: 8px;">
+            <span style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ civic_500 }};">OPTION {{ opt.number }}</span>
+            &nbsp;&nbsp;
+            <span style="font-family: {{ display }}; font-size: 18px; font-weight: 700; color: {{ heading_color }};">{{ opt.label }}</span>
+            {% if opt.endorsement %}
+            &nbsp;<span style="font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #243aa5; background: #dde6ff; padding: 2px 8px; border-radius: 4px;">{{ opt.endorsement }}</span>
+            {% endif %}
+            {% if opt.cost %}
+            &nbsp;<span style="font-family: {{ serif }}; font-size: 14px; font-weight: 600; color: {{ muted }}; float: right;">{{ opt.cost }}</span>
+            {% endif %}
+          </div>
+          <div style="font-family: {{ serif }}; font-size: 14px; line-height: 1.6; color: {{ body_color }}; clear: both;">
+            {{ opt.summary }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if section.pull_quote %}
+      <div style="padding: 16px 32px; margin: 24px 0;">
+        <div style="font-family: {{ display }}; font-style: italic; font-size: 22px; line-height: 1.35; color: {{ civic_900 }}; margin-bottom: 12px;">
+          “{{ section.pull_quote.quote }}”
+        </div>
+        <div style="font-family: {{ sans }}; font-size: 12px; font-weight: 600; letter-spacing: 1px; color: {{ muted }};">
+          — {{ section.pull_quote.speaker }}{% if section.pull_quote.context %}, {{ section.pull_quote.context }}{% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  {# ─── WHIP COUNT ─────────────────────────────────────────────── #}
+  {% if whip_rows and (lead_decision or workshop_sections) %}
+  <hr style="border: none; border-top: 1px solid {{ border }}; margin: 32px 0;">
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ civic_500 }}; margin-bottom: 8px;">
+      WHIP COUNT
+    </div>
+    <h2 style="font-family: {{ display }}; font-size: 24px; font-weight: 700; line-height: 1.2; color: {{ heading_color }}; margin: 0 0 8px 0;">
+      Where each member landed
+    </h2>
+    <div style="font-family: {{ serif }}; font-size: 14px; line-height: 1.5; color: {{ muted }}; margin-bottom: 12px;">
+      Reach out — they answer to constituents.
+    </div>
+    <table style="width: 100%; border-collapse: collapse; border-top: 2px solid {{ civic_900 }}; border-bottom: 2px solid {{ civic_900 }};">
+      <thead>
+        <tr>
+          <th style="text-align: left; padding: 10px 8px 10px 0; border-bottom: 1px solid {{ border }}; font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: {{ subtle }};" colspan="2">COUNCILMEMBER</th>
+          {% if lead_decision %}
+          <th style="text-align: left; padding: 10px 8px; border-bottom: 1px solid {{ border }}; font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: {{ subtle }}; width: 80px;">VOTE</th>
+          {% endif %}
+          {% if workshop_sections %}
+          <th style="text-align: left; padding: 10px 0 10px 8px; border-bottom: 1px solid {{ border }}; font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: {{ subtle }};">{{ workshop_sections[0].topic.title|upper }} POSITION</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+      {% for r in whip_rows %}
+        <tr>
+          <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; vertical-align: middle; width: 56px;">
+            {% if r.photo_url %}
+            <img src="{{ r.photo_url }}" alt="{{ r.name }}" width="44" height="44" style="border-radius: 50%; display: block;">
+            {% endif %}
+          </td>
+          <td style="padding: 12px 8px 12px 12px; border-bottom: 1px solid #f3f4f6; vertical-align: middle;">
+            <div style="font-family: {{ serif }}; font-size: 15px; font-weight: 600; color: {{ heading_color }};">{{ r.name }}</div>
+            <div style="font-family: {{ sans }}; font-size: 11px; color: {{ subtle }}; margin-top: 1px;">
+              {{ r.title }}{% if r.district %} · {{ r.district }}{% endif %}
+            </div>
+            {% if r.phone %}
+            <div style="font-family: {{ serif }}; font-size: 12px; color: {{ muted }}; margin-top: 2px;">{{ r.phone }}</div>
+            {% endif %}
+          </td>
+          {% if lead_decision %}
+          <td style="padding: 12px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: middle; font-family: {{ serif }}; font-size: 14px; font-weight: 600;
+              {% if r.decision_vote == 'Yes' %}color: #166534;
+              {% elif r.decision_vote == 'No' %}color: #991b1b;
+              {% elif r.decision_vote == 'Excused' %}color: {{ subtle }}; font-style: italic; font-weight: 500;
+              {% else %}color: {{ subtle }};{% endif %}">
+            {{ r.decision_vote or '—' }}
+          </td>
+          {% endif %}
+          {% if workshop_sections %}
+          <td style="padding: 12px 0 12px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: middle; font-family: {{ serif }}; font-size: 13px; line-height: 1.5; color: {{ body_color }};">
+            {{ r.workshop_position or '—' }}
+          </td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  {# ─── REMAINING QUOTES ───────────────────────────────────────── #}
+  {% if remaining_quotes %}
+  <hr style="border: none; border-top: 1px solid {{ border }}; margin: 32px 0;">
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ civic_500 }}; margin-bottom: 12px;">
+      MORE QUOTES
+    </div>
+    {% for q in remaining_quotes %}
+    <div style="border-left: 4px solid {{ civic_500 }}; padding: 4px 0 4px 16px; margin-bottom: 16px;">
+      <div style="font-family: {{ serif }}; font-style: italic; font-size: 16px; line-height: 1.55; color: {{ heading_color }}; margin-bottom: 8px;">
+        “{{ q.quote }}”
+      </div>
+      <div style="font-family: {{ sans }}; font-size: 12px; font-weight: 600; color: {{ civic_500 }};">
+        — {{ q.speaker }}
+      </div>
+      {% if q.context %}
+      <div style="font-family: {{ serif }}; font-size: 13px; color: {{ muted }}; margin-top: 4px;">{{ q.context }}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# ─── WHAT'S NEXT ────────────────────────────────────────────── #}
+  {% if analysis.on_the_horizon %}
+  <hr style="border: none; border-top: 1px solid {{ border }}; margin: 32px 0;">
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ civic_500 }}; margin-bottom: 8px;">
+      WHAT'S NEXT
+    </div>
+    <h2 style="font-family: {{ display }}; font-size: 24px; font-weight: 700; line-height: 1.2; color: {{ heading_color }}; margin: 0 0 12px 0;">
+      On the calendar
+    </h2>
+    <p style="font-family: {{ serif }}; font-size: 16px; line-height: 1.6; color: {{ body_color }}; margin: 0;">
+      {{ analysis.on_the_horizon }}
+    </p>
+  </div>
+  {% endif %}
+
+  {# ─── WORTH WATCHING ─────────────────────────────────────────── #}
+  {% if analysis.consistency_flags %}
+  <div style="background: #fffbeb; border: 1px solid #fde68a; padding: 24px 28px; margin-bottom: 32px;">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #b45309; margin-bottom: 8px;">
+      WORTH WATCHING
+    </div>
+    {% for flag in analysis.consistency_flags %}
+    <div style="margin-bottom: 12px;">
+      <div style="font-family: {{ display }}; font-size: 18px; font-weight: 700; color: #78350f; margin-bottom: 4px;">{{ flag.council_member }}</div>
+      <div style="font-family: {{ serif }}; font-size: 14px; line-height: 1.6; color: #78350f;">{{ flag.observation }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# ─── FROM THE EDITOR ────────────────────────────────────────── #}
+  <div style="margin-bottom: 32px; padding: 8px 0;">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: {{ subtle }}; margin-bottom: 8px;">
+      FROM THE EDITOR
+    </div>
+    <h2 style="font-family: {{ display }}; font-size: 22px; font-weight: 700; line-height: 1.25; color: {{ heading_color }}; margin: 0 0 12px 0;">
+      [Edit this section before sending]
+    </h2>
+    <p style="font-family: {{ serif }}; font-size: 15px; line-height: 1.65; color: {{ body_color }}; white-space: pre-wrap; margin: 0 0 12px 0;">
+{{ editor_stub }}
+    </p>
+    <div style="font-family: {{ serif }}; font-style: italic; font-size: 14px; color: {{ subtle }};">— RW</div>
+  </div>
+
+  {# ─── SUBSCRIBE ──────────────────────────────────────────────── #}
+  <div style="background: {{ civic_900 }}; padding: 36px 32px; text-align: center; margin-bottom: 24px;">
+    <div style="font-family: {{ sans }}; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #dde6ff; margin-bottom: 12px;">
+      DELIVERED AFTER EVERY MEETING
+    </div>
+    <div style="font-family: {{ display }}; font-size: 22px; font-weight: 700; line-height: 1.3; color: #ffffff; margin-bottom: 16px;">
+      Forward this to a neighbor who pays attention.
+    </div>
+    {% if newsletter.subscribe_url %}
+    <a href="{{ newsletter.subscribe_url }}" style="display: inline-block; background: #ffffff; color: {{ civic_900 }}; font-family: {{ sans }}; font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 6px; text-decoration: none;">Subscribe</a>
+    {% endif %}
+  </div>
+
+  {# ─── COLOPHON ───────────────────────────────────────────────── #}
+  <div style="text-align: center; padding-top: 16px;">
+    <div style="font-family: {{ sans }}; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: {{ subtle }}; margin-bottom: 4px;">
+      {{ newsletter.name|upper }} · {{ formatted_date }}
+    </div>
+    <div style="font-family: {{ serif }}; font-style: italic; font-size: 12px; color: {{ subtle }};">
+      Independent, AI-assisted civic journalism. Not affiliated with the City of {{ city.name }}.
+    </div>
+  </div>
+
+</div>

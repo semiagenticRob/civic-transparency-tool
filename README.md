@@ -1,13 +1,20 @@
 # Civic Transparency Tool
 
-AI-powered local government accountability. Watches city council meetings so your community doesn't have to.
+AI-assisted local government accountability. Watches city council meetings so your community doesn't have to.
 
 ## What it does
 
-1. Pulls the transcript from a city council meeting YouTube video
-2. Fetches upcoming agenda items from the city's RSS feeds
-3. Sends everything to Claude for analysis — key decisions, votes, notable quotes, speaker attribution, consistency flags
-4. Generates a newsletter draft ready for your review and publication to Beehiiv
+End-to-end, unattended:
+
+1. **Monitors** the city's CivicClerk meeting calendar and YouTube playlist.
+2. When a new council meeting video appears, **fetches the transcript and RSS context**.
+3. **Analyzes** the meeting with an LLM (via OpenRouter — Claude / GPT / Gemini, configurable) to extract decisions, votes, notable quotes, workshop topics with per-member positions, consistency flags, and upcoming items.
+4. **Renders** the analysis into an *Eyes on Arvada*–style HTML newsletter (inline-styled, Beehiiv-compatible).
+5. **Posts a draft** to Beehiiv via the API.
+6. **Emails the editor** with the draft URL via Resend.
+7. The editor reviews, edits the "From the Editor" section, and hits send.
+
+A React dashboard reads the same analysis JSON and displays the latest meeting publicly.
 
 ## Setup
 
@@ -18,48 +25,82 @@ source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Add your Anthropic API key
-cp .env.example .env
-# Edit .env and add your ANTHROPIC_API_KEY
 ```
+
+For automation (recommended), add the following secrets to GitHub repo settings → Secrets and variables → Actions:
+
+| Secret | Where to get it |
+|---|---|
+| `OPENROUTER_API_KEY` | https://openrouter.ai/keys |
+| `BEEHIIV_API_KEY` | Beehiiv → Settings → Integrations |
+| `BEEHIIV_PUBLICATION_ID` | Beehiiv → Publication settings (UUID) |
+| `RESEND_API_KEY` | https://resend.com (free tier: 3,000 emails/mo) |
+| `NOTIFY_EMAIL` | Where you want draft-ready emails sent |
+
+For local manual runs, drop the same vars into a `.env` file at the repo root.
 
 ## Run
 
-After each city council meeting:
+**Automated** (after secrets are configured):
+
+The GitHub Actions workflow at `.github/workflows/monitor.yml` runs every 30 minutes. It picks up new playlist videos, drafts them in Beehiiv, and emails you. You can also trigger it manually from the Actions tab.
+
+**Manual one-off** (legacy CLI, generates Markdown only):
 
 ```bash
-python run_pipeline.py <youtube_url_or_video_id> --city arvada
+python run_pipeline.py "https://www.youtube.com/watch?v=XXXXXXXXXXX" --city arvada
 ```
 
-Example:
+The Markdown draft saves to `output/arvada_YYYY-MM-DD.md`.
+
+**Local dry-run of the automation** (renders HTML to `/tmp` without publishing):
+
 ```bash
-python run_pipeline.py "https://www.youtube.com/watch?v=XXXXXXXXXXX" --city arvada --date 2025-03-25
+python -m automation.monitor --dry-run --video-id XXXXXXXXXXX
 ```
-
-The draft will be saved to `output/arvada_YYYY-MM-DD.md`. Review it, add your commentary, delete the editor prompts, and paste into Beehiiv.
 
 ## Adding a new city
 
-Copy `config/cities/arvada.json`, rename it to `<city>.json`, and fill in:
-- `youtube_channel_handle` — the city's YouTube @handle
-- `rss_feeds` — URLs from the city's RSS page
-- `council_members` — names and titles
+Copy `config/cities/arvada.json`, rename to `<city>.json`, and fill in:
 
-Then run with `--city <city>`.
+- `name`, `state`, `timezone`
+- `youtube_channel_handle`, `youtube_playlist_id`
+- `civicclerk.subdomain`, `civicclerk.category_id` (the city council category in their CivicClerk portal)
+- `rss_feeds` (URLs from the city's RSS page)
+- `newsletter` block (name, tagline, photo_base_url)
+- `council_members` (name, title, district, profile_url, phone, photo_filename)
+
+Drop council photos into `docs/design/assets/council/<photo_filename>`.
 
 ## Project structure
 
 ```
 pipeline/
-  fetch_transcript.py   # YouTube → transcript text
-  fetch_rss.py          # City RSS feeds → upcoming agenda items
-  analyze_meeting.py    # Claude API → structured analysis
-  generate_draft.py     # Analysis → newsletter draft Markdown
+  fetch_transcript.py       # YouTube → timestamped transcript
+  fetch_rss.py              # City RSS feeds → context for the LLM
+  analyze_meeting.py        # OpenRouter → structured MeetingAnalysis
+  render_newsletter.py      # MeetingAnalysis → inline-CSS HTML
+  templates/newsletter.html.j2
+  generate_draft.py         # Markdown fallback (manual flow)
+  save_dashboard_data.py    # MeetingAnalysis → dashboard JSON
 
-config/cities/
-  arvada.json           # City-specific configuration
+automation/
+  monitor.py                # scheduled entry point
+  civicclerk.py             # CivicClerk OData client
+  youtube_monitor.py        # YouTube playlist RSS
+  orchestrator.py           # headless pipeline run
+  beehiiv.py                # Beehiiv draft post
+  notifier.py               # Resend email
 
-output/                 # Generated drafts (gitignored)
-run_pipeline.py         # Main entry point
+dashboard/                  # Vite + React 19 + Tailwind
+config/cities/arvada.json   # City-specific configuration
+docs/design/                # Pencil design source + assets
+state/processed.json        # tracks processed video IDs (CI updates)
+.github/workflows/monitor.yml
 ```
+
+## Editorial workflow
+
+Once a draft lands in Beehiiv, you'll get an email with the link. Open Beehiiv, review the draft, **rewrite the "From the Editor" section** (the auto-stub is just bullet prompts to get you started), and hit Send.
+
+The newsletter template is a faithful port of the *Eyes on Arvada* design in `docs/design/dashboard.pen` (see the "Newsletter — April 28" frame). Iterate on `pipeline/templates/newsletter.html.j2` to evolve it.

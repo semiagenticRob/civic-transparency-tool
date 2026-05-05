@@ -1,0 +1,55 @@
+name: Monitor & publish
+
+on:
+  schedule:
+    # Every 30 minutes. Adjust if it's noisier than you want.
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry-run (render HTML, do not publish or email)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # so we can commit state/processed.json + dashboard data
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    env:
+      DRY_RUN: ${{ inputs.dry_run }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run monitor
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python -m automation.monitor --dry-run
+          else
+            python -m automation.monitor
+          fi
+
+      - name: Commit state changes
+        if: env.DRY_RUN != 'true'
+        run: |
+          git config user.name "Eyes on Arvada bot"
+          git config user.email "rbrt.s.wrrn@gmail.com"
+          git add state/processed.json dashboard/public/data/ || true
+          if ! git diff --quiet --cached; then
+            git commit -m "chore: state update [skip ci]"
+            git push
+          fi
