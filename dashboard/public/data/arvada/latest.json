@@ -2,13 +2,13 @@
   "city": "Arvada",
   "state": "CO",
   "meeting_date": "2026-04-28",
-  "generated_at": "2026-05-05T19:43:33.575932+00:00",
+  "generated_at": "2026-05-05T19:47:16.809535+00:00",
   "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s",
-  "meeting_summary": "The Arvada City Council held a special meeting followed by a workshop on Tuesday, April 28, 2026. The special meeting addressed a second ethics investigation involving Councilmember Sharon Davis, who was excused from that portion. The council voted 4-2 to authorize retaining outside investigators and counsel for a new set of alleged ethics violations — the second such authorization since February. Councilmembers Griffith and Lovisone dissented, arguing the findings of the first investigation should be released before a new one is opened. City attorney Hoffman recommended proceeding with the second investigation simultaneously and handling both together for due process reasons.\n\nThe majority of the meeting was a workshop on the city's solid waste and recycling program. Staff presented proposed fee increases for the 2026 contract year: a 5-cent increase in the city program fee (to $1.74/month), maintaining the $1.06/month enterprise fee to fund the solid waste reserve, and pass-through increases from Republic Services tied to a contracted index. All council members present expressed support for these three fee-related items. The meeting also covered significant progress on billing system upgrades, including a new autopay feature launching the following week, and an update on the city's application to the state's Extended Producer Responsibility (EPR) program, which would provide recycling reimbursements to customers.\n\nThe most spirited debate centered on whether and how to launch a composting program. Staff recommended Option 3 — a near-term drop-off site pilot followed by composting as a bid option in the next hauler contract (due July 2028). Mayor Pro Tem Moorman and Councilmember Ambrose pushed for Option 2, a citywide opt-out curbside composting program, arguing EPR reimbursements could cover the cost, potentially making it a wash on customer bills. Other members cited concerns about staff capacity, community trust, and the complexity of launching multiple programs simultaneously. The workshop ended with a council consensus around Option 3 as the near-term direction, with the door left open to revisiting Option 2 as early as spring 2027.",
+  "meeting_summary": "The Arvada City Council held a special meeting followed by a workshop on April 28, 2026. The special meeting addressed a second ethics investigation involving Councilmember Sharon Davis, who was excused from that portion of the meeting. The council voted 4-2 to authorize retaining an outside investigator and outside counsel for a second set of alleged ethics violations — a follow-up to a first investigation already underway since February. Councilmembers Griffith and Lovisone dissented, both saying they wanted to see the findings of the first investigation before opening a second one. City Attorney Hoffman recommended proceeding with both investigations simultaneously for due process reasons.\n\nThe workshop focused on the city's solid waste and recycling program. Staff presented proposed fee increases: a 5-cent bump in the city program fee (to $1.74/month), maintenance of the $1.16/month enterprise fee to build a reserve fund, and contractually required pass-through increases from Republic Services. All seven members present signaled support for those three recommendations. The bulk of the discussion centered on a fourth question: whether and how to launch a composting program.\n\nStaff recommended Option 3 — a near-term drop-off composting pilot on city property, managed by a local vendor (Scraps), while composting is also included as a bid item in the next hauler contract (effective July 2028). Mayor Pro Tem Moorman pushed hard for Option 2, a citywide opt-out curbside composting program, arguing it could be funded entirely by incoming Extended Producer Responsibility (EPR) recycling reimbursements with no net cost increase to residents. Most council members expressed interest in Option 2 eventually but deferred to staff's step-wise recommendation given workload concerns and the complexity of rolling out the service. The consensus landed on Option 3 with an expressed desire to move toward curbside composting as soon as feasibly possible, ideally spring 2027.",
   "alerts": [],
   "key_decisions": [
     {
-      "motion": "Excuse Councilmember Davis from the special meeting portion",
+      "motion": "Excuse Councilmember Sharon Davis from the special meeting portion",
       "result": "Passed",
       "vote_breakdown": "6-0",
       "votes": {
@@ -18,12 +18,12 @@
         "Rebecka Lovisone": "Yes",
         "Bob Fifer": "Yes",
         "Michael Griffith": "Yes",
-        "Sharon Davis": "Absent"
+        "Sharon Davis": "Excused"
       },
-      "significance": "Davis was excused from voting on matters related to her own ethics investigation, consistent with standard conflict-of-interest practice."
+      "significance": "Davis was excused from voting on her own ethics investigation, as she is the subject of the proceedings."
     },
     {
-      "motion": "Authorize retention of outside investigator and outside counsel to pursue a second ethics investigation and administrative process involving Councilmember Sharon Davis under Arvada Code of Ethics",
+      "motion": "Authorize retention of outside investigator and outside counsel to investigate a second alleged ethics violation involving Councilmember Sharon Davis under Arvada Code of Ethics Chapter 2, Article 8",
       "result": "Passed",
       "vote_breakdown": "4-2",
       "votes": {
@@ -35,92 +35,114 @@
         "Michael Griffith": "No",
         "Sharon Davis": "Excused"
       },
-      "significance": "This is the second ethics investigation authorized against Davis in under three months. The dissenting votes reflect a council split over process — specifically whether results of the first investigation should be disclosed before launching a second."
+      "significance": "This opens a second ethics investigation against Davis before the findings of the first investigation (authorized February 3, 2026) have been released. City attorney recommended consolidating the investigations for due process reasons; two members objected to proceeding without first seeing the first investigation's results."
     }
   ],
   "notable_quotes": [
     {
       "speaker": "Michael Griffith",
       "quote": "I would very much like to see the findings of the first investigation to be shared prior to the opening of a new investigation. So I would not be supporting this motion.",
-      "context": "Griffith explaining his no vote on the second ethics investigation authorization, raising a process concern about sequencing.",
+      "context": "Griffith explaining his dissenting vote on the second ethics investigation authorization.",
       "timestamp_seconds": 162,
       "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=162s",
       "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7"
     },
     {
-      "speaker": "City Attorney Hoffman",
-      "quote": "My recommendation would be to actually authorize the investigation into the second claim because frankly it could have the effect of — if the first investigation is released now — of impacting the overall process of council.",
-      "context": "Hoffman advising council to consolidate both ethics investigations rather than releasing the first findings prematurely, which swayed Mayor Simpson's vote.",
+      "speaker": "Rebecka Lovisone",
+      "quote": "Similar to council member Griffith. I too would like to see them and will also be voting no.",
+      "context": "Lovisone announcing her dissenting vote on the second ethics investigation, echoing Griffith's rationale.",
+      "timestamp_seconds": 163,
+      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=163s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4"
+    },
+    {
+      "speaker": "City Attorney Hoffman (unidentified by first name in transcript)",
+      "quote": "My recommendation would be to actually authorize the investigation into the second claim because frankly it could have the effect of — if the first investigation is released now — of impacting the overall process of council. Whereas if you have a quick investigation... and handle them together, from a due process perspective I think my recommendation would be that would be the better approach.",
+      "context": "City attorney advising council to approve the second investigation rather than release the first investigation's findings prematurely.",
       "timestamp_seconds": 228,
       "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=228s",
       "speaker_profile_url": null
     },
     {
       "speaker": "Randy Moorman",
-      "quote": "The city of Arvada would have the lowest rate with a three-cart program in the entire state of Colorado.",
-      "context": "Moorman summarizing Republic Services rep Steve Gilmore's claim that EPR reimbursements could fully offset a new curbside composting program with no net cost increase to customers.",
-      "timestamp_seconds": 3357,
-      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=3357s",
+      "quote": "We would be able to maintain that price and become a green bar, meaning that we would be able to add both the collection at curbside of our yard trimmings and our food scraps and maintain that price right there. And so we would be one of the lowest of the cities offering that service and still be able to add a service without adding a cost to our customers.",
+      "context": "Moorman arguing that EPR reimbursements could fund curbside composting at no net cost to residents, making the case for Option 2.",
+      "timestamp_seconds": 2310,
+      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=2310s",
       "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2"
     },
     {
-      "speaker": "Shawna Ambrose",
-      "quote": "This is also about wildfire defense because people will be able to reduce slash of their leaves, of sticks and other organics in an accessible way... you are only as safe as your neighbor.",
-      "context": "Ambrose making a public safety argument for Option 2 citywide curbside composting, linking organic waste pickup to wildfire risk reduction.",
-      "timestamp_seconds": 6012,
-      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=6012s",
-      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3"
+      "speaker": "Steve Gilmore (Republic Services)",
+      "quote": "The city of Arvada would have the lowest rate with a three-cart program in the entire state of Colorado.",
+      "context": "Republic Services representative confirming that combining EPR reimbursements with curbside composting under Option 2 would make Arvada's three-cart program the lowest-cost in Colorado.",
+      "timestamp_seconds": 3347,
+      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=3347s",
+      "speaker_profile_url": null
     },
     {
       "speaker": "Michael Griffith",
       "quote": "This is a rare opportunity for government to provide the same service for a lower cost to our residents and we just don't get that opportunity very often.",
-      "context": "Griffith noting that doing nothing (Option 4) or Option 1 would result in customers saving $5–7/month via EPR reimbursements without adding a composting charge — a trade-off he felt deserved more discussion.",
+      "context": "Griffith raising the point that letting the EPR credit pass through to residents without adding composting would actually lower their bills — a trade-off the council hadn't fully weighed.",
       "timestamp_seconds": 7275,
       "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=7275s",
       "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7"
     },
     {
-      "speaker": "City Manager (Don Wick)",
-      "quote": "What you just articulated is exactly our concern around — while we agree, like this looks like the perfect time — it's the community trust aspect of this that we're really really concerned about.",
-      "context": "City leadership explaining why staff recommended the slower Option 3 approach over the faster Option 2, citing the team's current workload including drought response.",
-      "timestamp_seconds": 5725,
-      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=5725s",
+      "speaker": "Lauren Simpson (Mayor)",
+      "quote": "I actually have a compost bin. It can get pretty darn stinky. And in terms of the — I would need to see at least a football field before we started having people start dropping their smelly leftovers onto a drop-off site.",
+      "context": "Mayor expressing concern about odor impacts on nearby residents if a compost drop-off site is placed near homes, specifically objecting to the Arvada Center as a location.",
+      "timestamp_seconds": 4870,
+      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=4870s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "City Manager (Shek, unidentified first name in transcript)",
+      "quote": "What you just articulated is exactly our concern around — while we agree this looks like the perfect time — it's the community trust aspect of this that we're really really concerned about. We have an amazing team. However, they are not going to be ready to implement this when the first credits come in.",
+      "context": "City leadership explaining why staff recommends the step-wise Option 3 rather than jumping directly to curbside composting.",
+      "timestamp_seconds": 4525,
+      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=4525s",
       "speaker_profile_url": null
     },
     {
       "speaker": "Bob Fifer",
-      "quote": "I hate to see the bill drop and then pick up because I think it's a harder hill to climb.",
-      "context": "Fifer voicing concern that showing customers an EPR credit and then adding a composting charge shortly after could erode public trust in the billing program.",
-      "timestamp_seconds": 4096,
-      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=4096s",
+      "quote": "I rather have composting and as an opt-in, you know, I don't want to walk in and think that everyone needs to compost now — all 19, 20,000 households, they must compost. Well, you can opt out, but you're still going to pay, but don't worry about it because you get a credit. It just seems a little weird for those people that may not want to compost.",
+      "context": "Fifer voicing concern about the opt-out structure of Option 2 and the communication challenges it would create.",
+      "timestamp_seconds": 4026,
+      "video_url": "https://www.youtube.com/watch?v=e5hTD3LxL2s&t=4026s",
       "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
     }
   ],
   "topics_discussed": [
-    "Ethics investigation (second authorization for Councilmember Davis)",
-    "Solid waste fee increases for 2026",
-    "Republic Services contract pass-through increases",
-    "City program fee (5-cent increase)",
-    "Solid waste enterprise fund reserve balance",
+    "Ethics investigation (second allegation against Councilmember Davis)",
+    "Solid waste and recycling fee increases",
+    "Republic Services contract pass-through costs",
+    "City program fee adjustment",
+    "Enterprise fund reserve policy (25% fund balance goal)",
     "Extended Producer Responsibility (EPR) program application and timeline",
-    "Billing system upgrades (autopay, online access, version upgrades)",
-    "Composting program options",
-    "Wildfire debris and slash management",
-    "Drought and water restriction surcharges",
-    "Bulky item drop-off event recap",
-    "Next hauler contract RFP timeline (toward July 2028)"
+    "Composting program options (drop-off vs. curbside)",
+    "Billing system modernization (autopay, online bill access)",
+    "Water waste violations and potential drought surcharges",
+    "Recycling credit line-item on utility bills",
+    "Bulky item drop-off events",
+    "Large-item and leaf recycling events",
+    "Wildfire defensible space and organics removal",
+    "2028 hauler contract RFP planning"
   ],
   "consistency_flags": [
     {
       "council_member": "Rebecka Lovisone",
-      "observation": "Lovisone voted No on the second ethics investigation, citing a desire to see findings from the first investigation before opening a new one. However, she told the council she would 'also be voting no quickly' and in the same breath asked city attorney Hoffman for legal advice on whether proceeding was appropriate — suggesting her stated position and actual reasoning may have been forming in real time rather than based on a firm prior stance."
+      "observation": "Lovisone stated she wanted to see the findings of the first ethics investigation before opening a second one, and voted No. However, she did not engage with the city attorney's due process argument that releasing the first investigation's findings prematurely could taint the second. It is unclear whether her position accounts for this legal consideration or whether she disputes it."
     },
     {
       "council_member": "Bob Fifer",
-      "observation": "Fifer stated he supported all four staff recommendations — including Option 3 for composting — yet spent considerable time exploring Option 2 mechanics, suggesting a tiered pricing model, and asking 'what's the downside?' of the EPR-funded composting scenario. His ultimate stated support for Option 3 came after the city manager's intervention, raising a question about whether his support for Option 3 was a genuine first preference or a deference to staff capacity concerns."
+      "observation": "Fifer said he was uncomfortable with Option 2's opt-out structure (residents pay even if they don't use composting), yet he did not raise the same concern about the existing opt-out fee for the overall solid waste program, which operates on the same principle. He ultimately supported all staff recommendations including maintaining the existing opt-out fee structure."
+    },
+    {
+      "council_member": "Michael Griffith",
+      "observation": "Griffith said he agreed with the staff recommendations and supported Option 3, yet his most substantive comment raised a case for Options 1 or 4 (no composting or opt-in only) on the grounds that residents would see direct bill savings. He did not explicitly reconcile this with his stated support for Option 3."
     }
   ],
-  "on_the_horizon": "The city is under Stage 1 drought restrictions (effective April 15, 2026), and staff mentioned a May presentation to council on potential water surcharges to financially incentivize conservation — worth watching for residents facing higher water bills. On the solid waste front, the formal rate adoption vote is scheduled for June 16, with new rates taking effect July 1; the June meeting will also be the moment to watch for any composting direction updates if the EPR master service agreement with Circular Action Alliance has progressed. The Arvada Summerfest on June 6 coincides with the next large-item drop-off event at the same Ralston Park Addition location.",
+  "on_the_horizon": "The city is in an active Stage 1 drought, and staff mentioned a future May workshop on potential water surcharges as a financial incentive for residents to reduce usage — worth watching for rate impacts. The June 16 council meeting is when the new solid waste and recycling rates are expected to come up for formal adoption, with the new rates effective July 1, 2026. The EPR master service agreement with Circular Action Alliance and a related Republic Services contract amendment will also return to council for authorization, likely in summer or fall 2026.",
   "upcoming": [],
   "recent_news": [
     {
