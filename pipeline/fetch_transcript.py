@@ -79,7 +79,12 @@ def _find_caption_url(info: dict) -> tuple[str, str]:
             for entry in caps.get(lang, []):
                 if entry.get("ext") == "json3" and entry.get("url"):
                     return lang, entry["url"]
-    raise RuntimeError("No English caption track found")
+    sub_keys = list((info.get("subtitles") or {}).keys())[:8]
+    auto_keys = list((info.get("automatic_captions") or {}).keys())[:8]
+    raise RuntimeError(
+        f"No English caption track found. video_id={info.get('id')!r} "
+        f"subtitles_keys={sub_keys} automatic_caption_keys={auto_keys}"
+    )
 
 
 def _parse_json3(data: dict) -> list[Segment]:
