@@ -46,11 +46,12 @@ jobs:
       - name: Run monitor
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SOCIALKIT_API_KEY: ${{ secrets.SOCIALKIT_API_KEY }}
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
-          # YT_COOKIES_FILE flows in from $GITHUB_ENV set above
+          # YT_COOKIES_FILE flows in from $GITHUB_ENV set above (yt-dlp fallback only)
         run: |
           if [ "$DRY_RUN" = "true" ]; then
             python -m automation.monitor --dry-run

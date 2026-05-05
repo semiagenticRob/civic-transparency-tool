@@ -1,11 +1,11 @@
 """
-Fetches and cleans a YouTube transcript using yt-dlp.
+Fetches and cleans a YouTube transcript.
 
-Why yt-dlp instead of youtube-transcript-api: the simpler library hits
-https://www.youtube.com/api/timedtext directly, which YouTube anti-bot blocks
-from data-center IP ranges (including GitHub Actions runners). yt-dlp has
-to extract a video player payload first to get fresh signed caption URLs,
-which sails through.
+Two backends, picked by env:
+  * SOCIALKIT_API_KEY set → use SocialKit's hosted transcript API (residential
+    egress, no IP-block headaches). Free tier: 20 credits/mo.
+  * Otherwise → use yt-dlp locally (works fine from a residential connection;
+    fails on data-center IPs like GitHub Actions runners).
 
 Returns a list of timed Segment objects plus a joined plain-text string.
 """
@@ -19,8 +19,10 @@ from pathlib import Path
 import requests
 import yt_dlp
 
-# Languages we'll try, in priority order
+# yt-dlp languages we'll try, in priority order
 _PREFERRED_LANGS = ["en", "en-US", "en-GB", "en-uYU-mmqFLq8", "en-JkeT_87f4cc"]
+
+_SOCIALKIT_ENDPOINT = "https://api.socialkit.dev/youtube/transcript"
 
 
 def extract_video_id(url_or_id: str) -> str:
@@ -50,7 +52,7 @@ def _seconds_to_hms(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
 
 
-def format_with_timestamps(segments: list[Segment], interval_seconds: int = 30) -> str:
+def format_with_timestamps(segments: list, interval_seconds: int = 30) -> str:
     """
     Return a transcript string with periodic timestamps injected, e.g.:
         [00:05:32] We need to consider the budget implications...
@@ -67,12 +69,46 @@ def format_with_timestamps(segments: list[Segment], interval_seconds: int = 30) 
     return " ".join(lines)
 
 
-def _find_caption_url(info: dict) -> tuple[str, str]:
-    """Pick the best (manual > automatic, en > variant) json3 caption URL.
-    Returns (lang_code, url) or raises if none found."""
+# ─── SocialKit backend ─────────────────────────────────────────────────────
+
+def _fetch_via_socialkit(video_id: str, api_key: str) -> list:
+    """Call SocialKit's hosted YouTube Transcript API.
+
+    Endpoint: GET https://api.socialkit.dev/youtube/transcript
+    Auth: access_key query param
+    Response: { success, data: { transcriptSegments: [{text, start, duration, timestamp}], ... } }
+    """
+    params = {
+        "url": f"https://www.youtube.com/watch?v={video_id}",
+        "access_key": api_key,
+    }
+    resp = requests.get(_SOCIALKIT_ENDPOINT, params=params, timeout=60)
+    if resp.status_code >= 400:
+        raise RuntimeError(f"SocialKit API error {resp.status_code}: {resp.text[:300]}")
+
+    payload = resp.json()
+    if not payload.get("success"):
+        raise RuntimeError(f"SocialKit returned success=false: {str(payload)[:300]}")
+
+    segments = []
+    for raw in payload.get("data", {}).get("transcriptSegments", []):
+        text = (raw.get("text") or "").strip()
+        if not text:
+            continue
+        segments.append(Segment(
+            start=float(raw.get("start", 0.0)),
+            duration=float(raw.get("duration", 0.0)),
+            text=text,
+        ))
+    return segments
+
+
+# ─── yt-dlp backend ─────────────────────────────────────────────────────────
+
+def _find_caption_url(info: dict) -> tuple:
+    """Pick the best (manual > automatic, en > variant) json3 caption URL."""
     for src in ("subtitles", "automatic_captions"):
         caps = info.get(src) or {}
-        # Try preferred languages first, then any en* variant, then any
         candidates = list(_PREFERRED_LANGS)
         candidates += [k for k in caps if k.startswith("en") and k not in candidates]
         for lang in candidates:
@@ -87,8 +123,8 @@ def _find_caption_url(info: dict) -> tuple[str, str]:
     )
 
 
-def _parse_json3(data: dict) -> list[Segment]:
-    segments: list[Segment] = []
+def _parse_json3(data: dict) -> list:
+    segments = []
     for event in data.get("events", []):
         segs = event.get("segs")
         if not segs:
@@ -102,37 +138,15 @@ def _parse_json3(data: dict) -> list[Segment]:
     return segments
 
 
-def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
-    """
-    Fetch the transcript for a YouTube video via yt-dlp + the timedtext API.
-
-    Returns:
-        segments: list of Segment objects with timing
-        full_text: plain-text transcript joined with spaces (auto-caption noise stripped)
-    """
-    video_id = extract_video_id(video_url_or_id)
+def _fetch_via_yt_dlp(video_id: str) -> list:
     url = f"https://www.youtube.com/watch?v={video_id}"
-
     ydl_opts = {
         "skip_download": True,
-        # We only want the captions metadata. Some player_clients return no
-        # downloadable video formats (especially when authenticated) — skip
-        # the format-availability check so extraction doesn't fail there.
         "ignore_no_formats_error": True,
         "quiet": True,
         "no_warnings": True,
-        # Try multiple YouTube client extractors — different ones return
-        # different metadata depending on the request's IP and auth state.
-        # 'web' honors session cookies (authenticated requests); 'android'
-        # works without auth on residential IPs but returns empty captions
-        # from data-center IPs even with cookies. Order matters: yt-dlp
-        # tries them in sequence and merges available data.
         "extractor_args": {"youtube": {"player_client": ["web", "android", "tv_simply"]}},
     }
-
-    # Pass YouTube cookies if available — needed for data-center IPs (like
-    # GitHub Actions runners) that hit "Sign in to confirm you're not a bot".
-    # Locally, just set YT_COOKIES_FILE=/path/to/cookies.txt.
     cookie_file = os.environ.get("YT_COOKIES_FILE")
     if cookie_file and Path(cookie_file).exists():
         ydl_opts["cookiefile"] = cookie_file
@@ -141,16 +155,38 @@ def fetch_transcript(video_url_or_id: str) -> tuple[list[Segment], str]:
         info = ydl.extract_info(url, download=False)
 
     _lang, caption_url = _find_caption_url(info)
-
     resp = requests.get(caption_url, timeout=30)
     resp.raise_for_status()
-    segments = _parse_json3(resp.json())
+    return _parse_json3(resp.json())
+
+
+# ─── Public entry point ─────────────────────────────────────────────────────
+
+def fetch_transcript(video_url_or_id: str) -> tuple:
+    """
+    Fetch the transcript for a YouTube video.
+
+    Picks SocialKit (hosted, residential egress) when SOCIALKIT_API_KEY is set,
+    otherwise falls back to yt-dlp (works locally on residential connections,
+    fails on data-center IPs).
+
+    Returns:
+        segments: list of Segment objects with timing
+        full_text: plain-text transcript joined with spaces (auto-caption noise stripped)
+    """
+    video_id = extract_video_id(video_url_or_id)
+
+    socialkit_key = os.environ.get("SOCIALKIT_API_KEY")
+    if socialkit_key:
+        segments = _fetch_via_socialkit(video_id, socialkit_key)
+    else:
+        segments = _fetch_via_yt_dlp(video_id)
 
     if not segments:
         raise RuntimeError(f"Caption track for {video_id} was empty")
 
     full_text = " ".join(s.text for s in segments)
-    full_text = re.sub(r"\[.*?\]", "", full_text)       # remove [Music], [Applause], etc.
+    full_text = re.sub(r"\[.*?\]", "", full_text)        # strip [Music], [Applause], etc.
     full_text = re.sub(r"\s+", " ", full_text).strip()
 
     return segments, full_text
