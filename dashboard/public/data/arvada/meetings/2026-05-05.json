@@ -5,26 +5,7 @@
   "generated_at": "2026-05-07T02:56:55.500911+00:00",
   "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0",
   "meeting_summary": "The Arvada City Council met on May 5, 2026, with six members present (Councilmember Griffith was excused). The meeting opened with eight proclamations recognizing: Early Care and Education Provider Appreciation Day (May 8), Poppy Month, Mental Health Month, Economic Development Week, ALS Awareness Month, Drinking Water Week, Building Safety Month, and Affordable Housing Month. A presentation from the Arts and Culture Commission highlighted completed murals, a public art map, and plans for a new sculpture at the aquatic center. Public comment was dominated by two issues: several speakers urged adoption of the city's Climate and Sustainability Action Plan (KSAP), and multiple speakers addressed the failed Welby Gardens conditional use permit — with the project's developer (AvalonBay) formally requesting reconsideration at the next meeting, and both supporters and opponents of the project weighing in on housing access, traffic, and evacuation concerns in West Arvada.\n\nOn the formal business side, the council approved an intergovernmental agreement with Apex Park and Recreation District to designate their Wadsworth recreation center as a disaster resource center in emergencies — a preparedness measure modeled partly on lessons from the Marshall Fire. The council also approved an updated sidewalk repair assistance program (formerly the 50/50 program), which offers 100% financial assistance for low-income households and 50% assistance for others, with $300,000 budgeted for 2026. A rezoning first reading for a Candelas commercial property was approved, and the June 2 council meeting was canceled.\n\nA notable procedural item: the council unanimously postponed indefinitely a resolution that would have formally adopted new council bylaws, after community criticism that a 'time pooling' provision for public testimony was used in a lopsided way during the April 21 Welby Gardens hearing. Staff acknowledged the process did not go as intended and committed to broader community engagement before bringing updated bylaws back to council.",
-  "alerts": [
-    {
-      "title": "Tree Damage and Limb Disposal",
-      "body": "The City of Arvada is hosting a free tree limb drop-off starting Saturday, May 9 at Long Lake Regional Park.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/m/newsflash/home/detail/336"
-    },
-    {
-      "title": "Juvenile Municipal Court Cases scheduled for May 6th 2026 at 3:00PM will be continued to 2:00 p.m. May 13th due to power outage and weather conditions",
-      "body": "Juvenile Municipal Court Cases scheduled for May 6th 2026 at 3:00PM will be continued to 2:00 p.m. May 13th due to power outage and weather conditions",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/AlertCenter.aspx?AID=73"
-    },
-    {
-      "title": "Arvada-Blunn Reservoir Closed May 6",
-      "body": "The Arvada-Blunn Reservoir will be closed Wednesday, May 6 due to the weather. The reservoir will reopen Thursday, May 7.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/AlertCenter.aspx?AID=31"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [
     {
       "motion": "Excuse Councilmember Griffith from tonight's meeting",
@@ -222,32 +203,7 @@
   ],
   "on_the_horizon": "The most consequential upcoming item is AvalonBay's expected motion for reconsideration of the Welby Gardens conditional use permit at the June 16 meeting — the same meeting that will also include the Candelas commercial rezoning public hearing and the Barber Nichols annexation hearing, all touching West Arvada development and traffic concerns. Two council workshops are scheduled for the following week (week of May 12): one on wildfire mitigation and response strategies — directly relevant to the evacuation concerns raised in public comment — and one on 2027 water, wastewater, and stormwater rates and fees, which will be important context given the active Stage 1 drought restrictions currently in effect.",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Tree Limb Damage and Disposal",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=336"
-    },
-    {
-      "title": "Movies Around Town",
-      "url": "https://www.arvadaco.gov/1260"
-    },
-    {
-      "title": "Volunteer with Arvada Festivals",
-      "url": "https://www.arvadaco.gov/1204"
-    },
-    {
-      "title": "Ralston Central Park Playground Closure",
-      "url": "https://www.arvadaco.gov/675"
-    },
-    {
-      "title": "Arvada Summerfest",
-      "url": "https://www.arvadaco.gov/1261"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
