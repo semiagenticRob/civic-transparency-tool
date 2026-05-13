@@ -1,13 +1,179 @@
 {
   "city": "Arvada",
   "state": "CO",
-  "meeting_date": "2026-05-05",
-  "generated_at": "2026-05-07T02:56:55.500911+00:00",
-  "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0",
-  "meeting_summary": "The Arvada City Council met on May 5, 2026, with six members present (Councilmember Griffith was excused). The meeting opened with eight proclamations recognizing: Early Care and Education Provider Appreciation Day (May 8), Poppy Month, Mental Health Month, Economic Development Week, ALS Awareness Month, Drinking Water Week, Building Safety Month, and Affordable Housing Month. A presentation from the Arts and Culture Commission highlighted completed murals, a public art map, and plans for a new sculpture at the aquatic center. Public comment was dominated by two issues: several speakers urged adoption of the city's Climate and Sustainability Action Plan (KSAP), and multiple speakers addressed the failed Welby Gardens conditional use permit — with the project's developer (AvalonBay) formally requesting reconsideration at the next meeting, and both supporters and opponents of the project weighing in on housing access, traffic, and evacuation concerns in West Arvada.\n\nOn the formal business side, the council approved an intergovernmental agreement with Apex Park and Recreation District to designate their Wadsworth recreation center as a disaster resource center in emergencies — a preparedness measure modeled partly on lessons from the Marshall Fire. The council also approved an updated sidewalk repair assistance program (formerly the 50/50 program), which offers 100% financial assistance for low-income households and 50% assistance for others, with $300,000 budgeted for 2026. A rezoning first reading for a Candelas commercial property was approved, and the June 2 council meeting was canceled.\n\nA notable procedural item: the council unanimously postponed indefinitely a resolution that would have formally adopted new council bylaws, after community criticism that a 'time pooling' provision for public testimony was used in a lopsided way during the April 21 Welby Gardens hearing. Staff acknowledged the process did not go as intended and committed to broader community engagement before bringing updated bylaws back to council.",
+  "meeting_date": "2026-04-07",
+  "generated_at": "2026-05-13T08:47:05.246986+00:00",
+  "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo",
+  "meeting_type": "study_session",
+  "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
+  "lead_headline": "Arvada PD Unveils 'ARCTIC' Real-Time Info Hub Ahead of April Contract Vote",
+  "schedule_portal_url": "https://arvadaco.portal.civicclerk.com/?category_id=26",
+  "type_specific": {
+    "meeting_type": "study_session",
+    "meeting_summary": "The Arvada City Council received an informational briefing on the Arvada Real Time Information Center (ARCTIC), a new citywide hub that will consolidate feeds from drones, surveillance cameras, license plate readers, and body-worn cameras to improve emergency response and operational efficiency across multiple city departments. Chief Brady and his team explained the program's technology, staffing, legal framework, and phased implementation plan, noting that a formal Axon contract covering three drone-first-responder units and related equipment will be brought to council for a vote on April 21. No formal vote was taken at this session.",
+    "lead_headline": "Arvada PD Unveils 'ARCTIC' Real-Time Info Hub Ahead of April Contract Vote",
+    "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
+    "briefings": [
+      {
+        "topic": "Arvada Real Time Information Center (ARCTIC) — Program Overview, Technology & Funding",
+        "presenter_name": "Chief Brady",
+        "presenter_role": "Police Chief, Arvada Police Department",
+        "duration_minutes": 48,
+        "prose_paragraphs": [
+          "Chief Brady introduced the Arvada Real Time Information Center, branded 'ARCTIC,' as a centralized operations hub that consolidates live feeds from drone-first-responders (DFRs), more than 400 existing city surveillance cameras, automated license plate readers (ALPRs), body-worn cameras, and eventually traffic cameras. Located in the former dispatch center on the second floor of police headquarters, the ARCTIC currently houses two workstations staffed by two newly regraded Arctic technicians. The system is built around a contract with Axon, which sub-contracts drone hardware to a company called Skydio (the Skydio X10 model), with software integration handled through a platform called Fusus. The formal contract will come before council for a vote on April 21.",
+          "The ARCTIC is designed to serve the entire city, not just the police department. Chief Brady outlined use cases spanning emergency management (wildfire smoke detection via AI-enabled tower cameras, flood damage assessment), structure fires (sending live drone feeds to an incident commander before units arrive, as demonstrated by a Lakewood example showing 2.5 minutes of advance intelligence), infrastructure monitoring (traffic patterns, water-line breaks, power outages, I-70 structural damage assessment), parks management (crowd monitoring, sprinkler inspections, homeless-camp status checks), and police operations (officer safety, fugitive tracking, clearing calls for service remotely). Lakewood PD, cited as a peer agency, has cleared 41% of calls for service without deploying an officer since activating its DFR program. Greeley, using only intersection cameras without a DFR, cleared approximately 300 calls with that technology alone. The department will deploy three DFRs: two at City Hall headquarters and one at the Lake Arbor (Adam) station, providing partial but not full city coverage at launch. Each drone has a roughly 22-minute battery life, necessitating the two-unit rotation at headquarters. Funding is drawn from three sources: regrading two existing positions (a civilian accident investigator slot and a neighborhood-services administrative role) at net savings, approximately $100,000 in seizure funds for the physical buildout of the ARCTIC space, and $500,000 in reimbursements from Jefferson County School District for school resource officers, which the department is redirecting to cover program costs.",
+          "Council members raised several open questions about the program's maturity and future trajectory. Staffing was a recurring concern: with only two technicians splitting an early-swing schedule, council members worried about coverage gaps and the risk of an operator being focused on a DFR flight while missing another incident elsewhere in the city. Chief Brady acknowledged the ideal staffing would be at least four technicians plus a supervisor to cover roughly 20 hours per day, and noted that officers on light duty could supplement the team. A question about data fusion prompted discussion of the Fusus platform's ability to aggregate multiple data sources, with the NYPD fusion center cited as a long-term model. Councilmember Ambrose raised a pointed concern that all public community engagement meetings are scheduled on or after April 21, the same date as the contract vote, giving the public no opportunity to influence the procurement. The Chief acknowledged this and indicated dates could be revisited. Phase one of implementation will cover DFR deployment, integration with the computer-aided dispatch (CAD) system, and body-worn cameras; phase two will incorporate existing city cameras and new strategic camera installations (including towers on Highway 72 and Highway 68); and phase three will integrate ALPR technology citywide."
+        ],
+        "presenter_quotes": [
+          {
+            "speaker": "Chief Brady",
+            "text": "essentially the Arctic is a hub of information that allows us to provide a real and immediate information to those in the field who need it most.",
+            "timestamp_seconds": 61,
+            "context_excerpt": "And so, I mean, essentially the Arctic is a hub of information that allows us to provide a real and immediate information to those in the field who need it most. That's essentially what it is and I'll go into the specifics on it. But you may ask, why do we need the Arctic?",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=61s"
+          },
+          {
+            "speaker": "Chief Brady",
+            "text": "I think they're selling themselves way too short. This has more benefit than just the PD. It has benefit for all city services.",
+            "timestamp_seconds": 215,
+            "context_excerpt": "I think you will you will have heard this term, a real time crime center, in other cities. I think they're selling themselves way too short. This has more benefit than just the PD. It has benefit for all city services and I'm going to dive into those.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=215s"
+          },
+          {
+            "speaker": "Chief Brady",
+            "text": "at the end of the day the PD has been able to absorb this within our own budget.",
+            "timestamp_seconds": 900,
+            "context_excerpt": "So we're basically getting 100 we're getting 500,000 that we're applying from the reimbursement from the school district to the Arctic program. And so at the end of the day the PD has been able to absorb this within our own budget.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=900s"
+          },
+          {
+            "speaker": "Unidentified",
+            "text": "aerial surveillance uh such as this is perfectly legal, not only in the state of Colorado, but in the United States.",
+            "timestamp_seconds": 962,
+            "context_excerpt": "Uh I'll just come out and say it is uh aerial surveillance uh such as this is perfectly legal, not only in the state of Colorado, but in the United States. In fact, we are video aerial surveillance, I keep saying video surveillance, aerial surveillance uh was first litigated back in uh the 1980s in the form of helicopters.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=962s"
+          },
+          {
+            "speaker": "Unidentified",
+            "text": "the drones uh fly at a altitude that is actually owned and owned and operated, for lack of better description, by the federal government, the FAA.",
+            "timestamp_seconds": 1022,
+            "context_excerpt": "In fact, uh the drones uh fly at a altitude that is actually owned and owned and operated, for lack of better description, by the federal government, the FAA. So, our drones have to be registered with the FAA. I know uh Jason has been working on that application.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=1022s"
+          },
+          {
+            "speaker": "Unidentified",
+            "text": "The Fourth Amendment has a number of recognized or known exceptions. One such such exception that immediately comes into play there is what is known as hot pursuit.",
+            "timestamp_seconds": 1306,
+            "context_excerpt": "The Fourth Amendment has a number of recognized or known exceptions. One such such exception that immediately comes into play there is what is known as hot pursuit. As officers do not violate the Fourth Amendment when they are in literal hot pursuit of a suspect.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=1306s"
+          },
+          {
+            "speaker": "Chief Brady",
+            "text": "one of the things that the sector commanders I have talked about is having more of a regular cadence of meetings with the communities like this um regardless of whether or not it's a hot topic and and regardless of whether one person attends or 20.",
+            "timestamp_seconds": 1973,
+            "context_excerpt": "So, one of the things that the sector commanders I have talked about is having more of a regular cadence of meetings with the communities like this um regardless of whether or not it's a hot topic and and regardless of whether one person attends or 20. Being able just to have that opportunity.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=1973s"
+          },
+          {
+            "speaker": "Unidentified",
+            "text": "the software has a transparency portal. So, every flight that this uh drone takes will be publicly available to where they get on there on a public-facing and see where the drone went will be listed here.",
+            "timestamp_seconds": 2013,
+            "context_excerpt": "The other good thing about this is is the uh software has a transparency portal. So, every flight that this uh drone takes will be publicly available to where they get on there on a public-facing and see where the drone went will be listed here. What time? Yeah, it'll be a part of the the whole website.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=2013s"
+          },
+          {
+            "speaker": "Unidentified",
+            "text": "the data is ours. So it's not shared.",
+            "timestamp_seconds": 2522,
+            "context_excerpt": "So I assume for this system it would be those same list of agencies that would have access and we would be transparent about that. And you know, you put that the data only stays in the system for 14 days and then after that you have like the logs of where it was flown, but you don't actually have the data, right? So the good thing with this product, the data is ours. So it's not shared.",
+            "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=2522s"
+          }
+        ],
+        "external_resources": [
+          {
+            "title": "Axon Contract (drone-first-responder program, body-worn cameras, tasers, fleet cameras, evidence.com, Draft One, virtual reality headsets)",
+            "url": "",
+            "kind": "contract"
+          },
+          {
+            "title": "Skydio X10 Drone-First-Responder Hardware Specifications (Skydio Dock for X10)",
+            "url": "",
+            "kind": "product documentation"
+          },
+          {
+            "title": "Fusus Software Platform — Axon/Skydio Integration and Data Aggregation",
+            "url": "",
+            "kind": "product documentation"
+          },
+          {
+            "title": "Lakewood Police Department Drone-First-Responder Program — Calls-for-Service Data (41% cleared without officer dispatch)",
+            "url": "",
+            "kind": "dataset"
+          },
+          {
+            "title": "Greeley Police Department Camera Program — Calls-for-Service Clearance Data (~300 calls cleared via intersection cameras)",
+            "url": "",
+            "kind": "dataset"
+          },
+          {
+            "title": "Jefferson County School District SRO Reimbursement Agreement (50% cost reimbursement for school resource officers)",
+            "url": "",
+            "kind": "agreement"
+          },
+          {
+            "title": "Axon Drone Transparency Portal (public-facing flight log system)",
+            "url": "",
+            "kind": "web resource"
+          },
+          {
+            "title": "Arvada Report (February–March issue) — Full-page article on the ARCTIC program",
+            "url": "",
+            "kind": "report"
+          },
+          {
+            "title": "Arvada Police Department Annual Report — Technology and Innovation section (ARCTIC, ALPRs, Draft One, facial recognition)",
+            "url": "",
+            "kind": "report"
+          },
+          {
+            "title": "FAA Drone Registration and Flight Plan Records (public record requirement for DFR operations)",
+            "url": "",
+            "kind": "regulatory filing"
+          },
+          {
+            "title": "NYPD Fusion Center — Referenced as a long-term model for data integration",
+            "url": "",
+            "kind": "report"
+          }
+        ],
+        "video_deep_link": null
+      }
+    ],
+    "questions_raised": [
+      "How many drones will the city operate, and what geographic coverage will three DFRs provide?",
+      "How does the hot-pursuit Fourth Amendment exception apply when a drone follows a fleeing suspect through private backyards?",
+      "Can council and the public track drone flight paths, and how does the obstacle-avoidance and horizon-level camera design limit incidental recording?",
+      "What is the life expectancy of the drones and docking stations, and is a hardware refresh built into the contract?",
+      "How will the department keep pace with software updates given the IT department's existing workload?",
+      "Will the city eventually expand drone coverage to the entire city, including remote areas like Canyon Pines?",
+      "Are the drones marked with red and blue lights or decals so the public can identify them as police assets?",
+      "With only two technicians on a split early-swing schedule, how will the department avoid coverage gaps, and is 24-hour staffing the goal?",
+      "If a technician is actively piloting a DFR, who is monitoring the rest of the camera feeds for other incidents?",
+      "Is the department exploring data-fusion technology to algorithmically surface incidents rather than relying solely on human operators?",
+      "Why are all community engagement meetings scheduled on or after the April 21 contract vote, giving the public no chance to shape the procurement?",
+      "What does the audit process look like for ensuring DFR flights are tied to legitimate law enforcement calls rather than general surveillance?",
+      "Which third-party agencies, if any, can access ARCTIC video data, and how long is footage retained before deletion?",
+      "Would the availability of DFRs prompt the department to revisit or expand its partial vehicle-pursuit policy?",
+      "How will the department communicate to the public what constitutes 'general surveillance' and what safeguards exist against it?",
+      "Will the department use DFRs for lower-level nuisance complaints such as fireworks violations or short-term rental parties, and how will it prioritize call types?",
+      "Could the city use its drone assets at public events or school career fairs to build community familiarity with the technology?",
+      "Is the department sharing more body-cam and drone footage on social media to proactively demonstrate transparency, as some peer agencies do?"
+    ]
+  },
+  "meeting_summary": "The Arvada City Council received an informational briefing on the Arvada Real Time Information Center (ARCTIC), a new citywide hub that will consolidate feeds from drones, surveillance cameras, license plate readers, and body-worn cameras to improve emergency response and operational efficiency across multiple city departments. Chief Brady and his team explained the program's technology, staffing, legal framework, and phased implementation plan, noting that a formal Axon contract covering three drone-first-responder units and related equipment will be brought to council for a vote on April 21. No formal vote was taken at this session.",
   "alerts": [
     {
-      "title": "Tree Damage and Limb Disposal",
+      "title": "Free Drop-Off Site Open Saturday, May 9",
       "body": "The City of Arvada is hosting a free tree limb drop-off starting Saturday, May 9 at Long Lake Regional Park.",
       "severity": "warning",
       "url": "https://www.arvadaco.gov/m/newsflash/home/detail/336"
@@ -17,212 +183,94 @@
       "body": "Juvenile Municipal Court Cases scheduled for May 6th 2026 at 3:00PM will be continued to 2:00 p.m. May 13th due to power outage and weather conditions",
       "severity": "warning",
       "url": "https://www.arvadaco.gov/AlertCenter.aspx?AID=73"
-    },
-    {
-      "title": "Arvada-Blunn Reservoir Closed May 6",
-      "body": "The Arvada-Blunn Reservoir will be closed Wednesday, May 6 due to the weather. The reservoir will reopen Thursday, May 7.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/AlertCenter.aspx?AID=31"
     }
   ],
-  "key_decisions": [
-    {
-      "motion": "Excuse Councilmember Griffith from tonight's meeting",
-      "result": "Passed",
-      "vote_breakdown": "6-0",
-      "votes": {
-        "Lauren Simpson": "Yes",
-        "Randy Moorman": "Yes",
-        "Shawna Ambrose": "Yes",
-        "Rebecka Lovisone": "Yes",
-        "Bob Fifer": "Yes",
-        "Sharon Davis": "Yes",
-        "Michael Griffith": "Absent"
-      },
-      "significance": "Griffith was absent for all business this evening; all subsequent votes were 6-0."
-    },
-    {
-      "motion": "Approve consent agenda: R26-034 (design services agreement with Olsen Inc. for Lamar Road improvements, not to exceed $899,738) and R26-035 (accept annexation petition for Barber Nichols plant expansion, 1.793 acres at 6290 W. 56th Ave., set public hearing for June 16)",
-      "result": "Passed",
-      "vote_breakdown": "6-0",
-      "votes": {
-        "Lauren Simpson": "Yes",
-        "Randy Moorman": "Yes",
-        "Shawna Ambrose": "Yes",
-        "Rebecka Lovisone": "Yes",
-        "Bob Fifer": "Yes",
-        "Sharon Davis": "Yes",
-        "Michael Griffith": "Excused"
-      },
-      "significance": "The Lamar Road improvement contract is a significant infrastructure investment. The Barber Nichols annexation petition moves to a public hearing, expanding the city's footprint in Jefferson County."
-    },
-    {
-      "motion": "Approve R26-036: IGA between Apex Park and Recreation District and the City of Arvada for activation and operation of a disaster resource center in emergencies",
-      "result": "Passed",
-      "vote_breakdown": "6-0",
-      "votes": {
-        "Lauren Simpson": "Yes",
-        "Randy Moorman": "Yes",
-        "Shawna Ambrose": "Yes",
-        "Rebecka Lovisone": "Yes",
-        "Bob Fifer": "Yes",
-        "Sharon Davis": "Yes",
-        "Michael Griffith": "Excused"
-      },
-      "significance": "Formalizes a pre-designated emergency shelter and coordination site (Apex's Wadsworth recreation center), with the city covering 50% of operating costs during activation and seeking FEMA reimbursement. Modeled on Marshall Fire recovery lessons."
-    },
-    {
-      "motion": "Postpone indefinitely R26-009: resolution repealing current council rules of procedure and adopting new council bylaws",
-      "result": "Passed",
-      "vote_breakdown": "6-0",
-      "votes": {
-        "Lauren Simpson": "Yes",
-        "Randy Moorman": "Yes",
-        "Shawna Ambrose": "Yes",
-        "Rebecka Lovisone": "Yes",
-        "Bob Fifer": "Yes",
-        "Sharon Davis": "Yes",
-        "Michael Griffith": "Excused"
-      },
-      "significance": "Following community backlash over how a 'time pooling' provision was applied during the April 21 Welby Gardens hearing — allowing organized opposition groups over two hours of testimony before supporters could speak — the council delayed formal adoption to allow broader public engagement on meeting procedures."
-    },
-    {
-      "motion": "Approve CB26-017 on first reading: rezoning Candelas lots (SE corner of Hwy 93 and Hwy 72) from PUD-BP to CG Commercial General; set public hearing for June 16, 2026",
-      "result": "Passed",
-      "vote_breakdown": "6-0",
-      "votes": {
-        "Lauren Simpson": "Yes",
-        "Randy Moorman": "Yes",
-        "Shawna Ambrose": "Yes",
-        "Rebecka Lovisone": "Yes",
-        "Bob Fifer": "Yes",
-        "Sharon Davis": "Yes",
-        "Michael Griffith": "Excused"
-      },
-      "significance": "First reading only; the full public hearing on this West Arvada commercial rezoning — a corridor already the subject of evacuation and traffic concerns raised in public comment — will be held June 16."
-    },
-    {
-      "motion": "Cancel the June 2, 2026 city council business meeting",
-      "result": "Passed",
-      "vote_breakdown": "6-0",
-      "votes": {
-        "Lauren Simpson": "Yes",
-        "Randy Moorman": "Yes",
-        "Shawna Ambrose": "Yes",
-        "Rebecka Lovisone": "Yes",
-        "Bob Fifer": "Yes",
-        "Sharon Davis": "Yes",
-        "Michael Griffith": "Excused"
-      },
-      "significance": "Residents should note the next regular council business meeting after May 5 will be June 16, not June 2."
-    },
-    {
-      "motion": "Approve CB26-016 on final reading: ordinance repealing and reenacting Chapter 94, Article 2 of city code (Sidewalk Assistance Program, formerly the 50/50 program), Ordinance No. 4932",
-      "result": "Passed",
-      "vote_breakdown": "6-0",
-      "votes": {
-        "Lauren Simpson": "Yes",
-        "Randy Moorman": "Yes",
-        "Shawna Ambrose": "Yes",
-        "Rebecka Lovisone": "Yes",
-        "Bob Fifer": "Yes",
-        "Sharon Davis": "Yes",
-        "Michael Griffith": "Excused"
-      },
-      "significance": "Relaunches a dormant sidewalk repair program with $300,000 budgeted for 2026. Households at or below 80% of HUD area median income receive 100% financial assistance; others receive 50%. Applications open June 1 on a first-come, first-served basis with no need to reapply if placed on a wait list."
-    }
-  ],
+  "key_decisions": [],
   "notable_quotes": [
     {
-      "speaker": "Judy Douglas (public commenter)",
-      "quote": "We need to be fair in how we are developing this city and not jam it all in just one place.",
-      "context": "A resident speaking about housing density concentration near 72nd and Oberon Road, where she says four developments have been approved or proposed within a quarter mile of her home.",
-      "timestamp_seconds": 4057,
-      "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0&t=4057s",
+      "speaker": "Chief Brady",
+      "quote": "essentially the Arctic is a hub of information that allows us to provide a real and immediate information to those in the field who need it most.",
+      "context": "And so, I mean, essentially the Arctic is a hub of information that allows us to provide a real and immediate information to those in the field who need it most. That's essentially what it is and I'll go into the specifics on it. But you may ask, why do we need the Arctic?",
+      "timestamp_seconds": 61,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=61s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Patty Shannon (public commenter)",
-      "quote": "I would urge council to evaluate rezonings and proposed developments not only as individual parcels but as a cumulative evacuation and emergency access system.",
-      "context": "A West Arvada resident raising concerns about Highway 72 as the sole evacuation corridor for a growing number of developments in a wildfire-interface area.",
-      "timestamp_seconds": 4244,
-      "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0&t=4244s",
+      "speaker": "Chief Brady",
+      "quote": "I think they're selling themselves way too short. This has more benefit than just the PD. It has benefit for all city services.",
+      "context": "I think you will you will have heard this term, a real time crime center, in other cities. I think they're selling themselves way too short. This has more benefit than just the PD. It has benefit for all city services and I'm going to dive into those.",
+      "timestamp_seconds": 215,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=215s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Robert Slay (public commenter)",
-      "quote": "Working residents, renters, young households, people who would live in this project — they were not in that room. Not because they don't have opinions, because the process doesn't make room for them.",
-      "context": "A supporter of the Welby Gardens housing project arguing the April 21 hearing did not represent the full community, and advocating for online public comment tools.",
-      "timestamp_seconds": 4714,
-      "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0&t=4714s",
+      "speaker": "Chief Brady",
+      "quote": "at the end of the day the PD has been able to absorb this within our own budget.",
+      "context": "So we're basically getting 100 we're getting 500,000 that we're applying from the reimbursement from the school district to the Arctic program. And so at the end of the day the PD has been able to absorb this within our own budget.",
+      "timestamp_seconds": 900,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=900s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Todd Nicotra (public commenter, AvalonBay)",
-      "quote": "We are seeking the reconsideration so that we may provide new information as permitted by your rules of procedure.",
-      "context": "The AvalonBay representative formally requesting that council place a motion to reconsider the failed Welby Gardens CUP at the next meeting, noting new studies on retail feasibility and traffic have been commissioned.",
-      "timestamp_seconds": 4906,
-      "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0&t=4906s",
+      "speaker": "Unidentified",
+      "quote": "aerial surveillance uh such as this is perfectly legal, not only in the state of Colorado, but in the United States.",
+      "context": "Uh I'll just come out and say it is uh aerial surveillance uh such as this is perfectly legal, not only in the state of Colorado, but in the United States. In fact, we are video aerial surveillance, I keep saying video surveillance, aerial surveillance uh was first litigated back in uh the 1980s in the form of helicopters.",
+      "timestamp_seconds": 962,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=962s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Unidentified (City Attorney/City Clerk — identified as 'Miss Morris' in transcript)",
-      "quote": "We got one form for group time pooling on Sunday, I believe, prior to the hearing and then 13 additional requests for time pooling on the date of the hearing. So, it was far far in excess of what we thought we were going to receive.",
-      "context": "Staff explaining how the experimental 'time pooling' provision for public testimony at the Welby Gardens hearing was overwhelmed, resulting in organized opposition groups testifying for over two hours before supporters could speak.",
-      "timestamp_seconds": 5029,
-      "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0&t=5029s",
+      "speaker": "Unidentified",
+      "quote": "the drones uh fly at a altitude that is actually owned and owned and operated, for lack of better description, by the federal government, the FAA.",
+      "context": "In fact, uh the drones uh fly at a altitude that is actually owned and owned and operated, for lack of better description, by the federal government, the FAA. So, our drones have to be registered with the FAA. I know uh Jason has been working on that application.",
+      "timestamp_seconds": 1022,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=1022s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Lauren Simpson (Mayor)",
-      "quote": "It does feel like we've had sort of some agitation around this issue from very interested groups, but the broader public deserves to be able to know and frankly there's just more opportunity for council ourselves to be able to hash it out.",
-      "context": "Mayor Simpson explaining her support for postponing the council bylaws vote to allow wider community input on meeting procedures.",
-      "timestamp_seconds": 5785,
-      "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0&t=5785s",
+      "speaker": "Unidentified",
+      "quote": "The Fourth Amendment has a number of recognized or known exceptions. One such such exception that immediately comes into play there is what is known as hot pursuit.",
+      "context": "The Fourth Amendment has a number of recognized or known exceptions. One such such exception that immediately comes into play there is what is known as hot pursuit. As officers do not violate the Fourth Amendment when they are in literal hot pursuit of a suspect.",
+      "timestamp_seconds": 1306,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=1306s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Randy Moorman (Mayor Pro Tem)",
-      "quote": "I think as you know as a commission of the city, we would appreciate your input to us as the policy makers about what solutions we might want to be exploring there.",
-      "context": "Moorman responding to the Arts and Culture Commission's discussion about the potential loss of Bird's Nest Art Gallery's space and the lack of a maker space for artists in Arvada.",
-      "timestamp_seconds": 3457,
-      "video_url": "https://www.youtube.com/watch?v=wx7l1qfPuD0&t=3457s",
+      "speaker": "Chief Brady",
+      "quote": "one of the things that the sector commanders I have talked about is having more of a regular cadence of meetings with the communities like this um regardless of whether or not it's a hot topic and and regardless of whether one person attends or 20.",
+      "context": "So, one of the things that the sector commanders I have talked about is having more of a regular cadence of meetings with the communities like this um regardless of whether or not it's a hot topic and and regardless of whether one person attends or 20. Being able just to have that opportunity.",
+      "timestamp_seconds": 1973,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=1973s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Unidentified",
+      "quote": "the software has a transparency portal. So, every flight that this uh drone takes will be publicly available to where they get on there on a public-facing and see where the drone went will be listed here.",
+      "context": "The other good thing about this is is the uh software has a transparency portal. So, every flight that this uh drone takes will be publicly available to where they get on there on a public-facing and see where the drone went will be listed here. What time? Yeah, it'll be a part of the the whole website.",
+      "timestamp_seconds": 2013,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=2013s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Unidentified",
+      "quote": "the data is ours. So it's not shared.",
+      "context": "So I assume for this system it would be those same list of agencies that would have access and we would be transparent about that. And you know, you put that the data only stays in the system for 14 days and then after that you have like the logs of where it was flown, but you don't actually have the data, right? So the good thing with this product, the data is ours. So it's not shared.",
+      "timestamp_seconds": 2522,
+      "video_url": "https://www.youtube.com/watch?v=jFtrqNF8Muo&t=2522s",
       "speaker_profile_url": null
     }
   ],
   "topics_discussed": [
-    "Early childhood care and education workforce crisis",
-    "Poppy Month / veterans recognition",
-    "Mental health awareness",
-    "Economic development (AIDA 2025 results: 126 net new businesses, $200K+ in grants)",
-    "ALS awareness",
-    "Stage 1 drought restrictions and drinking water stewardship",
-    "Building safety / 2024 code adoption including wildfire resiliency code",
-    "Affordable housing (Prop 123 commitment met; 725+ units over 5 years)",
-    "Public art and Arts and Culture Commission programs",
-    "Climate and Sustainability Action Plan (KSAP) — public support expressed, no vote",
-    "Welby Gardens conditional use permit reconsideration request",
-    "West Arvada development, traffic, and wildfire evacuation concerns",
-    "Council meeting bylaws and time-pooling public testimony procedures",
-    "Disaster resource center IGA with Apex",
-    "Sidewalk Assistance Program relaunch",
-    "Candelas commercial rezoning (first reading)",
-    "Arvada Police vehicle tracking event",
-    "Upcoming wildfire mitigation and water/wastewater rate workshops"
+    "Arvada Real Time Information Center (ARCTIC) — Program Overview, Technology & Funding"
   ],
-  "consistency_flags": [
-    {
-      "council_member": "Unidentified (full council)",
-      "observation": "The council approved a first reading of a commercial rezoning (CB26-017) at the SE corner of Hwy 93 and Hwy 72 in Candelas — the precise corridor that multiple public commenters, including Patty Shannon, warned is already overburdened as the sole evacuation and emergency access route for West Arvada. The council asked no questions about emergency access or evacuation capacity during the rezoning vote, despite those concerns being raised in public comment earlier the same evening."
-    },
-    {
-      "council_member": "Unidentified (full council)",
-      "observation": "The council unanimously postponed the council bylaws indefinitely due to concerns about the fairness of the time-pooling process at the Welby Gardens hearing, yet the same evening heard the Welby Gardens developer request reconsideration. The council did not discuss or vote on that reconsideration request at this meeting (the developer explicitly asked them to wait until the next meeting when full membership would be present), but the interplay between procedural fairness concerns and the pending reconsideration was not directly addressed by council members on the record."
-    }
-  ],
-  "on_the_horizon": "The most consequential upcoming item is AvalonBay's expected motion for reconsideration of the Welby Gardens conditional use permit at the June 16 meeting — the same meeting that will also include the Candelas commercial rezoning public hearing and the Barber Nichols annexation hearing, all touching West Arvada development and traffic concerns. Two council workshops are scheduled for the following week (week of May 12): one on wildfire mitigation and response strategies — directly relevant to the evacuation concerns raised in public comment — and one on 2027 water, wastewater, and stormwater rates and fees, which will be important context given the active Stage 1 drought restrictions currently in effect.",
+  "consistency_flags": [],
+  "on_the_horizon": "",
   "upcoming": [],
   "recent_news": [
+    {
+      "title": "Street maintenance in Olde Town",
+      "url": "https://www.arvadaco.gov/1527/Olde-Town-Arvada-pavement-improvements-t"
+    },
     {
       "title": "Tree Limb Damage and Disposal",
       "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=336"
@@ -242,10 +290,6 @@
     {
       "title": "Arvada Summerfest",
       "url": "https://www.arvadaco.gov/1261"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
     }
   ],
   "council_members": [
