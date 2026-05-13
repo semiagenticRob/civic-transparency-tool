@@ -20,8 +20,10 @@ from typing import Optional
 from pipeline.fetch_transcript import fetch_transcript, format_with_timestamps
 from pipeline.fetch_rss import fetch_all_feeds, format_for_prompt
 from pipeline.analyze_meeting import analyze_meeting
+from pipeline.meeting_type import detect_meeting_type
 from pipeline.render_newsletter import render_newsletter
 from pipeline.save_dashboard_data import save_dashboard_data, enrich_with_rss
+from pipeline.validate_quotes import validate_quotes
 
 from . import beehiiv
 
@@ -35,6 +37,9 @@ class RunResult:
     subtitle: str
     body_html: str
     meeting_date: str  # YYYY-MM-DD
+    meeting_type: str = ""
+    quotes_kept: int = 0
+    quotes_dropped: int = 0
     error: Optional[str] = None
 
 
@@ -43,9 +48,14 @@ def run_for_video(
     city_config: dict,
     meeting_date: Optional[datetime] = None,
     publish: bool = True,
+    video_title: str = "",
 ) -> RunResult:
     """End-to-end: video_id → Beehiiv draft. If publish=False, returns the
-    rendered HTML without posting to Beehiiv (useful for local preview)."""
+    rendered HTML without posting to Beehiiv (useful for local preview).
+
+    `video_title` is used to detect the meeting type (business / workshop /
+    study_session) before the LLM call. When empty, falls back to "business"
+    with a warning."""
 
     if meeting_date is None:
         meeting_date = datetime.now(timezone.utc)
@@ -54,7 +64,10 @@ def run_for_video(
     segments, _plain = fetch_transcript(video_id)
     transcript = format_with_timestamps(segments)
 
-    # 2. RSS context (best-effort)
+    # 2. Detect meeting type from the video title
+    meeting_type = detect_meeting_type(video_title or "", city_config)
+
+    # 3. RSS context (best-effort)
     feeds = {}
     rss_context = ""
     try:
@@ -63,13 +76,18 @@ def run_for_video(
     except Exception:
         pass  # don't let flaky feeds block the pipeline
 
-    # 3. LLM analysis (OpenRouter)
+    # 4. LLM analysis — picks the prompt + dataclass matching the meeting type
     analysis = analyze_meeting(
         transcript=transcript,
         city_config=city_config,
+        meeting_type=meeting_type,
         rss_context=rss_context,
         video_id=video_id,
     )
+
+    # 5. Validate every extracted quote against the transcript — drops quotes
+    #    that fail fuzzy-match against the source. See pipeline/validate_quotes.py.
+    quote_report = validate_quotes(analysis, transcript)
 
     # 4. Render newsletter HTML
     rendered = render_newsletter(analysis, city_config, meeting_date)
@@ -118,5 +136,8 @@ def run_for_video(
         subtitle=rendered.subtitle,
         body_html=rendered.body_html,
         meeting_date=meeting_date.strftime("%Y-%m-%d"),
+        meeting_type=meeting_type,
+        quotes_kept=quote_report.kept,
+        quotes_dropped=quote_report.dropped,
         error=publish_error,
     )

@@ -32,6 +32,17 @@
     { "name": "Sharon Davis",     "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=6", "phone": "720-450-4825", "photo_filename": "davis.jpg" },
     { "name": "Michael Griffith", "title": "Councilmember",  "district": "At-Large",  "profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7", "phone": "720-898-7000", "photo_filename": "griffith.jpg" }
   ],
-  "meeting_keywords": ["City Council Meeting", "Special City Council"],
+  "meeting_keywords": ["City Council Meeting", "Special City Council", "Workshop", "Study Session"],
+  "meeting_type_keywords": {
+    "workshop": ["workshop"],
+    "study_session": ["study session"],
+    "business": ["city council meeting", "special city council"]
+  },
+  "meeting_purpose_blurbs": {
+    "business": "Council makes official decisions in the form of ordinances, resolutions, or motions. Open to the public with public comment at designated times.",
+    "workshop": "Council examines particular topics in depth. No official decisions are made and no public comment is taken.",
+    "study_session": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken."
+  },
+  "schedule_portal_url": "https://arvadaco.portal.civicclerk.com/?category_id=26",
   "timezone": "America/Denver"
 }

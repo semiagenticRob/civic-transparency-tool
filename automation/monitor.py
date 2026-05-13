@@ -63,6 +63,7 @@ def process_video(
             city_config=city_config,
             meeting_date=meeting_date,
             publish=not dry_run,
+            video_title=video.title,
         )
     except Exception:
         traceback.print_exc()

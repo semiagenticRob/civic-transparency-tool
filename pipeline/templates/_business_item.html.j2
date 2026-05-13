@@ -1,0 +1,52 @@
+{# Compact tile for a consent / resolution / ordinance item.
+   Context: item — dataclass with official_title, plain_english_summary,
+            vote_tally, dissent_excused, links, and (for OrdinanceItem)
+            reading_number, coming_back_at. #}
+<div style="background: #f8f5ed; border-left: 3px solid #111e5c; border-radius: 4px; padding: 18px 22px; margin-bottom: 14px;">
+
+  {% if item.reading_number is defined %}
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #111e5c; margin-bottom: 6px;">
+    ORDINANCE · {% if item.reading_number == 1 %}FIRST READING{% elif item.reading_number == 2 %}SECOND READING{% else %}THIRD READING (FINAL){% endif %}
+  </div>
+  {% endif %}
+
+  <div style="font-family: 'Newsreader', Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 600; color: #111827; line-height: 1.4; margin-bottom: 6px;">
+    {{ item.official_title }}
+  </div>
+
+  {% if item.plain_english_summary %}
+  <div style="font-family: 'Newsreader', Georgia, serif; font-size: 13px; font-style: italic; color: #6b7280; line-height: 1.6; margin-bottom: 10px;">
+    In plain English: {{ item.plain_english_summary }}
+  </div>
+  {% endif %}
+
+  <div style="margin-top: 10px; font-family: -apple-system, sans-serif; font-size: 11px; color: #6b7280;">
+    {% if item.vote_tally %}
+    <span style="font-weight: 700; color: {% if 'PASS' in (item.vote_tally|upper) %}#166534{% elif 'FAIL' in (item.vote_tally|upper) or 'REJECT' in (item.vote_tally|upper) %}#991b1b{% else %}#6b7280{% endif %}; letter-spacing: 1px;">{{ item.vote_tally|upper }}</span>
+    {% endif %}
+    {% if item.dissent_excused %}
+    <span style="margin-left: 8px; color: #d1d5db;">·</span>
+    <span style="margin-left: 8px; font-weight: 500;">{{ item.dissent_excused }}</span>
+    {% endif %}
+  </div>
+
+  {% set links = item.links %}
+  {% if links and (links.agenda_packet_url or links.text_url or links.video_deep_link) %}
+  <div style="margin-top: 8px; font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 600; color: #2f4ac7; letter-spacing: 0.3px;">
+    {% if links.agenda_packet_url %}<a href="{{ links.agenda_packet_url }}" style="color: #2f4ac7; text-decoration: none;">↗ Agenda packet</a>{% endif %}
+    {% if links.text_url %}{% if links.agenda_packet_url %} · {% endif %}<a href="{{ links.text_url }}" style="color: #2f4ac7; text-decoration: none;">Document text</a>{% endif %}
+    {% if links.video_deep_link %}{% if links.agenda_packet_url or links.text_url %} · {% endif %}<a href="{{ links.video_deep_link }}" style="color: #2f4ac7; text-decoration: none;">Watch ↗</a>{% endif %}
+  </div>
+  {% endif %}
+
+  {% if item.coming_back_at %}
+  <div style="margin-top: 12px; padding: 10px 12px; background: #eef2ff; border-radius: 4px;">
+    <span style="font-family: -apple-system, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #3b5bdb;">COMING BACK</span>
+    <span style="margin-left: 8px; font-family: 'Newsreader', Georgia, serif; font-size: 13px; font-weight: 500; color: #111e5c;">{{ item.coming_back_at }}</span>
+    {% if links and links.calendar_url %}
+    &nbsp;·&nbsp;<a href="{{ links.calendar_url }}" style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 600; color: #2f4ac7; text-decoration: none;">Add to calendar ↗</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+</div>

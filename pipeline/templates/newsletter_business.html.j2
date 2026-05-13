@@ -1,0 +1,249 @@
+{# Business Meeting newsletter — inline-CSS HTML for Beehiiv.
+   Sections appear in the order they occur on the canonical Arvada agenda:
+   Tonight at a Glance → Presentations → Public Comment (non-scheduled) →
+   New Business (Consent/Resolutions/Ordinances) → Public Hearings → Footer.
+#}
+<div style="font-family: 'Newsreader', Georgia, 'Times New Roman', serif; background: #fefdf8; color: #374151; max-width: 680px; margin: 0 auto; padding: 40px 24px;">
+
+  {% include "_masthead.html.j2" %}
+
+  {% set strip_bg = "#ecfdf5" %}
+  {% set strip_border = "#a7f3d0" %}
+  {% set pill_bg = "#065f46" %}
+  {% set meeting_type_label = "CITY COUNCIL BUSINESS MEETING" %}
+  {% set purpose_blurb = analysis.meeting_purpose_blurb %}
+  {% include "_purpose_strip.html.j2" %}
+
+  {# ─── META LINE ──────────────────────────────────────────────── #}
+  <div style="text-align: center; padding: 8px 0 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: #6b7280;">
+    OFFICIAL DECISIONS · PUBLIC COMMENT TAKEN
+    {% if meeting_video_url %}
+      &nbsp;·&nbsp;<a href="{{ meeting_video_url }}" style="color: #2f4ac7; text-decoration: none;">WATCH THE MEETING ↗</a>
+    {% endif %}
+  </div>
+
+  {# ─── TONIGHT AT A GLANCE ────────────────────────────────────── #}
+  {% if analysis.tonight_at_a_glance.synopsis or analysis.tonight_at_a_glance.highlights %}
+  <div style="padding: 24px 28px; border-top: 2px solid #111e5c; border-bottom: 2px solid #111e5c; margin: 16px 0 32px;">
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 12px;">
+      TONIGHT AT A GLANCE
+    </div>
+    {% if analysis.lead_headline %}
+    <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.25; color: #111827; margin: 0 0 14px 0;">
+      {{ analysis.lead_headline }}
+    </h1>
+    {% endif %}
+    {% if analysis.tonight_at_a_glance.synopsis %}
+    <p style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; line-height: 1.6; color: #374151; margin: 0 0 14px 0;">
+      {{ analysis.tonight_at_a_glance.synopsis }}
+    </p>
+    {% endif %}
+    {% if analysis.tonight_at_a_glance.highlights %}
+    <div style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; line-height: 1.6; color: #374151;">
+      {% for h in analysis.tonight_at_a_glance.highlights %}
+      <div style="margin: 4px 0;">·&nbsp;&nbsp;{{ h }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {# ─── PRESENTATIONS (only when material) ─────────────────────── #}
+  {% if analysis.presentations %}
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 10px;">
+      PRESENTATIONS
+    </div>
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.2; color: #111827; margin: 0 0 14px 0;">
+      What council heard before tonight's business
+    </h2>
+    {% for pres in analysis.presentations %}
+    <div style="margin-bottom: 20px;">
+      {% if pres.topic %}
+      <div style="font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 4px;">
+        {{ pres.topic }}
+      </div>
+      {% endif %}
+      {% if pres.presenter_name %}
+      <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 600; color: #6b7280; letter-spacing: 0.3px; margin-bottom: 8px;">
+        {{ pres.presenter_name }}{% if pres.presenter_role %} · {{ pres.presenter_role }}{% endif %}
+      </div>
+      {% endif %}
+      {% for para in pres.prose_paragraphs %}
+      <p style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; line-height: 1.65; color: #374151; margin: 0 0 12px 0;">
+        {{ para }}
+      </p>
+      {% endfor %}
+      {% if pres.external_resources or pres.video_deep_link %}
+      <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 600; color: #2f4ac7; letter-spacing: 0.3px;">
+        {% for res in pres.external_resources %}
+          {% if res.url %}<a href="{{ res.url }}" style="color: #2f4ac7; text-decoration: none;">↗ {{ res.title }}</a>{% else %}↗ {{ res.title }}{% endif %}{% if not loop.last %} · {% endif %}
+        {% endfor %}
+        {% if pres.video_deep_link %}{% if pres.external_resources %} · {% endif %}<a href="{{ pres.video_deep_link }}" style="color: #2f4ac7; text-decoration: none;">Watch ↗</a>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# ─── NON-SCHEDULED PUBLIC COMMENT (only when material) ───────── #}
+  {% if analysis.non_scheduled_public_comment %}
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 10px;">
+      PUBLIC COMMENT · NOT ON THE AGENDA
+    </div>
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.2; color: #111827; margin: 0 0 14px 0;">
+      What residents brought to council tonight
+    </h2>
+    {% for q in analysis.non_scheduled_public_comment %}
+    <div style="background: #f8f5ed; border-left: 3px solid #111e5c; padding: 14px 18px; margin-bottom: 14px;">
+      <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 17px; font-style: italic; color: #111e5c; line-height: 1.4; margin-bottom: 6px;">
+        {% if q.video_url %}<a href="{{ q.video_url }}" style="color: inherit; text-decoration: none;">{% endif %}“{{ q.text }}”{% if q.video_url %}</a>{% endif %}
+      </div>
+      <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 600; color: #6b7280; letter-spacing: 0.3px;">
+        — {{ q.speaker }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# ─── NEW BUSINESS (Consent / Resolutions / Ordinances) ───────── #}
+  {% if analysis.consent_agenda or analysis.resolutions or analysis.ordinances %}
+  <div style="margin-bottom: 32px;">
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 10px;">
+      NEW BUSINESS
+    </div>
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 700; line-height: 1.2; color: #111827; margin: 0 0 10px 0;">
+      Consent, resolutions, and ordinances
+    </h2>
+    <p style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; line-height: 1.6; color: #6b7280; margin: 0 0 20px 0;">
+      In the order they appeared on the agenda. Each item shows the verbatim agenda language, a plain-English clarifier, the vote tally, and inline links where available. Ordinances on first reading carry an inline note for when they return.
+    </p>
+
+    {% if analysis.consent_agenda %}
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin: 24px 0 10px;">CONSENT AGENDA</div>
+    {% for item in analysis.consent_agenda %}
+    {% include "_business_item.html.j2" %}
+    {% endfor %}
+    {% endif %}
+
+    {% if analysis.resolutions %}
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin: 24px 0 10px;">RESOLUTIONS</div>
+    {% for item in analysis.resolutions %}
+    {% include "_business_item.html.j2" %}
+    {% endfor %}
+    {% endif %}
+
+    {% if analysis.ordinances %}
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin: 24px 0 10px;">ORDINANCES</div>
+    {% for item in analysis.ordinances %}
+    {% include "_business_item.html.j2" %}
+    {% endfor %}
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {# ─── PUBLIC HEARINGS — the dominant section ──────────────────── #}
+  {% if analysis.public_hearings %}
+  {% for hearing in analysis.public_hearings %}
+  <div style="margin: 40px 0;">
+    <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 12px;">
+      PUBLIC HEARING{% if loop.length > 1 %} · {{ loop.index }}{% endif %}
+    </div>
+    {% if hearing.what_is_being_heard %}
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1.2; color: #111827; margin: 0 0 16px 0;">
+      {{ hearing.vote_breakdown.motion_text or hearing.what_is_being_heard[:120] }}
+    </h2>
+    <p style="font-family: 'Newsreader', Georgia, serif; font-size: 17px; line-height: 1.65; color: #374151; margin: 0 0 24px 0;">
+      {{ hearing.what_is_being_heard }}
+    </p>
+    {% endif %}
+
+    {# Four commentary sources #}
+    {% set sources = [
+      ("FROM THE CITY", hearing.city_staff_commentary, "No staff or legal commentary was on the record for this hearing."),
+      ("FROM OUTSIDE PARTIES", hearing.outside_party_commentary, "No outside parties were heard during this hearing."),
+      ("FROM COUNCIL", hearing.councilmember_commentary, "No councilmember commentary was on the record."),
+      ("FROM THE PUBLIC AT THE HEARING", hearing.public_commentary, "No public comment was given at this hearing.")
+    ] %}
+    {% for label, quotes, empty_note in sources %}
+    <div style="padding: 16px 18px; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; margin: 12px 0; background: #fefdf8;">
+      <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 10px;">
+        {{ label }}
+      </div>
+      {% if quotes %}
+        {% for q in quotes %}
+        <div style="background: #f8f5ed; border-left: 3px solid #111e5c; padding: 10px 14px; margin-bottom: 8px;">
+          <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 16px; font-style: italic; color: #111e5c; line-height: 1.4; margin-bottom: 6px;">
+            {% if q.video_url %}<a href="{{ q.video_url }}" style="color: inherit; text-decoration: none;">{% endif %}“{{ q.text }}”{% if q.video_url %}</a>{% endif %}
+          </div>
+          <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 600; color: #6b7280; letter-spacing: 0.3px;">
+            — {{ q.speaker }}
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div style="font-family: 'Newsreader', Georgia, serif; font-size: 13px; font-style: italic; color: #6b7280; line-height: 1.6;">
+          {{ empty_note }}
+        </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    {# The Vote #}
+    {% if hearing.vote_breakdown.tally %}
+    <div style="background: #f8f5ed; border-left: 4px solid #111e5c; padding: 20px 24px; margin: 20px 0;">
+      <div style="font-family: -apple-system, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #9ca3af; margin-bottom: 8px;">
+        THE VOTE
+      </div>
+      <div style="font-family: 'Newsreader', Georgia, serif; font-size: 17px; font-weight: 600; line-height: 1.4; color: #111827; margin-bottom: 8px;">
+        {{ hearing.vote_breakdown.motion_text or hearing.what_is_being_heard }}
+      </div>
+      <div style="font-family: -apple-system, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #166534;">
+        {{ hearing.vote_breakdown.result|upper }} {{ hearing.vote_breakdown.tally }}
+      </div>
+    </div>
+    {% endif %}
+
+    {# Whip count — nested inside this hearing #}
+    {% if hearing.whip_count %}
+    <div style="margin-top: 20px;">
+      <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 8px;">
+        WHIP COUNT
+      </div>
+      <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 12px;">
+        How each member voted
+      </div>
+      <div style="border-top: 2px solid #111e5c; border-bottom: 2px solid #111e5c; padding: 8px 0;">
+        {% for m in hearing.whip_count %}
+        <div style="padding: 10px 0; {% if not loop.last %}border-bottom: 1px solid #f3f4f6;{% endif %}">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; font-weight: 700; color: #111827;">{{ m.name }}</span>
+            <span style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: {% if m.vote == 'Yes' %}#166534{% elif m.vote == 'No' %}#991b1b{% else %}#9ca3af{% endif %};">{{ m.vote|upper }}</span>
+          </div>
+          {% if m.rationale %}
+          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 13px; color: #374151; line-height: 1.55;">
+            {{ m.rationale }}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if hearing.follow_up_direction %}
+    <div style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; line-height: 1.65; color: #374151; margin-top: 16px;">
+      <strong style="color: #111827;">What happens next:</strong> {{ hearing.follow_up_direction }}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  {% set schedule_link_label = "View upcoming City Council business meetings" %}
+  {% include "_footer.html.j2" %}
+
+</div>

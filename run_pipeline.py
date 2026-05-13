@@ -33,7 +33,10 @@ console = Console()
 @click.option("--date", default=None, help="Meeting date in YYYY-MM-DD format (defaults to today)")
 @click.option("--output-dir", default="output", help="Directory to save the draft")
 @click.option("--skip-rss", is_flag=True, help="Skip fetching RSS feeds")
-def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
+@click.option("--meeting-type", default=None, type=click.Choice(["business", "workshop", "study_session"]),
+              help="Override meeting type (default: detect from --title; falls back to 'business')")
+@click.option("--title", default="", help="Meeting title used for type detection when --meeting-type is omitted")
+def main(video: str, city: str, date, output_dir: str, skip_rss: bool, meeting_type, title: str):
     """Generate a newsletter draft from a city council meeting video."""
 
     # Load city config
@@ -86,14 +89,23 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
                 progress.update(task, description=f"[yellow]⚠[/yellow] RSS fetch failed (continuing): {e}")
                 progress.stop_task(task)
 
-        # Step 3: Analyze with Claude
-        task = progress.add_task("Analyzing meeting with Claude...", total=None)
+        # Step 3: Detect meeting type
+        from pipeline.meeting_type import detect_meeting_type
+        resolved_type = meeting_type or detect_meeting_type(title, city_config)
+        console.print(f"  meeting type: [bold cyan]{resolved_type}[/bold cyan]")
+
+        # Step 4: Analyze with the type-specific prompt
+        task = progress.add_task(f"Analyzing meeting ({resolved_type})...", total=None)
         from pipeline.analyze_meeting import analyze_meeting
         try:
-            analysis = analyze_meeting(timestamped_transcript, city_config, rss_context, video_id=video_id)
-            n_decisions = len(analysis.key_decisions)
-            n_quotes = len(analysis.notable_quotes)
-            progress.update(task, description=f"[green]✓[/green] Analysis complete ({n_decisions} decisions, {n_quotes} quotes)")
+            analysis = analyze_meeting(
+                transcript=timestamped_transcript,
+                city_config=city_config,
+                meeting_type=resolved_type,
+                rss_context=rss_context,
+                video_id=video_id,
+            )
+            progress.update(task, description=f"[green]✓[/green] Analysis complete")
             progress.stop_task(task)
         except Exception as e:
             progress.update(task, description=f"[red]✗[/red] Analysis failed: {e}")
@@ -101,14 +113,31 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
             console.print(f"\n[red]Fatal:[/red] {e}")
             sys.exit(1)
 
-        # Step 4: Generate newsletter draft
-        task = progress.add_task("Generating newsletter draft...", total=None)
-        from pipeline.generate_draft import generate_draft
-        draft = generate_draft(analysis, city_config, meeting_date, Path(output_dir))
-        progress.update(task, description="[green]✓[/green] Draft generated")
+        # Step 5: Validate quotes against the transcript
+        task = progress.add_task("Validating quotes against transcript...", total=None)
+        from pipeline.validate_quotes import validate_quotes
+        report = validate_quotes(analysis, timestamped_transcript)
+        progress.update(task, description=f"[green]✓[/green] Quote validation: {report.kept} kept, {report.dropped} dropped")
         progress.stop_task(task)
 
-        # Step 5: Save dashboard data
+        # Step 6: Generate Markdown summary draft
+        task = progress.add_task("Generating Markdown draft...", total=None)
+        from pipeline.generate_draft import generate_draft
+        draft = generate_draft(analysis, city_config, meeting_date, Path(output_dir))
+        progress.update(task, description="[green]✓[/green] Markdown draft generated")
+        progress.stop_task(task)
+
+        # Step 7: Render the HTML newsletter alongside the Markdown
+        task = progress.add_task("Rendering HTML newsletter...", total=None)
+        from pipeline.render_newsletter import render_newsletter
+        rendered = render_newsletter(analysis, city_config, meeting_date)
+        html_filename = f"{city_config['name'].lower().replace(' ', '-')}_{meeting_date.strftime('%Y-%m-%d')}.html"
+        html_path = Path(output_dir) / html_filename
+        html_path.write_text(rendered.body_html)
+        progress.update(task, description=f"[green]✓[/green] HTML newsletter → {html_path}")
+        progress.stop_task(task)
+
+        # Step 8: Save dashboard data
         task = progress.add_task("Updating dashboard data...", total=None)
         from pipeline.save_dashboard_data import save_dashboard_data, enrich_with_rss
         latest_path = save_dashboard_data(analysis, city_config, meeting_date, video_url=video_url)
@@ -122,15 +151,8 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool):
     console.print()
     console.rule("[bold green]Done[/bold green]")
 
-    if analysis.editors_note_prompts:
-        console.print("\n[bold yellow]Editor prompts to consider:[/bold yellow]")
-        for prompt in analysis.editors_note_prompts:
-            console.print(f"  • {prompt}")
-
-    if analysis.consistency_flags:
-        console.print("\n[bold yellow]Consistency flags:[/bold yellow]")
-        for flag in analysis.consistency_flags:
-            console.print(f"  • {flag['council_member']}: {flag['observation']}")
+    if report.dropped:
+        console.print(f"\n[bold yellow]⚠ Quote validation dropped {report.dropped} of {report.total} quotes[/bold yellow] — see logs for details.")
 
     console.print(f"\nDraft saved to: [cyan]{output_dir}/[/cyan]")
     console.print("Review the draft, add your commentary, then publish to Beehiiv. 🗳️")
