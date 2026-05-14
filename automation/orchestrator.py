@@ -20,12 +20,12 @@ from typing import Optional
 from pipeline.fetch_transcript import fetch_transcript, format_with_timestamps
 from pipeline.fetch_rss import fetch_all_feeds, format_for_prompt
 from pipeline.analyze_meeting import analyze_meeting
-from pipeline.meeting_type import detect_meeting_type
 from pipeline.render_newsletter import render_newsletter
 from pipeline.save_dashboard_data import save_dashboard_data, enrich_with_rss
 from pipeline.validate_quotes import validate_quotes
 
 from . import beehiiv
+from .meeting_classifier import classify_meeting_for_video
 
 
 @dataclass
@@ -38,6 +38,7 @@ class RunResult:
     body_html: str
     meeting_date: str  # YYYY-MM-DD
     meeting_type: str = ""
+    meeting_type_source: str = ""
     quotes_kept: int = 0
     quotes_dropped: int = 0
     error: Optional[str] = None
@@ -61,11 +62,20 @@ def run_for_video(
         meeting_date = datetime.now(timezone.utc)
 
     # 1. Transcript
-    segments, _plain = fetch_transcript(video_id)
+    segments, plain_transcript = fetch_transcript(video_id)
     transcript = format_with_timestamps(segments)
 
-    # 2. Detect meeting type from the video title
-    meeting_type = detect_meeting_type(video_title or "", city_config)
+    # 2. Classify meeting type. CivicClerk is authoritative; when the date has
+    #    multiple events (e.g. study session + business meeting on the same day),
+    #    we disambiguate by correlating each event's agenda items against the
+    #    transcript. Falls back to the YouTube-title keyword classifier only if
+    #    CivicClerk lookup can't resolve it.
+    meeting_type, meeting_type_source = classify_meeting_for_video(
+        city_config=city_config,
+        video_title=video_title or "",
+        meeting_date=meeting_date,
+        transcript_text=plain_transcript,
+    )
 
     # 3. RSS context (best-effort)
     feeds = {}
@@ -137,6 +147,7 @@ def run_for_video(
         body_html=rendered.body_html,
         meeting_date=meeting_date.strftime("%Y-%m-%d"),
         meeting_type=meeting_type,
+        meeting_type_source=meeting_type_source,
         quotes_kept=quote_report.kept,
         quotes_dropped=quote_report.dropped,
         error=publish_error,

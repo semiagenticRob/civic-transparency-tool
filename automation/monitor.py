@@ -69,6 +69,8 @@ def process_video(
         traceback.print_exc()
         return None
 
+    print(f"    meeting_type: {result.meeting_type} (source: {result.meeting_type_source or 'unknown'})")
+
     if dry_run:
         preview_path = Path("/tmp") / f"preview_{video.video_id}.html"
         preview_path.write_text(result.body_html)
