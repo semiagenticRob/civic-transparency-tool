@@ -57,6 +57,29 @@ def _derive_subtitle(analysis: MeetingAnalysis) -> str:
     return summary[:200]
 
 
+def _build_council_lookup(city_config: dict) -> dict:
+    """Map normalized councilmember name → enriched member dict (with computed photo_url).
+
+    Templates look members up by `pos.name` to attach a headshot, title, district,
+    and phone alongside the LLM-extracted preference + quote. Returns an empty
+    dict when no photo_base_url is configured.
+    """
+    base = (city_config.get("newsletter") or {}).get("photo_base_url") or ""
+    lookup: dict[str, dict] = {}
+    for m in city_config.get("council_members", []) or []:
+        name = (m.get("name") or "").strip()
+        if not name:
+            continue
+        photo_url = ""
+        fname = m.get("photo_filename")
+        if base and fname:
+            photo_url = f"{base.rstrip('/')}/{fname}"
+        enriched = dict(m)
+        enriched["photo_url"] = photo_url
+        lookup[name.lower()] = enriched
+    return lookup
+
+
 def _meeting_video_url(analysis: MeetingAnalysis) -> str | None:
     """Best-effort: pull a meeting video URL from any quote that carries one."""
     quotes: list = []
@@ -114,6 +137,7 @@ def render_newsletter(
         formatted_date=_format_date(meeting_date),
         schedule_portal_url=city_config.get("schedule_portal_url"),
         meeting_video_url=_meeting_video_url(analysis),
+        council_by_name=_build_council_lookup(city_config),
     )
 
     subject = analysis.lead_headline or f"{city_config['newsletter']['name']} — {meeting_date.strftime('%B %d')}"
