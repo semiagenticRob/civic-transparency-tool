@@ -10,6 +10,10 @@ on:
         description: 'Dry-run (render HTML, do not publish or email)'
         type: boolean
         default: false
+      video_id:
+        description: 'Force-process this YouTube video ID, ignoring state (leave blank for normal playlist scan)'
+        type: string
+        default: ''
 
 permissions:
   contents: write   # so we can commit state/processed.json + dashboard data
@@ -19,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DRY_RUN: ${{ inputs.dry_run }}
+      FORCE_VIDEO_ID: ${{ inputs.video_id }}
     steps:
       - uses: actions/checkout@v4
 
@@ -53,11 +58,18 @@ jobs:
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
           # YT_COOKIES_FILE flows in from $GITHUB_ENV set above (yt-dlp fallback only)
         run: |
-          if [ "$DRY_RUN" = "true" ]; then
-            python -m automation.monitor --dry-run
-          else
-            python -m automation.monitor
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+          # Validate FORCE_VIDEO_ID is a plausible YouTube ID before passing it to argv.
+          if [ -n "$FORCE_VIDEO_ID" ]; then
+            if [[ "$FORCE_VIDEO_ID" =~ ^[A-Za-z0-9_-]{11}$ ]]; then
+              ARGS+=(--video-id "$FORCE_VIDEO_ID")
+            else
+              echo "Refusing FORCE_VIDEO_ID=$FORCE_VIDEO_ID (must be an 11-char YouTube id)"
+              exit 2
+            fi
           fi
+          python -m automation.monitor "${ARGS[@]}"
 
       - name: Commit state changes
         if: env.DRY_RUN != 'true'
