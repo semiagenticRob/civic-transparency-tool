@@ -124,13 +124,27 @@ def main() -> int:
     city_config = load_city_config(args.city)
 
     if args.video_id:
-        # Single-video mode — useful for testing
-        v = youtube_monitor.Video(
-            video_id=args.video_id,
-            title=f"(forced) {args.video_id}",
-            published_at=datetime.now(timezone.utc),
-            url=f"https://www.youtube.com/watch?v={args.video_id}",
-        )
+        # Single-video mode — useful for testing. Pull the real video metadata
+        # from the playlist when possible so the title-based date parser and the
+        # CivicClerk-based classifier see the actual title + publish date,
+        # not synthesized placeholders.
+        playlist_id = city_config.get("youtube_playlist_id")
+        v: Optional[youtube_monitor.Video] = None
+        if playlist_id:
+            for candidate in youtube_monitor.fetch_playlist_videos(playlist_id):
+                if candidate.video_id == args.video_id:
+                    v = candidate
+                    print(f"Resolved {args.video_id} from playlist: {v.title!r}")
+                    break
+        if v is None:
+            print(f"⚠ {args.video_id} not in playlist feed; using placeholder metadata "
+                  "(meeting-type detection will likely fall back to title keywords)")
+            v = youtube_monitor.Video(
+                video_id=args.video_id,
+                title=f"(forced) {args.video_id}",
+                published_at=datetime.now(timezone.utc),
+                url=f"https://www.youtube.com/watch?v={args.video_id}",
+            )
         process_video(v, city_config, dry_run=args.dry_run)
         return 0
 
