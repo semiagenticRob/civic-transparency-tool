@@ -120,14 +120,7 @@
     "public_hearings": []
   },
   "meeting_summary": "The Arvada City Council held two workshop discussions on May 12, 2026, with no formal votes taken beyond excusing an absent member. The first workshop covered wildfire mitigation and response strategies, including community preparedness, the recently completed Community Wildfire Protection Plan, the new Wildfire Resiliency Code, and public safety power shut-offs. The second workshop kicked off the annual utility rate and fee review process for 2027, covering water, wastewater, and stormwater infrastructure funding, affordability programs, and a proposed community advisory group.",
-  "alerts": [
-    {
-      "title": "Free Drop-Off Site Open at Long Lake",
-      "body": "The City of Arvada is hosting a free tree limb drop-off starting Saturday, May 9 at Long Lake Regional Park.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/m/newsflash/home/detail/336"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [
     {
       "motion": "Motion to excuse Council Member Davis from this evening's meeting",
@@ -145,32 +138,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Movies Around Town",
-      "url": "https://www.arvadaco.gov/1260"
-    },
-    {
-      "title": "Bulky Item Drop-Off Event",
-      "url": "https://www.arvadaco.gov/728/Bulky-Item-Events"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Street maintenance in Olde Town",
-      "url": "https://www.arvadaco.gov/1527/Olde-Town-Arvada-pavement-improvements-t"
-    },
-    {
-      "title": "Tree Limb Damage and Disposal",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=336"
-    },
-    {
-      "title": "Volunteer with Arvada Festivals",
-      "url": "https://www.arvadaco.gov/1204"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
