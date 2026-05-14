@@ -16,6 +16,7 @@ timestamp_seconds, context_excerpt. See pipeline/validate_quotes.py.
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 from dataclasses import dataclass, field
@@ -24,6 +25,29 @@ from typing import Any, Optional, Union
 from openai import OpenAI
 
 from .meeting_type import MeetingType
+
+
+log = logging.getLogger(__name__)
+
+
+_OPTION_PREFERENCE_RE = re.compile(r"^\s*option\s+(\d+)\s*$", re.IGNORECASE)
+
+
+def _normalize_option_preference(raw: str, valid_numbers: set[int]) -> Optional[str]:
+    """Return a canonical 'Option N' string if `raw` clearly maps to one of the
+    topic's numbered options; otherwise None. Defends the workshop newsletter's
+    short-label invariant against LLM drift (prose, parentheticals, compound
+    phrases, off-menu actions).
+    """
+    if not raw:
+        return None
+    m = _OPTION_PREFERENCE_RE.match(raw)
+    if not m:
+        return None
+    n = int(m.group(1))
+    if valid_numbers and n not in valid_numbers:
+        return None
+    return f"Option {n}"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -421,7 +445,7 @@ Extract content in the following structure:
       "member_positions": [
         {{
           "name": "Councilmember name",
-          "option_preference": "Option 3 (or 'Option 2', etc — the option label they leaned toward)",
+          "option_preference": "Option 3",
           "quote": {{
             "speaker": "Same councilmember name",
             "text": "Their actual words explaining why they leaned that way — verbatim.",
@@ -443,6 +467,19 @@ PRIORITY GUIDANCE:
   member from member_positions rather than fabricating reasoning.
 - Capture every option that staff or council put on the table, numbered as the meeting numbered them.
 - Reproduce option labels and costs as they were stated. Do not invent numbers.
+- option_preference MUST be EXACTLY the string "Option N" where N is the integer number of one of the
+  options listed in this topic's `options` array. No prose, no parentheticals, no compound labels.
+  Examples of valid values: "Option 1", "Option 2", "Option 5".
+  Examples of INVALID values that you must avoid: "Option 3 (and tiered pricing)",
+  "Support advisory group (Option 1) and promote autopay", "Engage Jefferson County mitigation crews",
+  "Refine color-coding and explore drought pricing".
+- If a councilmember spoke on a topic but did NOT endorse one of the numbered options — for example,
+  they proposed an orthogonal direction, asked clarifying questions only, expressed support for
+  multiple options without naming a primary, or argued for an off-menu action — OMIT that member
+  from member_positions for that topic. Do NOT invent a mapping to make them fit.
+- A member may appear at most ONCE per topic in member_positions. If a member spoke about multiple
+  options, pick the single option they most clearly aligned with and capture their verbatim quote
+  about that one; otherwise omit them.
 
 {quote_provenance}
 """.strip()
@@ -761,16 +798,37 @@ def _build_workshop(data: dict, purpose_blurb: str, raw: str, video_id: str) -> 
                 summary=o.get("summary", ""),
                 endorsement=o.get("endorsement") or None,
             ))
+        valid_option_numbers = {o.number for o in options if o.number}
         positions = []
+        seen_names: set[str] = set()
         for p in t.get("member_positions", []) or []:
             if not isinstance(p, dict):
                 continue
+            raw_pref = (p.get("option_preference") or "").strip()
+            name = p.get("name", "").strip()
+            normalized = _normalize_option_preference(raw_pref, valid_option_numbers)
+            if normalized is None:
+                log.info(
+                    "Dropping member_position for %r on topic %r: option_preference %r "
+                    "did not normalize to a valid Option N",
+                    name, t.get("title", ""), raw_pref,
+                )
+                continue
+            # One position per member per topic — keep the first.
+            name_key = name.lower()
+            if name_key in seen_names:
+                log.info(
+                    "Dropping duplicate member_position for %r on topic %r",
+                    name, t.get("title", ""),
+                )
+                continue
+            seen_names.add(name_key)
             q_raw = p.get("quote") or {}
             quote = Quote.from_dict(q_raw) if isinstance(q_raw, dict) else Quote()
             _enrich_quote(quote, video_id)
             positions.append(MemberPosition(
-                name=p.get("name", ""),
-                option_preference=p.get("option_preference", ""),
+                name=name,
+                option_preference=normalized,
                 quote=quote,
             ))
         topics.append(WorkshopTopic(
