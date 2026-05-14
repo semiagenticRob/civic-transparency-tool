@@ -20,7 +20,7 @@ import logging
 import os
 import re
 from dataclasses import dataclass, field
-from typing import Any, Optional, Union
+from typing import Any, Literal, Optional, Union
 
 from openai import OpenAI
 
@@ -214,12 +214,29 @@ class WorkshopOption:
     endorsement: Optional[str] = None
 
 
+MemberPositionStatus = Literal["aligned", "off_menu", "no_preference"]
+
+
 @dataclass
 class MemberPosition:
-    """A councilmember's stance on workshop options, with their actual words."""
+    """A councilmember's stance on workshop options, with their actual words.
+
+    status:
+      - "aligned"        — leaned toward one of the topic's numbered options;
+                           option_preference is "Option N" and quote is verbatim.
+      - "off_menu"       — proposed a direction not in the options[] menu;
+                           off_menu_summary holds a short noun phrase describing
+                           it and quote is verbatim.
+      - "no_preference"  — spoke about the topic but did not stake out a clear
+                           preference (asked clarifying questions, etc.);
+                           option_preference and off_menu_summary are empty and
+                           quote is optional.
+    """
     name: str = ""
-    option_preference: str = ""  # e.g. "Option 3"
-    quote: Quote = field(default_factory=Quote)  # verbatim, with provenance
+    status: MemberPositionStatus = "aligned"
+    option_preference: str = ""        # e.g. "Option 3" (only when status="aligned")
+    off_menu_summary: str = ""         # short noun phrase (only when status="off_menu")
+    quote: Quote = field(default_factory=Quote)
 
 
 @dataclass
@@ -238,6 +255,7 @@ class WorkshopAnalysis:
     meeting_summary: str = ""
     lead_headline: str = ""
     meeting_purpose_blurb: str = ""
+    members_present: list[str] = field(default_factory=list)  # roll call / who-spoke list
     workshop_topics: list[WorkshopTopic] = field(default_factory=list)
     raw_response: str = ""
 
@@ -428,6 +446,7 @@ Extract content in the following structure:
 {{
   "meeting_summary": "2–3 sentence plain-English summary of what was debated.",
   "lead_headline": "Single newspaper-style headline (<80 chars).",
+  "members_present": ["Lauren Simpson", "Randy Moorman", "..."],
   "workshop_topics": [
     {{
       "title": "Short topic title (e.g. 'Solid Waste & Composting')",
@@ -445,10 +464,12 @@ Extract content in the following structure:
       "member_positions": [
         {{
           "name": "Councilmember name",
+          "status": "aligned",
           "option_preference": "Option 3",
+          "off_menu_summary": "",
           "quote": {{
             "speaker": "Same councilmember name",
-            "text": "Their actual words explaining why they leaned that way — verbatim.",
+            "text": "Their actual words — verbatim.",
             "timestamp_seconds": 0,
             "context_excerpt": "30–60 words of surrounding transcript"
           }}
@@ -462,24 +483,47 @@ Extract content in the following structure:
 PRIORITY GUIDANCE:
 - DO NOT FABRICATE A VOTE. Workshops produce preferences, not votes. The member_positions field captures
   who leaned which way, in their own words. There is no "Yes/No" — only "leans toward Option X."
-- Every member_position must include a verbatim Quote object showing the member's own reasoning. If a
-  councilmember spoke but you cannot extract a verbatim quote explaining their preference, omit that
-  member from member_positions rather than fabricating reasoning.
 - Capture every option that staff or council put on the table, numbered as the meeting numbered them.
-- Reproduce option labels and costs as they were stated. Do not invent numbers.
-- option_preference MUST be EXACTLY the string "Option N" where N is the integer number of one of the
-  options listed in this topic's `options` array. No prose, no parentheticals, no compound labels.
-  Examples of valid values: "Option 1", "Option 2", "Option 5".
-  Examples of INVALID values that you must avoid: "Option 3 (and tiered pricing)",
-  "Support advisory group (Option 1) and promote autopay", "Engage Jefferson County mitigation crews",
-  "Refine color-coding and explore drought pricing".
-- If a councilmember spoke on a topic but did NOT endorse one of the numbered options — for example,
-  they proposed an orthogonal direction, asked clarifying questions only, expressed support for
-  multiple options without naming a primary, or argued for an off-menu action — OMIT that member
-  from member_positions for that topic. Do NOT invent a mapping to make them fit.
-- A member may appear at most ONCE per topic in member_positions. If a member spoke about multiple
-  options, pick the single option they most clearly aligned with and capture their verbatim quote
-  about that one; otherwise omit them.
+  Reproduce option labels and costs as they were stated. Do not invent numbers.
+
+members_present field:
+- List the full names of every councilmember who appears to be present at the meeting. Use a roll
+  call if one was read; otherwise infer from who speaks during the transcript. Use the exact names
+  from the COUNCIL MEMBERS list above. If you cannot determine presence, include the member's name
+  here (defaulting to "present") — only OMIT a name if there is direct evidence the member was
+  absent (e.g. another speaker said "Councilmember X is absent tonight" or the member sent regrets).
+
+member_positions — every entry MUST have a `status` field that is one of these three values:
+
+  "aligned" — the member clearly leaned toward one of the numbered options.
+    - option_preference MUST be EXACTLY "Option N" where N is the integer number of one of the
+      options in this topic's options[] array. No prose, no parentheticals, no compound labels.
+    - off_menu_summary MUST be the empty string "".
+    - quote MUST be a verbatim Quote object with the member's own reasoning.
+    - Valid examples: "Option 1", "Option 2", "Option 5".
+    - INVALID examples (do not produce these): "Option 3 (and tiered pricing)",
+      "Support advisory group (Option 1) and promote autopay".
+
+  "off_menu" — the member proposed a direction not in the options[] menu, or backed an orthogonal
+  action staff did not put on the table.
+    - option_preference MUST be the empty string "".
+    - off_menu_summary MUST be a short noun phrase (≤ 60 characters, no trailing period) describing
+      the direction. Examples: "Jefferson County mitigation crews", "Renewables for PSPS resilience",
+      "Reporting on payment compliance and liens".
+    - quote MUST be a verbatim Quote object with the member's own words.
+
+  "no_preference" — the member spoke about the topic but did not stake out a clear preference.
+  Use this when the member only asked clarifying questions, expressed support for multiple options
+  without naming a primary, or commented procedurally.
+    - option_preference and off_menu_summary MUST both be the empty string "".
+    - quote is OPTIONAL. If you include one, it must be verbatim. Otherwise leave quote.text "".
+
+- A member appears at most ONCE per topic in member_positions. If a member spoke about multiple
+  options, pick the SINGLE most clearly-aligned option and use status "aligned"; otherwise prefer
+  "off_menu" or "no_preference" over forcing a fit.
+- Do NOT include members in member_positions just to fill out a roster. If a member did not speak
+  about a given topic, simply omit them from that topic's member_positions; the newsletter renderer
+  will mark them as "Did not weigh in" based on members_present.
 
 {quote_provenance}
 """.strip()
@@ -804,15 +848,13 @@ def _build_workshop(data: dict, purpose_blurb: str, raw: str, video_id: str) -> 
         for p in t.get("member_positions", []) or []:
             if not isinstance(p, dict):
                 continue
-            raw_pref = (p.get("option_preference") or "").strip()
-            name = p.get("name", "").strip()
-            normalized = _normalize_option_preference(raw_pref, valid_option_numbers)
-            if normalized is None:
-                log.info(
-                    "Dropping member_position for %r on topic %r: option_preference %r "
-                    "did not normalize to a valid Option N",
-                    name, t.get("title", ""), raw_pref,
-                )
+            name = (p.get("name") or "").strip()
+            if not name:
+                continue
+            position = _build_member_position(
+                p, name, valid_option_numbers, t.get("title", ""), video_id,
+            )
+            if position is None:
                 continue
             # One position per member per topic — keep the first.
             name_key = name.lower()
@@ -823,14 +865,7 @@ def _build_workshop(data: dict, purpose_blurb: str, raw: str, video_id: str) -> 
                 )
                 continue
             seen_names.add(name_key)
-            q_raw = p.get("quote") or {}
-            quote = Quote.from_dict(q_raw) if isinstance(q_raw, dict) else Quote()
-            _enrich_quote(quote, video_id)
-            positions.append(MemberPosition(
-                name=name,
-                option_preference=normalized,
-                quote=quote,
-            ))
+            positions.append(position)
         topics.append(WorkshopTopic(
             title=t.get("title", ""),
             tagline=t.get("tagline", ""),
@@ -840,14 +875,105 @@ def _build_workshop(data: dict, purpose_blurb: str, raw: str, video_id: str) -> 
             feeds_into=t.get("feeds_into", ""),
         ))
 
+    members_present = [
+        m.strip() for m in (data.get("members_present") or [])
+        if isinstance(m, str) and m.strip()
+    ]
+
     return WorkshopAnalysis(
         meeting_type="workshop",
         meeting_summary=data.get("meeting_summary", ""),
         lead_headline=data.get("lead_headline", ""),
         meeting_purpose_blurb=purpose_blurb,
+        members_present=members_present,
         workshop_topics=topics,
         raw_response=raw,
     )
+
+
+def _build_member_position(
+    raw: dict, name: str, valid_option_numbers: set[int], topic_title: str, video_id: str,
+) -> Optional[MemberPosition]:
+    """Validate one LLM-emitted member_position by its `status`. Returns None when
+    the entry is malformed enough that it should be dropped entirely.
+
+    Tolerates legacy entries that lack a `status` field by inferring it: a valid
+    Option-N option_preference → "aligned"; anything else with a quote → drop with
+    a warning (since the constrained prompt should not produce these).
+    """
+    status_raw = (raw.get("status") or "").strip().lower()
+    pref_raw = (raw.get("option_preference") or "").strip()
+    summary_raw = (raw.get("off_menu_summary") or "").strip()
+    q_raw = raw.get("quote") or {}
+    quote = Quote.from_dict(q_raw) if isinstance(q_raw, dict) else Quote()
+    _enrich_quote(quote, video_id)
+
+    # Legacy / missing status — fall back to inferring from option_preference.
+    if not status_raw:
+        normalized = _normalize_option_preference(pref_raw, valid_option_numbers)
+        if normalized is not None:
+            return MemberPosition(
+                name=name, status="aligned",
+                option_preference=normalized, off_menu_summary="", quote=quote,
+            )
+        log.info(
+            "Dropping member_position for %r on topic %r: no status and option_preference %r "
+            "could not normalize", name, topic_title, pref_raw,
+        )
+        return None
+
+    if status_raw == "aligned":
+        normalized = _normalize_option_preference(pref_raw, valid_option_numbers)
+        if normalized is None:
+            log.info(
+                "Dropping member_position for %r on topic %r: status=aligned but "
+                "option_preference %r is not a valid Option N",
+                name, topic_title, pref_raw,
+            )
+            return None
+        if not (quote.text or "").strip():
+            log.info(
+                "Dropping member_position for %r on topic %r: status=aligned requires a quote",
+                name, topic_title,
+            )
+            return None
+        return MemberPosition(
+            name=name, status="aligned",
+            option_preference=normalized, off_menu_summary="", quote=quote,
+        )
+
+    if status_raw == "off_menu":
+        # Truncate summary to a noun-phrase-sized blurb; drop if absent.
+        summary = summary_raw[:80].rstrip(". ").strip()
+        if not summary:
+            log.info(
+                "Dropping off_menu position for %r on topic %r: empty off_menu_summary",
+                name, topic_title,
+            )
+            return None
+        if not (quote.text or "").strip():
+            log.info(
+                "Dropping off_menu position for %r on topic %r: missing quote",
+                name, topic_title,
+            )
+            return None
+        return MemberPosition(
+            name=name, status="off_menu",
+            option_preference="", off_menu_summary=summary, quote=quote,
+        )
+
+    if status_raw == "no_preference":
+        # Quote optional; clear option_preference and off_menu_summary defensively.
+        return MemberPosition(
+            name=name, status="no_preference",
+            option_preference="", off_menu_summary="", quote=quote,
+        )
+
+    log.info(
+        "Dropping member_position for %r on topic %r: unknown status %r",
+        name, topic_title, status_raw,
+    )
+    return None
 
 
 def _build_study(data: dict, purpose_blurb: str, raw: str, video_id: str) -> StudyAnalysis:

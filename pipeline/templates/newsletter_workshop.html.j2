@@ -69,12 +69,14 @@
     </div>
     {% endif %}
 
-    {# Member Preferences — NOT a vote. Table layout (not flex) because Outlook
-       and several Gmail clients drop flex columns. Column widths are explicit
-       (table-layout: fixed) so a long quote can't starve another column.
-       Section is hidden when no positions exist (e.g. all dropped by the
-       Option-N validator). #}
-    {% if topic.member_positions %}
+    {# Member Preferences — NOT a vote. Full council roster rendered (rows are
+       precomputed in render_newsletter._build_workshop_topic_rows). Each row's
+       status is one of aligned / off_menu / no_preference / absent and drives
+       the LEANS TOWARD and IN THEIR OWN WORDS variants below.
+       Table layout is fixed-width so long content can't starve neighbouring
+       columns. Tables (not flex) for Outlook/Gmail compatibility. #}
+    {% set rows = workshop_topic_rows.get(topic.title, []) %}
+    {% if rows %}
     <div style="margin: 32px 0;">
       <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3b5bdb; margin-bottom: 10px;">
         MEMBER PREFERENCES · NOT A VOTE
@@ -83,13 +85,13 @@
         Where each councilmember leaned — in their own words
       </h2>
       <p style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; line-height: 1.55; color: #6b7280; margin: 0 0 16px 0;">
-        No vote was taken. Workshops examine topics, not decide them. Below is each member's preferred direction with a verbatim quote from the transcript.
+        No vote was taken. Workshops examine topics, not decide them. The full council is shown below; members who proposed off-menu directions, did not weigh in, or were absent are flagged so silence is not read as agreement.
       </p>
       <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-collapse: collapse; border-top: 2px solid #111e5c; border-bottom: 2px solid #111e5c; table-layout: fixed;">
         <colgroup>
           <col style="width: 64px;">
           <col style="width: 28%;">
-          <col style="width: 14%;">
+          <col style="width: 22%;">
           <col>
         </colgroup>
         <thead>
@@ -100,39 +102,61 @@
           </tr>
         </thead>
         <tbody>
-        {% for pos in topic.member_positions %}
-        {% set m = council_by_name.get((pos.name or '')|lower|trim) %}
+        {% for row in rows %}
+        {% set m = row.member %}
+        {% set is_absent = row.status == 'absent' %}
         <tr>
+          {# Photo — dimmed when absent so the eye registers absence #}
           <td valign="top" style="padding: 16px 12px 16px 0; {% if not loop.last %}border-bottom: 1px solid #f3f4f6;{% endif %}">
             {% if m and m.photo_url %}
-            <img src="{{ m.photo_url }}" width="48" height="48" alt="{{ pos.name }}" style="width: 48px; height: 48px; border-radius: 50%; display: block; object-fit: cover;">
+            <img src="{{ m.photo_url }}" width="48" height="48" alt="{{ row.name }}" style="width: 48px; height: 48px; border-radius: 50%; display: block; object-fit: cover;{% if is_absent %} opacity: 0.35;{% endif %}">
             {% endif %}
           </td>
+          {# Name + meta — muted when absent #}
           <td valign="top" style="padding: 16px 12px 16px 0; {% if not loop.last %}border-bottom: 1px solid #f3f4f6;{% endif %}">
-            <div style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; font-weight: 700; color: #111827; line-height: 1.3;">
-              {{ pos.name }}
+            <div style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; font-weight: 700; color: {% if is_absent %}#9ca3af{% else %}#111827{% endif %}; line-height: 1.3;">
+              {{ row.name }}
             </div>
             {% if m %}
-            <div style="font-family: -apple-system, sans-serif; font-size: 12px; color: #6b7280; line-height: 1.5; margin-top: 2px;">
+            <div style="font-family: -apple-system, sans-serif; font-size: 12px; color: #9ca3af; line-height: 1.5; margin-top: 2px;">
               {{ m.title }}{% if m.district %} · {{ m.district }}{% endif %}
             </div>
             {% if m.phone %}
-            <div style="font-family: -apple-system, sans-serif; font-size: 12px; color: #6b7280; line-height: 1.5;">
+            <div style="font-family: -apple-system, sans-serif; font-size: 12px; color: #9ca3af; line-height: 1.5;">
               {{ m.phone }}
             </div>
             {% endif %}
             {% endif %}
           </td>
+          {# LEANS TOWARD — four status variants #}
           <td valign="top" style="padding: 16px 12px; {% if not loop.last %}border-bottom: 1px solid #f3f4f6;{% endif %}">
-            <span style="font-family: -apple-system, sans-serif; font-size: 13px; font-weight: 700; color: #111e5c; letter-spacing: 0.3px; white-space: nowrap;">
-              {{ pos.option_preference }}
-            </span>
+            {% if row.status == 'aligned' %}
+              <span style="font-family: -apple-system, sans-serif; font-size: 13px; font-weight: 700; color: #111e5c; letter-spacing: 0.3px; white-space: nowrap;">
+                {{ row.option_preference }}
+              </span>
+            {% elif row.status == 'off_menu' %}
+              <div style="font-family: -apple-system, sans-serif; font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 4px;">Off-menu</div>
+              <div style="font-family: 'Newsreader', Georgia, serif; font-size: 13px; font-weight: 600; color: #374151; line-height: 1.4;">
+                {{ row.off_menu_summary }}
+              </div>
+            {% elif row.status == 'no_preference' %}
+              <span style="font-family: -apple-system, sans-serif; font-size: 12px; font-style: italic; color: #9ca3af; letter-spacing: 0.2px;">
+                Did not weigh in
+              </span>
+            {% elif row.status == 'absent' %}
+              <span style="font-family: -apple-system, sans-serif; font-size: 12px; font-style: italic; color: #9ca3af; letter-spacing: 0.2px;">
+                Absent
+              </span>
+            {% endif %}
           </td>
+          {# IN THEIR OWN WORDS — only for aligned + off_menu, em-dash otherwise #}
           <td valign="top" style="padding: 16px 0 16px 12px; {% if not loop.last %}border-bottom: 1px solid #f3f4f6;{% endif %}">
-            {% if pos.quote and pos.quote.text %}
+            {% if row.quote and row.quote.text %}
             <div style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; font-style: italic; color: #374151; line-height: 1.55;">
-              {% if pos.quote.video_url %}<a href="{{ pos.quote.video_url }}" style="color: inherit; text-decoration: none;">{% endif %}“{{ pos.quote.text }}”{% if pos.quote.video_url %}</a>{% endif %}
+              {% if row.quote.video_url %}<a href="{{ row.quote.video_url }}" style="color: inherit; text-decoration: none;">{% endif %}“{{ row.quote.text }}”{% if row.quote.video_url %}</a>{% endif %}
             </div>
+            {% else %}
+            <div style="font-family: -apple-system, sans-serif; font-size: 14px; color: #d1d5db; text-align: left;">—</div>
             {% endif %}
           </td>
         </tr>

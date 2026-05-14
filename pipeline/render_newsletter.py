@@ -80,6 +80,70 @@ def _build_council_lookup(city_config: dict) -> dict:
     return lookup
 
 
+def _build_workshop_topic_rows(analysis: WorkshopAnalysis, city_config: dict) -> dict:
+    """Pre-compute the Member Preferences table rows for each workshop topic.
+
+    Joins every configured councilmember against the LLM-extracted member_positions
+    and the members_present roll call, producing a status per row:
+
+      - "aligned"        — leaned toward an Option N
+      - "off_menu"       — proposed a direction not in options[]
+      - "no_preference"  — present, spoke or appeared in roll, but did not pick
+      - "absent"         — not in members_present and not in member_positions
+
+    Returns {topic_title: [row, ...]} where each row is a plain dict for Jinja.
+    """
+    council = city_config.get("council_members", []) or []
+    council_lookup = _build_council_lookup(city_config)
+    present = {n.lower() for n in (analysis.members_present or [])}
+
+    result: dict[str, list[dict]] = {}
+    for topic in analysis.workshop_topics:
+        pos_by_name = {
+            (p.name or "").strip().lower(): p
+            for p in topic.member_positions
+        }
+        rows: list[dict] = []
+        for m in council:
+            name = (m.get("name") or "").strip()
+            if not name:
+                continue
+            key = name.lower()
+            member_dict = council_lookup.get(key, dict(m))
+            pos = pos_by_name.get(key)
+            if pos is not None:
+                rows.append({
+                    "name": name,
+                    "member": member_dict,
+                    "status": pos.status,
+                    "option_preference": pos.option_preference,
+                    "off_menu_summary": pos.off_menu_summary,
+                    "quote": pos.quote,
+                })
+            elif key in present or not present:
+                # If present-roster is empty, default to "spoke or present but
+                # didn't weigh in" rather than marking everyone absent.
+                rows.append({
+                    "name": name,
+                    "member": member_dict,
+                    "status": "no_preference",
+                    "option_preference": "",
+                    "off_menu_summary": "",
+                    "quote": None,
+                })
+            else:
+                rows.append({
+                    "name": name,
+                    "member": member_dict,
+                    "status": "absent",
+                    "option_preference": "",
+                    "off_menu_summary": "",
+                    "quote": None,
+                })
+        result[topic.title] = rows
+    return result
+
+
 def _meeting_video_url(analysis: MeetingAnalysis) -> str | None:
     """Best-effort: pull a meeting video URL from any quote that carries one."""
     quotes: list = []
@@ -130,6 +194,11 @@ def render_newsletter(
 
     template = env.get_template(template_name)
 
+    workshop_topic_rows = (
+        _build_workshop_topic_rows(analysis, city_config)
+        if isinstance(analysis, WorkshopAnalysis) else {}
+    )
+
     body_html = template.render(
         analysis=analysis,
         city=city_config,
@@ -138,6 +207,7 @@ def render_newsletter(
         schedule_portal_url=city_config.get("schedule_portal_url"),
         meeting_video_url=_meeting_video_url(analysis),
         council_by_name=_build_council_lookup(city_config),
+        workshop_topic_rows=workshop_topic_rows,
     )
 
     subject = analysis.lead_headline or f"{city_config['newsletter']['name']} — {meeting_date.strftime('%B %d')}"

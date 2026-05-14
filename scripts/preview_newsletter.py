@@ -50,6 +50,18 @@ def _quote_from(d: dict | None) -> Quote:
 def _rehydrate_workshop(ts: dict) -> WorkshopAnalysis:
     topics = []
     for t in ts.get("workshop_topics", []) or []:
+        positions = []
+        for mp in (t.get("member_positions") or []):
+            status = (mp.get("status") or "aligned").strip().lower()
+            if status not in ("aligned", "off_menu", "no_preference"):
+                status = "aligned"
+            positions.append(MemberPosition(
+                name=mp.get("name", ""),
+                status=status,
+                option_preference=mp.get("option_preference", ""),
+                off_menu_summary=mp.get("off_menu_summary", ""),
+                quote=_quote_from(mp.get("quote")),
+            ))
         topics.append(WorkshopTopic(
             title=t.get("title", ""),
             tagline=t.get("tagline", ""),
@@ -65,19 +77,13 @@ def _rehydrate_workshop(ts: dict) -> WorkshopAnalysis:
                 )
                 for o in (t.get("options") or [])
             ],
-            member_positions=[
-                MemberPosition(
-                    name=mp.get("name", ""),
-                    option_preference=mp.get("option_preference", ""),
-                    quote=_quote_from(mp.get("quote")),
-                )
-                for mp in (t.get("member_positions") or [])
-            ],
+            member_positions=positions,
         ))
     return WorkshopAnalysis(
         meeting_summary=ts.get("meeting_summary", ""),
         lead_headline=ts.get("lead_headline", ""),
         meeting_purpose_blurb=ts.get("meeting_purpose_blurb", ""),
+        members_present=[m for m in (ts.get("members_present") or []) if isinstance(m, str)],
         workshop_topics=topics,
     )
 
