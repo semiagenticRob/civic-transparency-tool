@@ -1,125 +1,172 @@
 {
   "city": "Arvada",
   "state": "CO",
-  "meeting_date": "2026-05-14",
-  "generated_at": "2026-05-14T21:23:42.410845+00:00",
+  "meeting_date": "2026-05-12",
+  "generated_at": "2026-05-14T21:26:40.305572+00:00",
   "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ",
-  "meeting_type": "business",
-  "meeting_purpose_blurb": "Council makes official decisions in the form of ordinances, resolutions, or motions. Open to the public with public comment at designated times.",
-  "lead_headline": "Arvada Kicks Off Wildfire Planning, Utility Rate Review in Dual Workshops",
+  "meeting_type": "workshop",
+  "meeting_purpose_blurb": "Council examines particular topics in depth. No official decisions are made and no public comment is taken.",
+  "lead_headline": "Arvada Council Examines Wildfire Readiness and Utility Rate Planning",
   "schedule_portal_url": "https://arvadaco.portal.civicclerk.com/?category_id=26",
   "type_specific": {
-    "meeting_type": "business",
-    "meeting_summary": "The Arvada City Council held two workshop discussions on May 12, 2026, with no formal votes taken beyond excusing an absent member. The first workshop covered wildfire mitigation and response strategies, including community preparedness, the recently completed Community Wildfire Protection Plan, the new Wildfire Resiliency Code, and public safety power shut-offs. The second workshop kicked off the annual utility rate and fee review process for 2027, covering water, wastewater, and stormwater infrastructure funding, affordability programs, and a proposed community advisory group.",
-    "lead_headline": "Arvada Kicks Off Wildfire Planning, Utility Rate Review in Dual Workshops",
-    "meeting_purpose_blurb": "Council makes official decisions in the form of ordinances, resolutions, or motions. Open to the public with public comment at designated times.",
-    "tonight_at_a_glance": {
-      "synopsis": "Council received briefings on wildfire preparedness strategies and utility infrastructure funding needs; no formal legislative votes were taken on either topic.",
-      "highlights": [
-        "Fire and emergency management staff presented Arvada's wildfire mitigation framework, including the completed Community Wildfire Protection Plan and new Wildfire Resiliency Code",
-        "Staff outlined Xcel Energy public safety power shut-off (PSPS) response protocols, including generator deployment and county-coordinated charging stations",
-        "Utility staff launched the annual 2027 rate and fee workshop series, reviewing infrastructure investment needs and affordability programs",
-        "Council members discussed water conservation, tiered pricing fairness for large families, and tree canopy protection during drought",
-        "Council Member Davis was excused from the meeting by a 6–0 vote"
-      ]
-    },
-    "presentations": [
+    "meeting_type": "workshop",
+    "meeting_summary": "Arvada City Council held two workshops on May 12, 2026. The first examined wildfire mitigation and emergency response strategies, covering community preparedness, the recently completed Community Wildfire Protection Plan, the new Wildfire Resiliency Code, public safety power shut-offs, prescribed fire, and the Jefferson County Hazard Mitigation Plan update. The second workshop kicked off the annual utility rate review process, covering how water, wastewater, and stormwater rates are set, affordability programs, infrastructure planning, and a proposed community advisory group.",
+    "lead_headline": "Arvada Council Examines Wildfire Readiness and Utility Rate Planning",
+    "meeting_purpose_blurb": "Council examines particular topics in depth. No official decisions are made and no public comment is taken.",
+    "workshop_topics": [
       {
-        "topic": "Wildfire Mitigation and Response Strategies Workshop",
-        "presenter_name": "Brian (last name not stated in transcript) and Steven Parker",
-        "presenter_role": "Emergency Management, City of Arvada; Arvada Fire Protection District",
-        "duration_minutes": null,
-        "prose_paragraphs": [
-          "City emergency management staff and Arvada Fire's Steven Parker jointly presented the city's wildfire preparedness framework, covering the February 2026 Community Wildfire Protection Plan (CWPP), the recently adopted Wildfire Resiliency Code, neighborhood outreach and home assessment programs, evacuation zone modeling, fuel mitigation projects (including a recent collaboration with Team Rubicon at Metobrook Park), prescribed fire considerations, Xcel Energy public safety power shut-off (PSPS) response protocols, and the ongoing Jefferson County Hazard Mitigation Plan update. Staff acknowledged gaps in policy tools for incorporating evacuation analysis into development review and noted that the Jefferson County Sheriff's Office now leads the Mountain Metro Wildfire Mitigation Council, which coordinates monthly with regional fire agencies."
-        ],
-        "presenter_quotes": [
+        "title": "Wildfire Mitigation and Response Strategies",
+        "tagline": "Staff outlines preparedness, evacuation gaps, and mitigation tools across city and fire district",
+        "lede": "Emergency management staff and Arvada Fire Department representatives jointly presented the city's current wildfire readiness posture, including a 65-person Emergency Operations Center team, the newly completed Community Wildfire Protection Plan finalized in February 2026, and the recently adopted Wildfire Resiliency Code. Staff also identified policy gaps — particularly the lack of formal evacuation analysis requirements in the development review process — and discussed ongoing mitigation efforts including fuel reduction projects, prescribed burning, and management of Xcel Energy's Public Safety Power Shut-Off events.",
+        "options": [
           {
-            "speaker": "Steven Parker",
-            "text": "a lot of people have the the misconception that, you know, we're looking at a a drought right now. And in drought conditions, obviously that wildfire wildfire threat goes up. But what I'm trying to show in in these pictures here is that even when we have wet winters, wet springs, and everything is green, we can still have wildfires.",
-            "timestamp_seconds": 854,
-            "context_excerpt": "So, a lot of people have the the misconception that, you know, we're looking at a a drought right now. And in drought conditions, obviously that wildfire wildfire threat goes up. But what I'm trying to show in in these pictures here is that even when we have wet winters, wet springs, and everything is green, we can still have wildfires.",
-            "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=854s"
+            "number": 1,
+            "label": "Current preparedness and mitigation approach (status quo plus incremental improvements)",
+            "cost": "Cost TBD",
+            "summary": "Continue existing programs: EOC staffing and training, Lookout Alert outreach, neighborhood partnerships, fuel reduction projects (mechanical clearing, grazing, mowing), home assessment services, the CWPP as a guiding document, and the new Wildfire Resiliency Code. Layer in PSPS management protocols and pursue grant funding for larger mitigation projects.",
+            "endorsement": "Presented by staff as the current operational framework; council members expressed general support while raising specific concerns and enhancements."
           },
           {
-            "speaker": "Unidentified",
-            "text": "At the moment, we do not have a lot of policy tools to specifically account for evacuation needs in development proposals. That's something we feel should be addressed.",
-            "timestamp_seconds": 697,
-            "context_excerpt": "At the moment, we do not have a lot of policy tools to specifically account for evacuation needs in development proposals. That's something we feel should be addressed. Um, when you look at Colorado Springs, they have an ordinance that actually specifically ties evacuation analysis into development proposals.",
-            "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=697s"
+            "number": 2,
+            "label": "Add formal evacuation analysis requirements to development review",
+            "cost": "Cost TBD",
+            "summary": "Adopt a policy mechanism — modeled on Colorado Springs or Boulder County ordinances — that formally requires evacuation capacity analysis as part of development proposal review, replacing the current informal collaboration process.",
+            "endorsement": "Raised by Brian (Emergency Management staff) as a gap that 'should be addressed'; no council member opposed the concept."
           },
           {
-            "speaker": "Steven Parker",
-            "text": "we are looking at kind of a holistic approach in the entire community and kind of doing that risk based analysis of where do we put most of our efforts and start solving problems uh from a systematic approach.",
-            "timestamp_seconds": 571,
-            "context_excerpt": "we are looking at kind of a holistic approach in the entire community and kind of doing that risk based analysis of where do we put most of our efforts and start solving problems uh from a systematic approach. If we take a potential solution and we can start applying that across the board in other communities and tweak it as we need for those individual specific intricacies.",
-            "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=571s"
-          },
-          {
-            "speaker": "Unidentified",
-            "text": "Excel generally uh will try to notify us of a potential event 72 hours ahead of time, but I can tell you that what we get notified of and what the event actually looks like 72 hours later is generally quite a bit different.",
-            "timestamp_seconds": 1691,
-            "context_excerpt": "Excel generally uh will try to notify us of a potential event 72 hours ahead of time, but I can tell you that what we get notified of and what the event actually looks like 72 hours later is generally quite a bit different. And so we have to work through that piece as well and balance, you know, how much do we put concern out there in the community with giving people time to prepare.",
-            "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=1691s"
+            "number": 3,
+            "label": "Expand prescribed burning program",
+            "cost": "Cost TBD",
+            "summary": "Pursue prescribed fire as a proactive fuel reduction tool, subject to coordination with CDPHE, Jefferson County, and the Colorado Division of Fire Prevention and Control for regulatory approvals.",
+            "endorsement": "Presented by Steven Parker (Arvada Fire) as a beneficial option; council acknowledged community concern but no opposition expressed."
           }
         ],
-        "external_resources": [],
-        "video_deep_link": null
+        "member_positions": [
+          {
+            "name": "Bob Fifer",
+            "option_preference": "Current preparedness and mitigation approach (status quo plus incremental improvements)",
+            "quote": {
+              "speaker": "Bob Fifer",
+              "text": "I just curious how much we're engaged with them to address that since some of it's out of the city. Um, as just a side note, just so you know, and I think you know this, you know, Highway 72 to Highway 119 is the highest burn probability in the state. So, I'm interested in that.",
+              "timestamp_seconds": 2371,
+              "context_excerpt": "Are are we working with them to make sure that they focus on that area? We are I'll I'll mention just there's a lot of coordination going on. Uh just so you know, and I think you know this, you know, Highway 72 to Highway 119 is the highest burn probability in the state. So, I'm interested in that. Uh if I put my day job on, I will tell you we started cutting down trees today on Highway 72 for 40 miles.",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=2371s"
+            }
+          },
+          {
+            "name": "Randy Moorman",
+            "option_preference": "Current preparedness and mitigation approach (status quo plus incremental improvements)",
+            "quote": {
+              "speaker": "Randy Moorman",
+              "text": "I'm I'm going to sound like a broken record council but I think you know having a more sustainable local source of energy uh to provide our residents in those times of the shut off whether it's a micro grid system, you know, solar gardens that we can tap into in battery system. There's many things we can be looking at to help have a more robust, resilient community when we do have those power shut offs.",
+              "timestamp_seconds": 2589,
+              "context_excerpt": "so I hope you're in coordination with that because you know especially comes to mind the public safety power shut offs and you know I'm I'm going to sound like a broken record council but I think you know having a more sustainable local source of energy uh to provide our residents in those times of the shut off whether it's a micro grid system, you know, solar gardens that we can tap into in battery system.",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=2589s"
+            }
+          },
+          {
+            "name": "Lauren Simpson",
+            "option_preference": "Current preparedness and mitigation approach (status quo plus incremental improvements)",
+            "quote": {
+              "speaker": "Lauren Simpson",
+              "text": "I I guess that's sort of my request is can we have those messages available? Can we start starting to socialize that information now with the public?",
+              "timestamp_seconds": 2776,
+              "context_excerpt": "I'm also thinking about what we can do in the immediate term to help our residents. Um, and this, I guess, maybe is a sort of a request for support. Are there information that we can be sharing out now about, you know, what to have in your go bag? I know we have that, but where will charging stations be set up? I I guess that's sort of my request is can we have those messages available? Can we start starting to socialize that information now with the public?",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=2776s"
+            }
+          }
+        ],
+        "feeds_into": "Jefferson County Hazard Mitigation Plan update expected to return to council for adoption in fall 2026; evacuation policy and development review changes would require future business meeting action — timing unclear."
       },
       {
-        "topic": "2027 Water, Wastewater, and Stormwater Rates and Fees Workshop (Kickoff)",
-        "presenter_name": "Chris (last name not stated) and Jacqueline Gray",
-        "presenter_role": "Utilities Staff, City of Arvada",
-        "duration_minutes": null,
-        "prose_paragraphs": [
-          "Utility staff opened the annual workshop series for 2027 rates and fees, explaining the enterprise fund model, the difference between rates/fees and system development charges, and the city's 10-year financial planning approach. Staff reviewed the city's significant debt issuances ($50 million water and $50 million sewer in 2022; $90 million water and $15 million sewer in July 2025), affordability programs including a revised annual hardship credit and a new autopay option launched May 7 with over 1,000 sign-ups in one week, and a proposed ad hoc community advisory group to engage residents through 2030 on infrastructure investment decisions. Follow-up workshops are scheduled for July 28 and August 25, with first and second readings of rate adoptions planned for October."
-        ],
-        "presenter_quotes": [
+        "title": "2027 Water, Wastewater, and Stormwater Rates and Fees",
+        "tagline": "Staff launches annual rate workshop series with foundational overview of utility finances and infrastructure needs",
+        "lede": "Utilities staff presented the first in a series of annual workshops designed to inform council ahead of a rate adoption vote expected in October 2026. Staff reviewed how enterprise fund revenues work, the difference between rates/fees and system development charges, current affordability programs, and the city's 10-year infrastructure investment roadmap. Staff also announced a new autopay option launched May 7, 2026, and proposed forming a community advisory group to accompany the city through a historic infrastructure reinvestment period through approximately 2030.",
+        "options": [
           {
-            "speaker": "Jacqueline Gray",
-            "text": "we've been on this journey together for some time since the council asked us to renew our master plans and then implement some strategies to actually um put them to work.",
-            "timestamp_seconds": 3843,
-            "context_excerpt": "we've been on this journey together for some time since the council asked us to renew our master plans and then implement some strategies to actually um put them to work. we had to work together on what our uh funding strategies look like. Um, we've been implementing this since about 2022.",
-            "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=3843s"
+            "number": 1,
+            "label": "Continue roadmap scenario (steady annual rate increases with ongoing bond-funded capital investment)",
+            "cost": "Cost TBD — rate scenarios to be presented at July 28 workshop",
+            "summary": "Maintain the multi-year investment roadmap adopted in 2022, which involves annual rate adjustments and significant debt issuance ($50M water + $50M sewer in 2022; $90M water + $15M sewer in July 2025) to fund critical and high-priority infrastructure projects, with affordability programs for vulnerable customers.",
+            "endorsement": "Presented by staff as the current trajectory; no council member proposed departing from the roadmap."
           },
           {
-            "speaker": "Jacqueline Gray",
-            "text": "we want this community group um that we're standing up for. This is an ad hoc group shorter in nature probably now through 2030 as we do this historic level investment in our infrastructure to really work and come alongside us to think about yes we need to focus on safe reliable infrastructure services at the lowest practical rates.",
-            "timestamp_seconds": 4197,
-            "context_excerpt": "we want this community group um that we're standing up for. This is an ad hoc group shorter in nature probably now through 2030 as we do this historic level investment in our infrastructure to really work and come alongside us to think about yes we need to focus on safe reliable infrastructure services at the lowest practical rates.",
-            "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4197s"
+            "number": 2,
+            "label": "Establish a community utility advisory group (ad hoc, through ~2030)",
+            "cost": "Cost TBD",
+            "summary": "Stand up a time-limited, ad hoc community group — not a formal board or commission — to advise on infrastructure prioritization, financial trade-offs, and affordability decisions during the current period of elevated capital investment.",
+            "endorsement": "Proposed by staff; supported by Mayor Pro Tem Moorman; Councilmember Lovisone suggested evaluating whether existing boards and commissions could fill the role before creating a new group."
           },
           {
-            "speaker": "Chris (Unidentified last name)",
-            "text": "we like debt because everybody pays for the debt service on something that everybody is using. We call that generational equity, which is a really wonky term, but it does explain that generations of people will pay for the thing.",
-            "timestamp_seconds": 3153,
-            "context_excerpt": "we like debt because everybody pays for the debt service on something that everybody is using. We call that generational equity, which is a really wonky term, but it does explain that generations of people will pay for the thing. So, wanted to give you a little bit of information about our customers.",
-            "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=3153s"
+            "number": 3,
+            "label": "Integrate drought pricing / tiered rate modifications",
+            "cost": "Cost TBD",
+            "summary": "Consider drought surcharges in higher consumption tiers, revisit tier formulas to account for household size, and potentially explore credits for water-efficient practices such as vegetable gardens or smart irrigation sensors. Details to be developed and brought forward in upcoming drought pricing discussions.",
+            "endorsement": "Raised by Councilmembers Fifer, Griffith, and Ambrose as a future direction; staff confirmed drought pricing discussions are forthcoming."
           }
         ],
-        "external_resources": [],
-        "video_deep_link": null
+        "member_positions": [
+          {
+            "name": "Shawna Ambrose",
+            "option_preference": "Continue roadmap scenario (steady annual rate increases with ongoing bond-funded capital investment)",
+            "quote": {
+              "speaker": "Shawna Ambrose",
+              "text": "I also recall at that time we switched from doing leans and no water shut offs to doing water shut offs that could lead to condemnations. And so I just would like a report um always to have a report um anytime you do a presentation on um the payment compliance because I also know that switching that brought so many more households into compliance to being current on their utilities which is a huge improvement.",
+              "timestamp_seconds": 4353,
+              "context_excerpt": "Um on the slide that where you talked about the hardship fee and the $100 credit um being offered to folks um and its utilization. Um uh I also recall at that time we switched from doing leans and no water shut offs to doing water shut offs that could lead to condemnations. And so I just would like a report um always to have a report um anytime you do a presentation on um the payment compliance because I also know that switching that brought so many more households into compliance.",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4353s"
+            }
+          },
+          {
+            "name": "Randy Moorman",
+            "option_preference": "Establish a community utility advisory group (ad hoc, through ~2030)",
+            "quote": {
+              "speaker": "Randy Moorman",
+              "text": "I first just want to commend you on the um the community advisory group. I think that's a fantastic idea and I'm I'm excited to see that get going.",
+              "timestamp_seconds": 4481,
+              "context_excerpt": "Thank you. So yeah, I think both of us are asking the same question. So Mayor Pro Tim Mormon, uh thank you. I I first just want to commend you on the um the community advisory group. I think that's a fantastic idea and I'm I'm excited to see that get going. Um happy to help get the word out. So, is there on our website now a place to apply?",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4481s"
+            }
+          },
+          {
+            "name": "Bob Fifer",
+            "option_preference": "Continue roadmap scenario (steady annual rate increases with ongoing bond-funded capital investment)",
+            "quote": {
+              "speaker": "Bob Fifer",
+              "text": "Red should be truly critical, high critical, not just go from orange to red just because all the reds are getting addressed. Does that make sense?",
+              "timestamp_seconds": 4545,
+              "context_excerpt": "Can we just make sure because I I felt like last time we were just moving things into criticality levels. I would like to see the red not just be the next critical item from going up. Red should be truly critical, high critical, not just go from orange to red just because all the reds are getting addressed. Does that make sense?",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4545s"
+            }
+          },
+          {
+            "name": "Rebecka Lovisone",
+            "option_preference": "Establish a community utility advisory group (ad hoc, through ~2030)",
+            "quote": {
+              "speaker": "Rebecka Lovisone",
+              "text": "I would just also like to encourage us to pause whenever possible before creating additional boards and commissions or committees until we create clearer structural alignment for the groups we already have. Uh so just a thought moving forward before adding something new. I think we should first ask is there an existing combination of boards and commissions that could advise the work who already exists",
+              "timestamp_seconds": 4731,
+              "context_excerpt": "that said, I would just also like to encourage us to pause whenever possible before creating additional boards and commissions or committees until we create clearer structural alignment for the groups we already have. Uh so just a thought moving forward before adding something new. I think we should first ask is there an existing combination of boards and commissions that could advise the work who already exists um and just figuring out how maybe if possible we can engage um some folks already engaged in the community.",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4731s"
+            }
+          },
+          {
+            "name": "Michael Griffith",
+            "option_preference": "Integrate drought pricing / tiered rate modifications",
+            "quote": {
+              "speaker": "Michael Griffith",
+              "text": "my concern is that when we talk about water conservation um and water usage in rural versus urban context um obviously it's more efficient in urban context. We're using less water because per person, per square foot, all that, right? But there's a co- benefit to basically vegetation, greenery, tree canopy, all these things that happen in more rural contexts that become very difficult to manage um with water rates that are flat",
+              "timestamp_seconds": 4992,
+              "context_excerpt": "I wanted to talk about something that's just a general concern of mine and maybe um I don't really have a solution for it but it's maybe something that we could talk about as we move through for future workshops. Um my concern is that when we talk about water conservation um and water usage in rural versus urban context um obviously it's more efficient in urban context. We're using less water because per person, per square foot, all that, right? But there's a co- benefit to basically vegetation, greenery, tree canopy.",
+              "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4992s"
+            }
+          }
+        ],
+        "feeds_into": "July 28, 2026 utility rate workshop (rate and fee scenarios); August 25, 2026 follow-up workshop; first and second reading for rate adoption in October 2026."
       }
-    ],
-    "non_scheduled_public_comment": [],
-    "consent_agenda": [
-      {
-        "official_title": "Motion to excuse Council Member Davis from this evening's meeting",
-        "plain_english_summary": "Council voted to formally excuse Council Member Sharon Davis from the May 12, 2026 meeting.",
-        "vote_tally": "PASSED 6–0",
-        "dissent_excused": "Excused: Davis",
-        "links": {
-          "agenda_packet_url": null,
-          "text_url": null,
-          "video_deep_link": null,
-          "calendar_url": null
-        }
-      }
-    ],
-    "resolutions": [],
-    "ordinances": [],
-    "public_hearings": []
+    ]
   },
-  "meeting_summary": "The Arvada City Council held two workshop discussions on May 12, 2026, with no formal votes taken beyond excusing an absent member. The first workshop covered wildfire mitigation and response strategies, including community preparedness, the recently completed Community Wildfire Protection Plan, the new Wildfire Resiliency Code, and public safety power shut-offs. The second workshop kicked off the annual utility rate and fee review process for 2027, covering water, wastewater, and stormwater infrastructure funding, affordability programs, and a proposed community advisory group.",
+  "meeting_summary": "Arvada City Council held two workshops on May 12, 2026. The first examined wildfire mitigation and emergency response strategies, covering community preparedness, the recently completed Community Wildfire Protection Plan, the new Wildfire Resiliency Code, public safety power shut-offs, prescribed fire, and the Jefferson County Hazard Mitigation Plan update. The second workshop kicked off the annual utility rate review process, covering how water, wastewater, and stormwater rates are set, affordability programs, infrastructure planning, and a proposed community advisory group.",
   "alerts": [
     {
       "title": "Free Drop-Off Site Open at Long Lake",
@@ -128,19 +175,76 @@
       "url": "https://www.arvadaco.gov/m/newsflash/home/detail/336"
     }
   ],
-  "key_decisions": [
+  "key_decisions": [],
+  "notable_quotes": [
     {
-      "motion": "Motion to excuse Council Member Davis from this evening's meeting",
-      "result": "Passed",
-      "vote_breakdown": "PASSED 6–0",
-      "votes": {},
-      "significance": "Council voted to formally excuse Council Member Sharon Davis from the May 12, 2026 meeting."
+      "speaker": "Bob Fifer",
+      "quote": "I just curious how much we're engaged with them to address that since some of it's out of the city. Um, as just a side note, just so you know, and I think you know this, you know, Highway 72 to Highway 119 is the highest burn probability in the state. So, I'm interested in that.",
+      "context": "Are are we working with them to make sure that they focus on that area? We are I'll I'll mention just there's a lot of coordination going on. Uh just so you know, and I think you know this, you know, Highway 72 to Highway 119 is the highest burn probability in the state. So, I'm interested in that. Uh if I put my day job on, I will tell you we started cutting down trees today on Highway 72 for 40 miles.",
+      "timestamp_seconds": 2371,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=2371s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "speaker": "Randy Moorman",
+      "quote": "I'm I'm going to sound like a broken record council but I think you know having a more sustainable local source of energy uh to provide our residents in those times of the shut off whether it's a micro grid system, you know, solar gardens that we can tap into in battery system. There's many things we can be looking at to help have a more robust, resilient community when we do have those power shut offs.",
+      "context": "so I hope you're in coordination with that because you know especially comes to mind the public safety power shut offs and you know I'm I'm going to sound like a broken record council but I think you know having a more sustainable local source of energy uh to provide our residents in those times of the shut off whether it's a micro grid system, you know, solar gardens that we can tap into in battery system.",
+      "timestamp_seconds": 2589,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=2589s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2"
+    },
+    {
+      "speaker": "Lauren Simpson",
+      "quote": "I I guess that's sort of my request is can we have those messages available? Can we start starting to socialize that information now with the public?",
+      "context": "I'm also thinking about what we can do in the immediate term to help our residents. Um, and this, I guess, maybe is a sort of a request for support. Are there information that we can be sharing out now about, you know, what to have in your go bag? I know we have that, but where will charging stations be set up? I I guess that's sort of my request is can we have those messages available? Can we start starting to socialize that information now with the public?",
+      "timestamp_seconds": 2776,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=2776s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=1"
+    },
+    {
+      "speaker": "Shawna Ambrose",
+      "quote": "I also recall at that time we switched from doing leans and no water shut offs to doing water shut offs that could lead to condemnations. And so I just would like a report um always to have a report um anytime you do a presentation on um the payment compliance because I also know that switching that brought so many more households into compliance to being current on their utilities which is a huge improvement.",
+      "context": "Um on the slide that where you talked about the hardship fee and the $100 credit um being offered to folks um and its utilization. Um uh I also recall at that time we switched from doing leans and no water shut offs to doing water shut offs that could lead to condemnations. And so I just would like a report um always to have a report um anytime you do a presentation on um the payment compliance because I also know that switching that brought so many more households into compliance.",
+      "timestamp_seconds": 4353,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4353s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=3"
+    },
+    {
+      "speaker": "Randy Moorman",
+      "quote": "I first just want to commend you on the um the community advisory group. I think that's a fantastic idea and I'm I'm excited to see that get going.",
+      "context": "Thank you. So yeah, I think both of us are asking the same question. So Mayor Pro Tim Mormon, uh thank you. I I first just want to commend you on the um the community advisory group. I think that's a fantastic idea and I'm I'm excited to see that get going. Um happy to help get the word out. So, is there on our website now a place to apply?",
+      "timestamp_seconds": 4481,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4481s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=2"
+    },
+    {
+      "speaker": "Bob Fifer",
+      "quote": "Red should be truly critical, high critical, not just go from orange to red just because all the reds are getting addressed. Does that make sense?",
+      "context": "Can we just make sure because I I felt like last time we were just moving things into criticality levels. I would like to see the red not just be the next critical item from going up. Red should be truly critical, high critical, not just go from orange to red just because all the reds are getting addressed. Does that make sense?",
+      "timestamp_seconds": 4545,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4545s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=5"
+    },
+    {
+      "speaker": "Rebecka Lovisone",
+      "quote": "I would just also like to encourage us to pause whenever possible before creating additional boards and commissions or committees until we create clearer structural alignment for the groups we already have. Uh so just a thought moving forward before adding something new. I think we should first ask is there an existing combination of boards and commissions that could advise the work who already exists",
+      "context": "that said, I would just also like to encourage us to pause whenever possible before creating additional boards and commissions or committees until we create clearer structural alignment for the groups we already have. Uh so just a thought moving forward before adding something new. I think we should first ask is there an existing combination of boards and commissions that could advise the work who already exists um and just figuring out how maybe if possible we can engage um some folks already engaged in the community.",
+      "timestamp_seconds": 4731,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4731s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=4"
+    },
+    {
+      "speaker": "Michael Griffith",
+      "quote": "my concern is that when we talk about water conservation um and water usage in rural versus urban context um obviously it's more efficient in urban context. We're using less water because per person, per square foot, all that, right? But there's a co- benefit to basically vegetation, greenery, tree canopy, all these things that happen in more rural contexts that become very difficult to manage um with water rates that are flat",
+      "context": "I wanted to talk about something that's just a general concern of mine and maybe um I don't really have a solution for it but it's maybe something that we could talk about as we move through for future workshops. Um my concern is that when we talk about water conservation um and water usage in rural versus urban context um obviously it's more efficient in urban context. We're using less water because per person, per square foot, all that, right? But there's a co- benefit to basically vegetation, greenery, tree canopy.",
+      "timestamp_seconds": 4992,
+      "video_url": "https://www.youtube.com/watch?v=_0rRv4LG8eQ&t=4992s",
+      "speaker_profile_url": "https://www.arvadaco.gov/Directory.aspx?EID=7"
     }
   ],
-  "notable_quotes": [],
   "topics_discussed": [
-    "Wildfire Mitigation and Response Strategies Workshop",
-    "2027 Water, Wastewater, and Stormwater Rates and Fees Workshop (Kickoff)"
+    "Wildfire Mitigation and Response Strategies",
+    "2027 Water, Wastewater, and Stormwater Rates and Fees"
   ],
   "consistency_flags": [],
   "on_the_horizon": "",
