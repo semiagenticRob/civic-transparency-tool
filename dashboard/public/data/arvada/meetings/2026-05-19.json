@@ -510,32 +510,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Arbor Day Tree Planting Celebration",
-      "url": "https://www.arvadaco.gov/724"
-    },
-    {
-      "title": "Movies Around Town",
-      "url": "https://www.arvadaco.gov/1260"
-    },
-    {
-      "title": "Bulky Item Drop-Off Event",
-      "url": "https://www.arvadaco.gov/728/Bulky-Item-Events"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Street maintenance in Olde Town",
-      "url": "https://www.arvadaco.gov/1527/Olde-Town-Arvada-pavement-improvements-t"
-    },
-    {
-      "title": "Volunteer with Arvada Festivals",
-      "url": "https://www.arvadaco.gov/1204"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
