@@ -12,6 +12,21 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import feedparser
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
+
+
+class _TransientFeedError(RuntimeError):
+    """Raised for feed fetches that look transient (network failure, bozo URLError).
+
+    A retry-eligible failure class so tenacity only burns wait time on errors
+    that have a reasonable chance of succeeding on retry — not on permanent
+    parse errors or 404s.
+    """
 
 
 @dataclass
@@ -22,9 +37,29 @@ class FeedItem:
     published: str
 
 
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(min=2, max=30),
+    retry=retry_if_exception_type(_TransientFeedError),
+    reraise=True,
+)
 def fetch_feed(url: str, limit: int = 10) -> list[FeedItem]:
-    """Fetch and parse a single RSS feed, returning the most recent items."""
+    """Fetch and parse a single RSS feed, returning the most recent items.
+
+    Retries up to 3× with exponential backoff on transient failures only
+    (network errors). Permanent parse failures fail fast — `fetch_all_feeds`
+    catches the underlying exception per feed and substitutes an empty list.
+    """
     feed = feedparser.parse(url)
+    if feed.bozo and not feed.entries:
+        exc = feed.bozo_exception
+        # feedparser uses urllib under the hood; URLError/socket errors indicate
+        # transient network issues. Everything else (SAXParseException,
+        # CharacterEncodingOverride, etc.) is a permanent parse problem.
+        import urllib.error
+        if isinstance(exc, (urllib.error.URLError, OSError)):
+            raise _TransientFeedError(f"RSS fetch failed for {url}: {exc!r}")
+        raise RuntimeError(f"RSS parse failed for {url}: {exc!r}")
     items = []
     for entry in feed.entries[:limit]:
         items.append(FeedItem(

@@ -28,6 +28,13 @@ from .analyze_meeting import (
 )
 
 
+# Bumped whenever the dashboard JSON shape changes in a way that requires the
+# frontend to be redeployed. Consumers check this against their expected value
+# and warn on mismatch. Keep in sync with `EXPECTED_SCHEMA_VERSION` in
+# dashboard/src/App.jsx.
+SCHEMA_VERSION = 1
+
+
 def _to_serializable(obj: Any) -> Any:
     """Recursively convert dataclasses to dicts for JSON serialization."""
     if is_dataclass(obj):
@@ -159,6 +166,7 @@ def save_dashboard_data(
     type_specific = _to_serializable(analysis)
 
     payload = {
+        "schema_version": SCHEMA_VERSION,
         "city": city_config["name"],
         "state": city_config["state"],
         "meeting_date": date_str,
@@ -170,6 +178,7 @@ def save_dashboard_data(
         "meeting_purpose_blurb": analysis.meeting_purpose_blurb,
         "lead_headline": analysis.lead_headline,
         "schedule_portal_url": city_config.get("schedule_portal_url"),
+        "newsletter_subscribe_url": city_config.get("newsletter", {}).get("subscribe_url"),
         "type_specific": type_specific,
 
         # Legacy-compatible fields (kept for the existing dashboard UI)

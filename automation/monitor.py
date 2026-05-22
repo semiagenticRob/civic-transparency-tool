@@ -14,29 +14,25 @@ Local usage:
 from __future__ import annotations
 
 import argparse
-import json
 import os
+import re
 import sys
 import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from . import state, youtube_monitor, orchestrator, notifier
+from config.loader import CityConfigError, CityConfigNotFoundError, load_city_config
+
+from . import beehiiv, state, youtube_monitor, orchestrator, notifier
 
 
 REPO_ROOT = Path(__file__).parent.parent
 
 
-def load_city_config(city: str) -> dict:
-    config_path = REPO_ROOT / "config" / "cities" / f"{city}.json"
-    return json.loads(config_path.read_text())
-
-
 def parse_meeting_date_from_title(title: str, fallback: datetime) -> datetime:
     """Try to extract a date like 'April 28 2026' from a YouTube title.
     Falls back to the provided datetime if not parseable."""
-    import re
     m = re.search(
         r"(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})",
         title,
@@ -47,6 +43,32 @@ def parse_meeting_date_from_title(title: str, fallback: datetime) -> datetime:
         return datetime.strptime(f"{m.group(1)} {m.group(2)} {m.group(3)}", "%B %d %Y").replace(tzinfo=timezone.utc)
     except ValueError:
         return fallback
+
+
+def _publish_to_beehiiv(
+    subject: str,
+    subtitle: str,
+    body_html: str,
+) -> tuple[str, str, Optional[str]]:
+    """Best-effort Beehiiv publish. Returns (draft_id, draft_url, error).
+
+    Beehiiv's posts API is gated behind enterprise tiers as of 2026-05; when
+    it 403s we still want the editor to receive the draft via email, so
+    failures are non-fatal and surface to the editor in the email header.
+    """
+    publication_id = os.environ.get("BEEHIIV_PUBLICATION_ID")
+    if not publication_id:
+        return "", "", None
+    try:
+        draft = beehiiv.create_draft(
+            publication_id=publication_id,
+            subject=subject,
+            subtitle=subtitle,
+            body_html=body_html,
+        )
+        return draft.draft_id, draft.draft_url, None
+    except Exception as e:
+        return "", "", str(e)
 
 
 def process_video(
@@ -62,7 +84,6 @@ def process_video(
             video_id=video.video_id,
             city_config=city_config,
             meeting_date=meeting_date,
-            publish=not dry_run,
             video_title=video.title,
         )
     except Exception:
@@ -78,10 +99,16 @@ def process_video(
         print(f"    subject: {result.subject}")
         return result
 
-    if result.draft_url:
-        print(f"  ✓ Beehiiv draft posted: {result.draft_url}")
-    elif result.error:
-        print(f"  ⚠ Beehiiv publish skipped: {result.error[:120]}")
+    draft_id, draft_url, publish_error = _publish_to_beehiiv(
+        subject=result.subject,
+        subtitle=result.subtitle,
+        body_html=result.body_html,
+    )
+
+    if draft_url:
+        print(f"  ✓ Beehiiv draft posted: {draft_url}")
+    elif publish_error:
+        print(f"  ⚠ Beehiiv publish skipped: {publish_error[:120]}")
     else:
         print("  ⚠ Beehiiv not configured — delivering via email only")
 
@@ -97,8 +124,8 @@ def process_video(
             to_email=notify_email,
             subject_line=result.subject,
             body_html=result.body_html,
-            draft_url=result.draft_url or None,
-            publish_error=result.error,
+            draft_url=draft_url or None,
+            publish_error=publish_error,
         )
         print(f"  ✓ draft emailed to {notify_email}")
     except Exception as e:
@@ -107,21 +134,33 @@ def process_video(
 
     state.mark_processed(
         video_id=video.video_id,
-        draft_id=result.draft_id or "email-only",
-        draft_url=result.draft_url or "",
+        draft_id=draft_id or "email-only",
+        draft_url=draft_url or "",
         meeting_date=result.meeting_date,
     )
     return result
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--city", default="arvada")
+    ap = argparse.ArgumentParser(
+        description="Scheduled monitor: process new council meeting videos and email the editor.",
+        epilog="Examples:\n  python -m automation.monitor\n  python -m automation.monitor --city arvada --dry-run\n  python -m automation.monitor --video-id <youtube_id>",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    ap.add_argument(
+        "--city",
+        default="arvada",
+        help="City config slug matching config/cities/<slug>.json (default: %(default)s)",
+    )
     ap.add_argument("--dry-run", action="store_true", help="render HTML but don't publish or notify")
     ap.add_argument("--video-id", help="force-process a single video, ignoring state")
     args = ap.parse_args()
 
-    city_config = load_city_config(args.city)
+    try:
+        city_config = load_city_config(args.city)
+    except (CityConfigNotFoundError, CityConfigError) as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return 1
 
     if args.video_id:
         # Single-video mode — useful for testing. Pull the real video metadata

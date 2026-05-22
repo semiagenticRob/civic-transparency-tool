@@ -18,11 +18,31 @@ from pathlib import Path
 
 import requests
 import yt_dlp
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 # yt-dlp languages we'll try, in priority order
-_PREFERRED_LANGS = ["en", "en-US", "en-GB", "en-uYU-mmqFLq8", "en-JkeT_87f4cc"]
+_PREFERRED_LANGS = ["en", "en-US", "en-GB"]
 
 _SOCIALKIT_ENDPOINT = "https://api.socialkit.dev/youtube/transcript"
+
+
+_HTTP_RETRY = retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(min=2, max=30),
+    retry=retry_if_exception_type(requests.RequestException),
+    reraise=True,
+)
+
+
+@_HTTP_RETRY
+def _get(url: str, **kwargs) -> requests.Response:
+    """GET with retry on transient network errors."""
+    return requests.get(url, **kwargs)
 
 
 def extract_video_id(url_or_id: str) -> str:
@@ -82,7 +102,7 @@ def _fetch_via_socialkit(video_id: str, api_key: str) -> list:
         "url": f"https://www.youtube.com/watch?v={video_id}",
         "access_key": api_key,
     }
-    resp = requests.get(_SOCIALKIT_ENDPOINT, params=params, timeout=60)
+    resp = _get(_SOCIALKIT_ENDPOINT, params=params, timeout=60)
     if resp.status_code >= 400:
         raise RuntimeError(f"SocialKit API error {resp.status_code}: {resp.text[:300]}")
 
@@ -155,7 +175,7 @@ def _fetch_via_yt_dlp(video_id: str) -> list:
         info = ydl.extract_info(url, download=False)
 
     _lang, caption_url = _find_caption_url(info)
-    resp = requests.get(caption_url, timeout=30)
+    resp = _get(caption_url, timeout=30)
     resp.raise_for_status()
     return _parse_json3(resp.json())
 

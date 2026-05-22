@@ -23,7 +23,9 @@ from dataclasses import dataclass, field
 from typing import Any, Literal, Optional, Union
 
 from openai import OpenAI
+from pydantic import ValidationError
 
+from .llm_schema import validate_and_normalize
 from .meeting_type import MeetingType
 
 
@@ -688,6 +690,17 @@ def analyze_meeting(
             data = json.loads(match.group())
         else:
             raise ValueError(f"Could not parse model response as JSON:\n{raw[:500]}")
+
+    # Schema gate: validate the LLM response against a Pydantic schema before
+    # constructing dataclasses. This fails loudly on missing required keys or
+    # type drift, and canonicalizes the Quote `text`/`quote` and
+    # `context_excerpt`/`context` aliases so downstream code sees one shape.
+    try:
+        data = validate_and_normalize(meeting_type, data)
+    except ValidationError as e:
+        raise ValueError(
+            f"LLM response failed schema validation for meeting_type={meeting_type!r}: {e}"
+        ) from e
 
     if meeting_type == "business":
         return _build_business(data, purpose_blurb, raw, video_id)

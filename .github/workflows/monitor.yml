@@ -32,7 +32,7 @@ jobs:
           python-version: '3.11'
           cache: pip
 
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.lock --require-hashes
 
       - name: Stage YouTube cookies
         env:
@@ -81,3 +81,14 @@ jobs:
             git commit -m "chore: state update [skip ci]"
             git push
           fi
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python -m automation.notifier \
+            --subject "Eyes on Arvada monitor run failed" \
+            --body "The scheduled monitor run failed. Run logs: $RUN_URL"

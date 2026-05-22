@@ -6,7 +6,12 @@ import QuoteCard from "./components/QuoteCard"
 import CouncilGrid from "./components/CouncilGrid"
 import Sidebar from "./components/Sidebar"
 
-const CITY = "arvada"
+const CITY = import.meta.env.VITE_CITY ?? "arvada"
+
+// Bump this whenever pipeline/save_dashboard_data.py bumps SCHEMA_VERSION.
+// On mismatch we still render — the legacy fields are derived for back-compat —
+// but log a warning so the deploy gap is visible in browser DevTools.
+const EXPECTED_SCHEMA_VERSION = 1
 
 export default function App() {
   const [data, setData] = useState(null)
@@ -18,7 +23,16 @@ export default function App() {
         if (!r.ok) throw new Error(`HTTP ${r.status}`)
         return r.json()
       })
-      .then(setData)
+      .then((payload) => {
+        if (Number(payload.schema_version) !== EXPECTED_SCHEMA_VERSION) {
+          console.warn(
+            `[${CITY}] dashboard data schema_version=${payload.schema_version} ` +
+            `but dashboard expects ${EXPECTED_SCHEMA_VERSION}. ` +
+            `Producer may have shipped a breaking change — redeploy the dashboard.`
+          )
+        }
+        setData(payload)
+      })
       .catch((e) => setError(e.message))
   }, [])
 
@@ -56,12 +70,14 @@ export default function App() {
               {data.city}, {data.state} · Updated {updatedAt}
             </p>
           </div>
-          <a
-            href="#subscribe"
-            className="shrink-0 bg-civic-500 hover:bg-civic-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-          >
-            Subscribe →
-          </a>
+          {data.newsletter_subscribe_url && (
+            <a
+              href="#subscribe"
+              className="shrink-0 bg-civic-500 hover:bg-civic-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+            >
+              Subscribe →
+            </a>
+          )}
         </div>
       </header>
 
@@ -130,20 +146,22 @@ export default function App() {
         </div>
 
         {/* Subscribe CTA */}
-        <div id="subscribe" className="mt-12 bg-civic-900 rounded-2xl p-8 text-center text-white">
-          <h3 className="text-xl font-bold mb-2">Stay in the loop</h3>
-          <p className="text-civic-100 text-sm mb-6 max-w-md mx-auto">
-            Get a plain-English summary of every {data.city} City Council meeting delivered to your inbox — written by a local, powered by AI.
-          </p>
-          <a
-            href="https://beehiiv.com"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block bg-white text-civic-900 font-semibold text-sm px-6 py-3 rounded-lg hover:bg-civic-50 transition-colors"
-          >
-            Subscribe to the newsletter
-          </a>
-        </div>
+        {data.newsletter_subscribe_url && (
+          <div id="subscribe" className="mt-12 bg-civic-900 rounded-2xl p-8 text-center text-white">
+            <h3 className="text-xl font-bold mb-2">Stay in the loop</h3>
+            <p className="text-civic-100 text-sm mb-6 max-w-md mx-auto">
+              Get a plain-English summary of every {data.city} City Council meeting delivered to your inbox — written by a local, powered by AI.
+            </p>
+            <a
+              href={data.newsletter_subscribe_url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block bg-white text-civic-900 font-semibold text-sm px-6 py-3 rounded-lg hover:bg-civic-50 transition-colors"
+            >
+              Subscribe to the newsletter
+            </a>
+          </div>
+        )}
 
       </main>
 

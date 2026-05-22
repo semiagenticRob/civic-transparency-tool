@@ -22,6 +22,8 @@ from dotenv import load_dotenv
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
+from config.loader import CityConfigNotFoundError, available_cities, load_city_config
+
 load_dotenv()
 
 console = Console()
@@ -36,19 +38,26 @@ console = Console()
 @click.option("--meeting-type", default=None, type=click.Choice(["business", "workshop", "study_session"]),
               help="Override meeting type (default: detect from --title; falls back to 'business')")
 @click.option("--title", default="", help="Meeting title used for type detection when --meeting-type is omitted")
-def main(video: str, city: str, date, output_dir: str, skip_rss: bool, meeting_type, title: str):
+def main(
+    video: str,
+    city: str,
+    date: "str | None",
+    output_dir: str,
+    skip_rss: bool,
+    meeting_type: "str | None",
+    title: str,
+):
     """Generate a newsletter draft from a city council meeting video."""
 
-    # Load city config
-    config_path = Path(f"config/cities/{city}.json")
-    if not config_path.exists():
-        console.print(f"[red]Error:[/red] City config not found: {config_path}")
+    try:
+        city_config = load_city_config(city)
+    except CityConfigNotFoundError as e:
+        console.print(f"[red]Error:[/red] {e}")
         console.print("Available cities:")
-        for p in Path("config/cities").glob("*.json"):
-            console.print(f"  - {p.stem}")
+        for slug in available_cities():
+            console.print(f"  - {slug}")
         sys.exit(1)
 
-    city_config = json.loads(config_path.read_text())
     meeting_date = datetime.strptime(date, "%Y-%m-%d") if date else datetime.now()
 
     console.rule(f"[bold blue]{city_config['name']} Council Watch Pipeline[/bold blue]")
@@ -122,9 +131,13 @@ def main(video: str, city: str, date, output_dir: str, skip_rss: bool, meeting_t
 
         # Step 6: Generate Markdown summary draft
         task = progress.add_task("Generating Markdown draft...", total=None)
-        from pipeline.generate_draft import generate_draft
-        draft = generate_draft(analysis, city_config, meeting_date, Path(output_dir))
-        progress.update(task, description="[green]✓[/green] Markdown draft generated")
+        from pipeline.generate_draft import draft_filename, generate_draft
+        draft = generate_draft(analysis, city_config, meeting_date)
+        output_dir_path = Path(output_dir)
+        output_dir_path.mkdir(parents=True, exist_ok=True)
+        draft_path = output_dir_path / draft_filename(city_config["name"], meeting_date)
+        draft_path.write_text(draft)
+        progress.update(task, description=f"[green]✓[/green] Markdown draft → {draft_path}")
         progress.stop_task(task)
 
         # Step 7: Render the HTML newsletter alongside the Markdown

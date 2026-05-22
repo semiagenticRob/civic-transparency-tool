@@ -23,9 +23,20 @@ A React dashboard reads the same analysis JSON and displays the latest meeting p
 python3 -m venv .venv
 source .venv/bin/activate
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (reproducible build via the pinned lockfile)
+pip install -r requirements.lock --require-hashes
 ```
+
+To add or update a dependency, edit `requirements.txt` (the high-level
+declarations) and regenerate the lockfile:
+
+```bash
+pip install pip-tools
+pip-compile --generate-hashes -o requirements.lock requirements.txt
+```
+
+CI installs from `requirements.lock --require-hashes`, so the lockfile must
+be committed alongside any change to `requirements.txt`.
 
 For automation (recommended), add the following secrets to GitHub repo settings → Secrets and variables → Actions:
 

@@ -20,6 +20,26 @@ import os
 from typing import Optional
 
 import requests
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
+
+
+_RETRY = retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(min=2, max=30),
+    retry=retry_if_exception_type(requests.RequestException),
+    reraise=True,
+)
+
+
+@_RETRY
+def _post(url: str, **kwargs) -> requests.Response:
+    """POST with retry on transient network errors."""
+    return requests.post(url, timeout=30, **kwargs)
 
 
 class NotifierError(RuntimeError):
@@ -100,14 +120,71 @@ def deliver_draft(
         ],
     }
 
-    resp = requests.post(
+    resp = _post(
         "https://api.resend.com/emails",
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
         },
         json=payload,
-        timeout=30,
     )
     if resp.status_code >= 400:
         raise NotifierError(f"Resend API error {resp.status_code}: {resp.text[:500]}")
+
+
+def send_plain(
+    to_email: str,
+    subject: str,
+    body: str,
+    from_email: str = "Eyes on Arvada <onboarding@resend.dev>",
+    api_key: Optional[str] = None,
+) -> None:
+    """Send a plain-text email. Used for operational alerts (CI failure, etc.)."""
+    if api_key is None:
+        api_key = os.environ.get("RESEND_API_KEY")
+    if not api_key:
+        raise NotifierError("RESEND_API_KEY not set")
+
+    resp = _post(
+        "https://api.resend.com/emails",
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "from": from_email,
+            "to": [to_email],
+            "subject": subject,
+            "text": body,
+        },
+    )
+    if resp.status_code >= 400:
+        raise NotifierError(f"Resend API error {resp.status_code}: {resp.text[:500]}")
+
+
+if __name__ == "__main__":
+    import argparse
+    import sys
+
+    parser = argparse.ArgumentParser(
+        description="Send a plain-text operational alert email via Resend.",
+        epilog="Example:\n  python -m automation.notifier --subject 'Run failed' --body 'See CI logs'",
+    )
+    parser.add_argument("--subject", required=True, help="Email subject line")
+    parser.add_argument("--body", required=True, help="Plain-text email body")
+    parser.add_argument(
+        "--to",
+        default=os.environ.get("NOTIFY_EMAIL"),
+        help="Recipient email address (default: $NOTIFY_EMAIL)",
+    )
+    args = parser.parse_args()
+
+    if not args.to:
+        print("Error: NOTIFY_EMAIL not set and --to not provided", file=sys.stderr)
+        sys.exit(1)
+
+    try:
+        send_plain(to_email=args.to, subject=args.subject, body=args.body)
+    except Exception as e:
+        print(f"Error sending alert: {e}", file=sys.stderr)
+        sys.exit(1)

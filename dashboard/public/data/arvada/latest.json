@@ -1,4 +1,5 @@
 {
+  "schema_version": 1,
   "city": "Arvada",
   "state": "CO",
   "meeting_date": "2026-05-19",
@@ -8,6 +9,7 @@
   "meeting_purpose_blurb": "Council makes official decisions in the form of ordinances, resolutions, or motions. Open to the public with public comment at designated times.",
   "lead_headline": "Council passes mental health co-responder funding, sets Candelis rezoning for July",
   "schedule_portal_url": "https://arvadaco.portal.civicclerk.com/?category_id=26",
+  "newsletter_subscribe_url": "https://eyes-on-arvada.beehiiv.com/",
   "type_specific": {
     "meeting_type": "business",
     "meeting_summary": "The Arvada City Council held its May 19, 2026 business meeting, honoring several long-serving advisory board members and issuing proclamations for National Preservation Month and National Gun Violence Awareness Day. A lobbyist team presented a wrap-up of the 2026 Colorado legislative session, highlighting key bills affecting local government. The council approved all consent and resolution items unanimously, passed three ordinances on first reading, made two board appointments, and continued three rezoning hearings to July 7, 2026.",

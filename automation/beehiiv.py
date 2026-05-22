@@ -12,11 +12,26 @@ Beehiiv caches them.
 
 from __future__ import annotations
 
+import json
 import os
 from dataclasses import dataclass
 from typing import Optional
 
 import requests
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
+
+
+_RETRY = retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(min=2, max=30),
+    retry=retry_if_exception_type(requests.RequestException),
+    reraise=True,
+)
 
 
 @dataclass
@@ -27,6 +42,12 @@ class DraftResponse:
 
 class BeehiivError(RuntimeError):
     pass
+
+
+@_RETRY
+def _post(url: str, **kwargs) -> requests.Response:
+    """POST with tenacity-driven retry on transient network errors."""
+    return requests.post(url, timeout=30, **kwargs)
 
 
 def create_draft(
@@ -59,11 +80,17 @@ def create_draft(
         "body_content": body_html,
     }
 
-    resp = requests.post(url, json=body, headers=headers, timeout=30)
+    resp = _post(url, json=body, headers=headers)
     if resp.status_code >= 400:
         raise BeehiivError(f"Beehiiv API error {resp.status_code}: {resp.text[:500]}")
 
-    data = resp.json().get("data", {})
+    try:
+        payload = resp.json()
+    except json.JSONDecodeError:
+        raise BeehiivError(
+            f"Beehiiv returned non-JSON response (status {resp.status_code}): {resp.text[:500]}"
+        )
+    data = payload.get("data", {})
     draft_id = data.get("id", "")
     if not draft_id:
         raise BeehiivError(f"Beehiiv response missing draft id: {resp.text[:500]}")

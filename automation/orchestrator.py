@@ -2,19 +2,21 @@
 Headless pipeline runner.
 
 Given a YouTube video for a known city, fetch the transcript, run analysis
-through OpenRouter, render the Eyes on Arvada HTML newsletter, post a draft
-to Beehiiv, and update the dashboard JSON.
+through OpenRouter, render the Eyes on Arvada HTML newsletter, and update
+the dashboard JSON. This is the part of the pipeline that's identical
+whether triggered manually or by the scheduled monitor.
 
-This is the part of the pipeline that's identical whether triggered manually
-or by the scheduled monitor.
+Note: publication (Beehiiv) and editor delivery (Resend) are *not* the
+orchestrator's concern. The caller (monitor.py or a future web API) decides
+what to do with the rendered output.
 """
 
 from __future__ import annotations
 
-import os
+import json
+import logging
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Optional
 
 from pipeline.fetch_transcript import fetch_transcript, format_with_timestamps
@@ -24,15 +26,15 @@ from pipeline.render_newsletter import render_newsletter
 from pipeline.save_dashboard_data import save_dashboard_data, enrich_with_rss
 from pipeline.validate_quotes import validate_quotes
 
-from . import beehiiv
 from .meeting_classifier import classify_meeting_for_video
+
+
+log = logging.getLogger(__name__)
 
 
 @dataclass
 class RunResult:
     video_id: str
-    draft_id: str
-    draft_url: str
     subject: str
     subtitle: str
     body_html: str
@@ -41,18 +43,15 @@ class RunResult:
     meeting_type_source: str = ""
     quotes_kept: int = 0
     quotes_dropped: int = 0
-    error: Optional[str] = None
 
 
 def run_for_video(
     video_id: str,
     city_config: dict,
     meeting_date: Optional[datetime] = None,
-    publish: bool = True,
     video_title: str = "",
 ) -> RunResult:
-    """End-to-end: video_id → Beehiiv draft. If publish=False, returns the
-    rendered HTML without posting to Beehiiv (useful for local preview).
+    """End-to-end: video_id → rendered newsletter + persisted dashboard data.
 
     `video_title` is used to detect the meeting type (business / workshop /
     study_session) before the LLM call. When empty, falls back to "business"
@@ -83,8 +82,8 @@ def run_for_video(
     try:
         feeds = fetch_all_feeds(city_config)
         rss_context = format_for_prompt(feeds)
-    except Exception:
-        pass  # don't let flaky feeds block the pipeline
+    except Exception as exc:
+        log.warning("RSS fetch failed (continuing without context): %s", exc)
 
     # 4. LLM analysis — picks the prompt + dataclass matching the meeting type
     analysis = analyze_meeting(
@@ -99,10 +98,12 @@ def run_for_video(
     #    that fail fuzzy-match against the source. See pipeline/validate_quotes.py.
     quote_report = validate_quotes(analysis, transcript)
 
-    # 4. Render newsletter HTML
+    # 6. Render newsletter HTML
     rendered = render_newsletter(analysis, city_config, meeting_date)
 
-    # 5. Persist dashboard data alongside (best-effort)
+    # 7. Persist dashboard data alongside (best-effort — failure here doesn't
+    #    block newsletter delivery, but the failure is logged so a silently
+    #    stale dashboard is visible in CI logs).
     try:
         latest_path = save_dashboard_data(
             analysis=analysis,
@@ -111,37 +112,14 @@ def run_for_video(
             video_url=f"https://www.youtube.com/watch?v={video_id}",
         )
         if feeds:
-            import json as _json
-            payload = _json.loads(latest_path.read_text())
+            payload = json.loads(latest_path.read_text())
             payload = enrich_with_rss(payload, feeds)
-            latest_path.write_text(_json.dumps(payload, indent=2, ensure_ascii=False))
-    except Exception:
-        pass  # dashboard write is not critical to newsletter delivery
-
-    # 6. Beehiiv draft (best-effort — gated behind enterprise plan as of
-    #    2026-05; if it 403s, we still deliver via email below)
-    draft_id = ""
-    draft_url = ""
-    publish_error = None
-    if publish:
-        publication_id = os.environ.get("BEEHIIV_PUBLICATION_ID")
-        if publication_id:
-            try:
-                draft = beehiiv.create_draft(
-                    publication_id=publication_id,
-                    subject=rendered.subject,
-                    subtitle=rendered.subtitle,
-                    body_html=rendered.body_html,
-                )
-                draft_id = draft.draft_id
-                draft_url = draft.draft_url
-            except Exception as e:
-                publish_error = str(e)
+            latest_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    except Exception as exc:
+        log.warning("dashboard write failed (continuing): %s", exc)
 
     return RunResult(
         video_id=video_id,
-        draft_id=draft_id,
-        draft_url=draft_url,
         subject=rendered.subject,
         subtitle=rendered.subtitle,
         body_html=rendered.body_html,
@@ -150,5 +128,4 @@ def run_for_video(
         meeting_type_source=meeting_type_source,
         quotes_kept=quote_report.kept,
         quotes_dropped=quote_report.dropped,
-        error=publish_error,
     )

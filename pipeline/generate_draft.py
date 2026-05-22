@@ -7,7 +7,6 @@ pipeline/render_newsletter.py; this module is for skim-readable drafts.
 from __future__ import annotations
 
 from datetime import datetime
-from pathlib import Path
 from typing import Optional
 
 from .analyze_meeting import (
@@ -161,12 +160,11 @@ def generate_draft(
     analysis: MeetingAnalysis,
     city_config: dict,
     meeting_date: Optional[datetime] = None,
-    output_dir: Optional[Path] = None,
 ) -> str:
-    """
-    Generate a Markdown summary from a typed MeetingAnalysis.
+    """Generate a Markdown summary from a typed MeetingAnalysis.
 
-    Returns the draft as a string and optionally saves it to output_dir.
+    Returns the draft as a string. Callers are responsible for writing it to
+    disk if they want a file on disk.
     """
     date_str = (meeting_date or datetime.now()).strftime("%B %d, %Y")
     city_name = city_config["name"]
@@ -198,14 +196,11 @@ def generate_draft(
         f"*Independent, AI-assisted civic journalism. Not affiliated with the City of {city_name}, {state}.*\n"
     )
 
-    draft = header + body + footer
+    return header + body + footer
 
-    if output_dir is not None:
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        filename = f"{city_name.lower().replace(' ', '-')}_{(meeting_date or datetime.now()).strftime('%Y-%m-%d')}.md"
-        output_path = output_dir / filename
-        output_path.write_text(draft)
-        print(f"Draft saved to: {output_path}")
 
-    return draft
+def draft_filename(city_name: str, meeting_date: Optional[datetime]) -> str:
+    """Canonical filename for a Markdown draft (`<slug>_<YYYY-MM-DD>.md`)."""
+    slug = city_name.lower().replace(" ", "-")
+    date_str = (meeting_date or datetime.now()).strftime("%Y-%m-%d")
+    return f"{slug}_{date_str}.md"

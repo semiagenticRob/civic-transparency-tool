@@ -17,7 +17,7 @@
   "newsletter": {
     "name": "Eyes on Arvada",
     "tagline": "A nonpartisan read on what your city council actually did this week.",
-    "subscribe_url": null,
+    "subscribe_url": "https://eyes-on-arvada.beehiiv.com/",
     "photo_base_url": "https://raw.githubusercontent.com/semiagenticRob/civic-transparency-tool/main/docs/design/assets/council"
   },
   "llm": {
