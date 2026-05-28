@@ -346,32 +346,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Access the City's 2026 Water Quality Report",
-      "url": "https://www.arvadaco.gov/448/Water-Quality-Report"
-    },
-    {
-      "title": "Fourth of July Fireworks",
-      "url": "https://www.arvadaco.gov/494"
-    },
-    {
-      "title": "Arbor Day Tree Planting Celebration",
-      "url": "https://www.arvadaco.gov/724"
-    },
-    {
-      "title": "Movies Around Town",
-      "url": "https://www.arvadaco.gov/1260"
-    },
-    {
-      "title": "Bulky Item Drop-Off Event",
-      "url": "https://www.arvadaco.gov/728/Bulky-Item-Events"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
