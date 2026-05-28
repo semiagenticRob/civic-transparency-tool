@@ -24,25 +24,77 @@ from typing import Optional
 
 from config.loader import CityConfigError, CityConfigNotFoundError, load_city_config
 
-from . import beehiiv, state, youtube_monitor, orchestrator, notifier
+from . import beehiiv, civicclerk, state, youtube_monitor, orchestrator, notifier
 
 
 REPO_ROOT = Path(__file__).parent.parent
 
 
-def parse_meeting_date_from_title(title: str, fallback: datetime) -> datetime:
-    """Try to extract a date like 'April 28 2026' from a YouTube title.
-    Falls back to the provided datetime if not parseable."""
+def _extract_date_from_title(title: str) -> Optional[datetime]:
+    """Return the calendar date mentioned in a YouTube title (e.g. 'April 28 2026'), or None."""
     m = re.search(
         r"(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})",
         title,
     )
     if not m:
-        return fallback
+        return None
     try:
         return datetime.strptime(f"{m.group(1)} {m.group(2)} {m.group(3)}", "%B %d %Y").replace(tzinfo=timezone.utc)
     except ValueError:
-        return fallback
+        return None
+
+
+def parse_meeting_date_from_title(title: str, fallback: datetime) -> datetime:
+    """Try to extract a date like 'April 28 2026' from a YouTube title.
+    Falls back to the provided datetime if not parseable."""
+    return _extract_date_from_title(title) or fallback
+
+
+def is_council_meeting_video(
+    video: youtube_monitor.Video,
+    city_config: dict,
+) -> tuple[bool, str]:
+    """Decide whether a YouTube video corresponds to a real council meeting.
+
+    Primary signal: parse a date from the video title and look up CivicClerk
+    events on that date under the city's council category. This is the same
+    source of truth used by the meeting-type classifier downstream.
+
+    Falls back to the legacy title-keyword filter only when the title has no
+    parseable date or CivicClerk is unreachable, so a vendor outage can't
+    silently drop meetings.
+
+    Returns (is_meeting, reason). The reason is logged so rejections surface
+    in CI output rather than hiding behind a "0 new meeting videos" line.
+    """
+    cc_cfg = city_config.get("civicclerk") or {}
+    subdomain = cc_cfg.get("subdomain")
+    category_id = cc_cfg.get("category_id")
+    tz_name = city_config.get("timezone") or "UTC"
+    keywords = city_config.get("meeting_keywords", [])
+
+    def _keyword_fallback(prefix: str) -> tuple[bool, str]:
+        if youtube_monitor.is_meeting_video(video.title, keywords):
+            return True, f"{prefix}; title keywords matched"
+        return False, f"{prefix}; title keywords did not match"
+
+    meeting_date = _extract_date_from_title(video.title)
+    if meeting_date is None:
+        return _keyword_fallback("no parseable date in title")
+
+    if not subdomain or not category_id:
+        return _keyword_fallback("no civicclerk config")
+
+    try:
+        events = civicclerk.fetch_events_on_date(subdomain, category_id, meeting_date, tz_name)
+    except Exception as e:
+        return _keyword_fallback(f"civicclerk lookup failed ({e})")
+
+    if events:
+        names = ", ".join(sorted({(e.event_name or "").strip() for e in events if e.event_name}))
+        return True, f"civicclerk: {len(events)} event(s) on {meeting_date.date()} ({names})"
+
+    return False, f"no civicclerk events on {meeting_date.date()}"
 
 
 def _publish_to_beehiiv(
@@ -192,16 +244,20 @@ def main() -> int:
         print(f"No youtube_playlist_id in config for {args.city}", file=sys.stderr)
         return 1
 
-    keywords = city_config.get("meeting_keywords", [])
     processed = state.load_processed_ids()
     videos = youtube_monitor.fetch_playlist_videos(playlist_id)
     print(f"Playlist {playlist_id}: {len(videos)} videos in feed")
 
-    new_meeting_videos = [
-        v for v in videos
-        if v.video_id not in processed
-        and youtube_monitor.is_meeting_video(v.title, keywords)
-    ]
+    new_meeting_videos: list[youtube_monitor.Video] = []
+    for v in videos:
+        if v.video_id in processed:
+            continue
+        is_meeting, reason = is_council_meeting_video(v, city_config)
+        if is_meeting:
+            print(f"  ✓ {v.video_id} {v.title!r} — {reason}")
+            new_meeting_videos.append(v)
+        else:
+            print(f"  ⊘ {v.video_id} {v.title!r} — {reason}")
     print(f"  {len(new_meeting_videos)} new meeting videos to process")
 
     if not new_meeting_videos:
