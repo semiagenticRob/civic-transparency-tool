@@ -3,350 +3,185 @@
   "city": "Arvada",
   "state": "CO",
   "meeting_date": "2026-05-26",
-  "generated_at": "2026-05-28T14:36:37.232879+00:00",
-  "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0",
+  "generated_at": "2026-05-29T09:56:34.419553+00:00",
+  "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0",
   "meeting_type": "study_session",
   "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
-  "lead_headline": "Arvada Staff Showcases Bloomberg Harvard Innovation Work Across Four City Projects",
+  "lead_headline": "Arvada Exceeds Prop 123 Housing Goal, But Debates Public Process Trade-Off",
   "schedule_portal_url": "https://arvadaco.portal.civicclerk.com/?category_id=26",
   "newsletter_subscribe_url": "https://eyes-on-arvada.beehiiv.com/",
   "type_specific": {
     "meeting_type": "study_session",
-    "meeting_summary": "Arvada City Council received an informal briefing on the city's participation in the Bloomberg Harvard City Leadership Innovation Track, a free nine-month program that taught staff a structured innovation framework. Presenters from across city departments and the Arvada Economic Development Association described how they applied the methodology to four ongoing challenges: paid parking in Olde Town, homelessness response, the comprehensive plan community engagement process, and economic development partnerships. No votes were taken and no public comment was accepted.",
-    "lead_headline": "Arvada Staff Showcases Bloomberg Harvard Innovation Work Across Four City Projects",
+    "meeting_summary": "Arvada City Council received a study session briefing on the city's obligations under Colorado Proposition 123, which requires the city to adopt a 90-day expedited review process for qualifying affordable housing projects by December 31, 2026. Staff reported that Arvada has already exceeded its unit-count commitment of 417 affordable units, reaching 515 accepted units, making it one of fewer than 10 communities statewide to have met that threshold early. Council members raised concerns about the potential loss of public hearing processes under the expedited review framework and asked staff to research how other municipalities have preserved public engagement within the 90-day timeline.",
+    "lead_headline": "Arvada Exceeds Prop 123 Housing Goal, But Debates Public Process Trade-Off",
     "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
     "briefings": [
       {
-        "topic": "Bloomberg Harvard City Leadership Innovation Track — Overview & Methodology",
-        "presenter_name": "Dawn Cariela (name approximated from transcript as 'Miss Cara Ela' / 'Miss Kira Ewa')",
-        "presenter_role": "Staff Lead for Innovation Program, City of Arvada",
-        "duration_minutes": 25,
+        "topic": "Proposition 123: Affordable Housing Commitments & Expedited Review Requirement",
+        "presenter_name": "Jessica Garner (primary) and Sam Bradley (co-presenter)",
+        "presenter_role": "Staff presenter — Community & Economic Development; Sam Bradley, Affordable Housing Development Specialist, City of Arvada",
+        "duration_minutes": 62,
         "prose_paragraphs": [
-          "The presenter walked council through the Bloomberg Harvard City Leadership Initiative's (BHCLI) Innovation Track, a free nine-month program that the city joined at Mayor Simpson's invitation. The Arvada team included senior leaders Linda Haley and Brian Archer alongside the mayor, with a project team led by Mr. Wick and Jessica Garner. The program combined online learning with Harvard faculty, on-site team sessions, and two embedded coaches — a design coach and an innovation lead — to build structured problem-solving skills across the organization.",
-          "The program taught a six-phase innovation framework: setting an Ambitious Impactful Mission (AIM); researching affected residents and stakeholders; identifying root causes and systemic barriers; generating large volumes of possible solutions; tightening ideas into concepts; and prototyping minimum-viable solutions to test cheaply before committing significant resources. The team's own project focused on complex, emergent city-adjacent projects — using Quantum Commons as the test case — where the city is not the controlling party but residents still look to the city for answers. A central research insight was that residents want to be engaged collaboratively: 'do it with us, not to us.' Two prototypes emerged: a customer-service concierge role (already implemented through an existing staff position) and an evolved civics academy, 'Lead Where You Live,' which would give residents real policy case studies and feed their input back into city decision-making.",
-          "Post-program benefits have continued: the design coach provided additional hours on a homelessness project, the presenter received a scholarship to a Harvard Kennedy School executive education program in public leadership (completed the prior week), and the team joined an ongoing innovators network that includes a cohort from Des Moines, Iowa. The presenter identified three ongoing challenges for innovation at the city: staff capacity to execute new ideas, the reality that not every problem suits the innovation framework (some are process problems), and closing the feedback loop with residents so they know when their input was acted upon. The 'Lead Where You Live' civics academy prototype remains on pause pending a team member's return from parental leave, with a pilot targeted for later in 2026."
+          "Staff briefed council on Colorado Proposition 123, a voter-approved 2022 ballot measure that created a state fund for affordable housing and required participating local governments to meet two commitments: increase their affordable housing unit count by 9 percent above a state-calculated baseline over a three-year period, and adopt a 90-day expedited review process for qualifying affordable housing projects. Arvada opted in via Resolution 23-061 in 2023 and has been working toward both requirements. The unit-count deadline and the expedited review adoption deadline are both December 31, 2026. Staff noted that fewer than 10 communities statewide have met the unit-count commitment so far, and that Arvada is one of them — a distinction that positions the city to compete for a large pool of state funding expected to open in 2027.",
+          "Sam Bradley detailed how Arvada reached and surpassed its 417-unit baseline commitment, currently sitting at 515 units accepted by the Colorado Department of Local Affairs (DOLA). Projects counted include Marshall Street Landing (85 new construction units), Legacy Senior Housing (72 new construction units), Marshall Point (221 of 260 units counted due to rent-threshold technicalities under Low Income Tax Credit rules), Park View Village rehabilitation (96 units), Beyond Home rehabilitation (10 units submitted so far), and Brothers Redevelopment essential home repair program (31 units). The presentation also explained that future unit targets are expected to shift to a new methodology based on average building permits issued multiplied by a job-growth factor, with early estimates suggesting Arvada's new target could be around 200 units over a three-year cycle — substantially lower than its prior commitment. Staff emphasized that Arvada's financial support — including grants, soft loans, project-based vouchers, and development fee adjustments — has been essential to making these projects pencil out, and that a forthcoming project has a $6.5 million DOLA/Chaffa Prop 123 award within a roughly $35 million total development cost.",
+          "The most debated element of the briefing was the second Prop 123 commitment: adopting an expedited 90-day review process for projects where 50 percent or more of dwelling units meet affordability thresholds (60 percent AMI for rental, 100 percent AMI for for-sale). Staff explained that complying would require amending Table 31-22 of the city's Land Development Code to add a footnote exempting qualifying projects from the conditional use permit process in mixed-use zoning districts (MXS, MXU, MXT), routing them instead to an administrative review. Council members expressed concern that this could eliminate the public hearing process and the council's call-up authority, and that the city would be locked into this framework even after meeting its Prop 123 goals. Staff noted 127 municipalities have already adopted the 90-day fast track and that some have retained a public process; council asked staff to research those examples via the Colorado Municipal League housing committee. Staff proposed bringing back options for a hybrid approach — potentially retaining a targeted call-up mechanism for mixed-use conditional use projects — and indicated that broader zoning alignment questions could be addressed through the concurrent comprehensive plan update process. The resolution adopting the expedited review must be passed and submitted to DOLA by December 31, 2026; failure to comply results in the loss of Prop 123 funding eligibility for one full year for both the city and all of its development partners."
         ],
         "presenter_quotes": [
           {
-            "speaker": "Dawn Cariela",
-            "text": "prototyping is a good tool to have in the toolbox because it allows us to fail quickly.",
-            "timestamp_seconds": 818,
-            "context_excerpt": "Um we prototyping is a good tool to have in the toolbox because it allows us to fail quickly. Um, so how what can we test that we can um see if this is going to work, if people are going to respond to it before we invest a lot of time, effort, and money to find out that it's not as effective as we had hoped.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=818s"
+            "speaker": "Sam Bradley",
+            "text": "we are now sitting at 515 units counting towards our commitment.",
+            "timestamp_seconds": 295,
+            "context_excerpt": "Um and finally, we participate in the uh Brothers Redevelopment uh program, which is that essential home repair program for low-income homeowners. Um there is an income verification process, and at this point, up 31 units have been uh rehabbed and accepted by Doula. So, we are now sitting at 515 units counting towards our commitment. So, I really want two more.",
+            "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=295s"
           },
           {
-            "speaker": "Dawn Cariela",
-            "text": "we heard from residents do it with us not to us. Um so they want to be part of the process and not feel like we're imposing decisions on them.",
-            "timestamp_seconds": 593,
-            "context_excerpt": "So one insight that we um shared and we shared this with residents who participated in an ideation session um is that we heard from residents do it with us not to us. Um so they want to be part of the process and not feel like we're imposing decisions on them. And when we shared it during our innovation workshop with residents they really resonated with those research insights.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=593s"
+            "speaker": "Sam Bradley",
+            "text": "This project would collapse without Prop 123 financing.",
+            "timestamp_seconds": 1564,
+            "context_excerpt": "Um the total development cost on that building is about 35ish million dollars and 6.7 is coming from Chaffa. This this project would collapse without Prop 123 financing. Um the other thing is because these capital stocks they c they don't go together in 90 days. It could take years and I'm talking like five years, six years.",
+            "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=1564s"
           },
           {
-            "speaker": "Dawn Cariela",
-            "text": "Not every problem is a good fit for innovation. Some problems are process problems and they need a process improvement approach.",
-            "timestamp_seconds": 2074,
-            "context_excerpt": "Not every problem is a good fit for innovation. Some problems are process problems and they need a process improvement approach. Um the most difficult and complicated problems are good fits for innovation. Um but you can't take on all of those all at once.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=2074s"
-          }
-        ],
-        "external_resources": [
-          {
-            "title": "Bloomberg Harvard City Leadership Initiative (BHCLI) — Innovation Track Program",
-            "url": "",
-            "kind": "program"
-          },
-          {
-            "title": "Harvard Kennedy School Executive Education — Certificate in Public Leadership",
-            "url": "",
-            "kind": "program"
-          },
-          {
-            "title": "Glasgow Innovation Training Materials (referenced as ongoing training resource)",
-            "url": "",
-            "kind": "training material"
-          }
-        ],
-        "video_deep_link": null
-      },
-      {
-        "topic": "Paid Parking Innovation Project — Olde Town Arvada",
-        "presenter_name": "Jacqueline Rhodess",
-        "presenter_role": "Staff Member, City of Arvada (presenting on behalf of herself and Kelly Van Bugen)",
-        "duration_minutes": 5,
-        "prose_paragraphs": [
-          "Jacqueline Rhodess presented a 'sprint' application of the Bloomberg Harvard innovation framework to the city's ongoing paid parking challenges in Olde Town. The team's Ambitious Impactful Mission was to establish, by June 2026, a coordinated, in-house, sustainable paid parking model with consistent due process for Olde Town that improves access, supports local businesses, reduces congestion, and builds public transparency through clear policies and aligned operations. The sprint format allowed the team to move faster than the full innovation track, leveraging prior research studies and ongoing coordination with the Business Improvement District (BID).",
-          "The team conducted cross-departmental ideation sessions and generated more than 100 ideas. A key framing question that drove the work was: 'How might we ensure that paid parking feels like a tool for access and managing turnover, and not a barrier for customers and employees?' The presenter noted that the 'how might we' mindset has been particularly powerful in shifting how the team approaches problems. From the full portfolio of ideas generated, the team narrowed its focus to two prototypes: one centered on incentive programs to encourage visitors and businesses to use the parking hub, and one focused on improving the customer experience and physical wayfinding as visitors walk from the hub through Olde Town.",
-          "Both prototypes are in early setup stages, with sessions not yet completed at the time of the meeting. The presenter described the current phase as a low-cost model intended to test concepts with community and business partners before committing to full implementation. Additional follow-up studies are underway to inform the work. No specific timeline or cost figures were provided. The lead staff member on the project, Kelly Van Bugen, was not present at the meeting."
-        ],
-        "presenter_quotes": [
-          {
-            "speaker": "Jacqueline Rhodess",
-            "text": "how might we ensure that paid parking feels like a tool for access in managing turnover and not a barrier for customers and employees.",
-            "timestamp_seconds": 1068,
-            "context_excerpt": "Um, and one of the questions we focused on in our sessions here together were how might we ensure that paid parking feels like a tool for access in managing turnover and not a barrier for customers and employees. Um, so those are some of the things that help generate our ideas.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1068s"
-          },
-          {
-            "speaker": "Jacqueline Rhodess",
-            "text": "one of the benefits of this for our team specifically is that design thinking mindset. So using the how might we questions has been really powerful with us across the team.",
-            "timestamp_seconds": 1051,
-            "context_excerpt": "Um, and I want to back up and just say um that one of the benefits of this for our team specifically is that design thinking mindset. So using the how might we questions has been really powerful with us across the team.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1051s"
-          }
-        ],
-        "external_resources": [
-          {
-            "title": "Prior Olde Town Parking Studies (referenced but not titled specifically)",
-            "url": "",
-            "kind": "report"
-          }
-        ],
-        "video_deep_link": null
-      },
-      {
-        "topic": "Homelessness Innovation Project",
-        "presenter_name": "Dawn Cariela",
-        "presenter_role": "Staff Lead for Innovation Program, City of Arvada",
-        "duration_minutes": 10,
-        "prose_paragraphs": [
-          "Immediately upon concluding the Bloomberg Harvard Innovation Track, the team launched a parallel innovation project focused on homelessness, utilizing post-program coaching hours with design coach Tim Fe. A city intern conducted research that summer reviewing successful approaches taken by other cities, with Columbus, Ohio highlighted as a model. Two ideation sessions were held — one with internal city staff and one with external service providers — generating more than 500 ideas. Those ideas were grouped into themes and then developed into actionable concepts using a prioritization matrix that weighed impact against feasibility.",
-          "Three concept posters were tested at community conversations: 'Common Ground Conversations' (structured community dialogue sessions around homelessness topics), a 'Bridge Team' (a group of community liaisons who would share information about the city's homelessness work directly with residents), and 'Activating Olde Town Square' (programming the square with public art, games, and varied seating to increase activity and perceived safety). Feedback from residents raised specific questions about the Bridge Team concept, particularly who the liaisons would be and whether they would be compensated. For the Olde Town activation concept, residents were shown images of different amenity options to gauge preferences. The Arvada Report newsletter was identified through the prioritization matrix as a high-value, low-effort tool worth continuing without further testing.",
-          "In a parallel track, the team convened a two-hour session with local faith leaders and facilitated a rapid innovation session — without labeling it as such — to identify how faith communities could support homelessness response. Three concepts emerged: a volunteer-matching website allowing people to find opportunities aligned with their interests; volunteer case managers from faith communities to walk alongside people exiting homelessness and provide community connection (distinct from professional case management); and expanded shelter options. Faith leaders were given concept poster templates to develop their ideas further and were scheduled to reconvene with city staff later that week. The presenter noted that a taxing district was identified as potentially high-impact but too difficult to prototype and was therefore set aside."
-        ],
-        "presenter_quotes": [
-          {
-            "speaker": "Dawn Cariela",
-            "text": "some things are um like high impact and really easy to do and those are kind of called no-brainers. So like if it's really easy to do and it would be high impact like you don't need to prototype, you don't need to like keep researching, just go.",
-            "timestamp_seconds": 1259,
-            "context_excerpt": "Um, where you take like a group of concepts and um the the chart is hard to read, but like um there's high impact, low impact, um and then uh ease of doing this. So some things are um like high impact and really easy to do and those are kind of called no-brainers. So like if it's really easy to do and it would be high impact like you don't need to prototype, you don't need to like keep researching, just go.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1259s"
-          },
-          {
-            "speaker": "Dawn Cariela",
-            "text": "how might we leverage what we have where our strengths are um and work together.",
-            "timestamp_seconds": 1527,
-            "context_excerpt": "Um, but we did some quick uh sort of like SWAT analysis of what are your strengths, what are your weaknesses and then asked them how might we questions that basically got to like how might we leverage what we have where our strengths are um and work together.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1527s"
-          }
-        ],
-        "external_resources": [
-          {
-            "title": "Research on Successful Municipal Homelessness Approaches (intern-compiled, cities not fully named; Columbus, Ohio cited as model)",
-            "url": "",
-            "kind": "research summary"
-          },
-          {
-            "title": "The Arvada Report (city newsletter, identified as high-value communications tool in prioritization matrix)",
-            "url": "",
-            "kind": "publication"
-          },
-          {
-            "title": "Bloomberg Harvard Innovation Cohort — Des Moines, Iowa Team (peer-learning partner)",
-            "url": "",
-            "kind": "peer network"
-          }
-        ],
-        "video_deep_link": null
-      },
-      {
-        "topic": "Comprehensive Plan Community Engagement — Innovation Framework Integration",
-        "presenter_name": "Jessica Garner",
-        "presenter_role": "Staff Member, City of Arvada (Comprehensive Plan Project Lead)",
-        "duration_minutes": 5,
-        "prose_paragraphs": [
-          "Jessica Garner described how the city is weaving innovation principles into its ongoing Comprehensive Plan process, which requires deep and sustained public engagement. Because the comprehensive plan process cannot follow the full Bloomberg Harvard innovation track sequentially, the team is taking a hybridized approach — embedding 'how might we' thinking, community storytelling, prototype-style feedback sessions, and problem-framing techniques into every public interaction. The goal is not just to gather opinions but to understand community challenges and convert them into design opportunities that ultimately show up as implementation commitments in the final plan.",
-          "Early engagement has focused on youth outreach, with sessions held at Arvada High School and Arvada West. Students told presenters that the questions being asked were not challenging enough and that they wanted deeper engagement; they also expressed frustration that their time with council during a prior lunch visit was too short. Themes from youth closely mirrored those raised by adults: housing affordability, safe and accessible transportation, and access to 'third spaces' for community gathering. The team also engaged more than 200 community members at the Kite Festival and plans to be present at Summerfest in early June.",
-          "Longer-term, staff expressed interest in establishing a youth advisory commission, describing current school engagement as planting seeds toward that goal. The presenter noted that sustained, consistent engagement over the next several years is expected to develop young leaders who will want to participate formally in city governance. No vote or formal action was requested; the presentation was intended to show council the early trajectory of the engagement strategy before the plan's core work is complete."
-        ],
-        "presenter_quotes": [
-          {
-            "speaker": "Jessica Garner",
-            "text": "you're not asking us the hard enough questions. We want to really be engaged more deeply.",
-            "timestamp_seconds": 1764,
-            "context_excerpt": "really what we were told from the high school students that came to meet with us is you're not asking us the hard enough questions. We want to really be engaged more deeply. They were upset that they didn't get enough time with the council when when they were here for lunch.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1764s"
+            "speaker": "Sam Bradley",
+            "text": "the new uh methodology is going to be based on um average number of permits issued um times a multiplier that's going to be determined by job growth in the city.",
+            "timestamp_seconds": 1067,
+            "context_excerpt": "they're changing the formulation of how many units each community needs to do because previously some of the some of the counts with certain communities were just completely astronomical they didn't make too much sense. So the new uh methodology is going to be based on um average number of permits issued um times a multiplier that's going to be determined by job growth in the city. So they haven't released the tool of how to do it.",
+            "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=1067s"
           },
           {
             "speaker": "Jessica Garner",
-            "text": "thinking about those third spaces and how do you really bring in the youth voice into these kind of grown-up problems that they're by the way about to inherit.",
-            "timestamp_seconds": 1794,
-            "context_excerpt": "Housing affordability, being able to get from point A to point B safely. um thinking about those third spaces and how do you really bring in the youth voice into these kind of grown-up problems that they're by the way about to inherit. So we really learned a lot from them and we also learned that we have a lot more to go.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1794s"
-          }
-        ],
-        "external_resources": [
-          {
-            "title": "Arvada Comprehensive Plan (in-progress document; implementation table referenced as final deliverable)",
-            "url": "",
-            "kind": "planning document"
-          }
-        ],
-        "video_deep_link": null
-      },
-      {
-        "topic": "Business Retention Innovation — AEDA Industry Roundtables",
-        "presenter_name": "Nancy Faulk",
-        "presenter_role": "Staff Member, Arvada Economic Development Association (AEDA)",
-        "duration_minutes": 5,
-        "prose_paragraphs": [
-          "Nancy Faulk presented on how the Arvada Economic Development Association (AEDA) applied the innovation framework to its business retention program. Facing the challenge that individual business visits are resource-intensive, AEDA piloted quarterly industry roundtables, beginning with beverage producers and retailers, as a way to connect with multiple businesses simultaneously. The initiative was framed around a shared challenge: how businesses can adapt to changing consumer habits. Participants generated ideas about AEDA program support and about ways businesses in the same industry could become more resilient by collaborating with one another.",
-          "Ideas from the roundtables are being clustered and prioritized using the impact-versus-difficulty matrix from the innovation framework, and AEDA is studying ways to develop programs that address the needs identified. The roundtables also produced an unexpected benefit: staff observed businesses forming strategic relationships in real time, including spontaneous conversations about product cross-collaborations and other joint resilience strategies that AEDA had not anticipated or planned for. These organic connections were described as a surprising and valuable immediate outcome of the format.",
-          "Faulk identified ongoing limitations: balancing the staff resources required to follow through on the needs surfaced in roundtables, addressing common themes that crossed both industries tested, and deciding whether to expand the roundtable model to additional industries. No specific budget figures, business counts, or implementation timelines were provided. The roundtable model itself is positioned as a more scalable complement to — not a replacement for — individual business visits."
-        ],
-        "presenter_quotes": [
-          {
-            "speaker": "Nancy Faulk",
-            "text": "A surprising immediate result of this work was witnessing the strategic business relationships that were happening right in front of us. We were overhearing ideas of potential product cross collaborations and other creative ways that these industries could come together and build resilience.",
-            "timestamp_seconds": 1908,
-            "context_excerpt": "A surprising immediate result of this work was witnessing the strategic business relationships that were happening right in front of us. We were overhearing ideas of potential product cross collaborations and other creative ways that these industries could come together and build resilience. Part of the limitations with this work though are balancing the resources to deliver on those needs that were identified.",
-            "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1908s"
-          }
-        ],
-        "external_resources": [
-          {
-            "title": "AEDA Business Survey (referenced as source of needs aligned with roundtable findings)",
-            "url": "",
-            "kind": "survey"
-          }
-        ],
-        "video_deep_link": null
-      },
-      {
-        "topic": "Economic Development Partnership Innovation — Aligned Network Project",
-        "presenter_name": "Dawn Cariela",
-        "presenter_role": "Staff Lead for Innovation Program, City of Arvada (facilitator)",
-        "duration_minutes": 5,
-        "prose_paragraphs": [
-          "The final example presented was a short innovation project focused on how the City of Arvada, AEDA, the Arvada Chamber of Commerce, AURA (the urban renewal authority), and Visit Arvada can better work together as an economic development ecosystem. The presenter facilitated the session and described the participating organizations as subjects of research for the project. The Ambitious Impactful Mission developed by the group was: 'By 2030, we'll have an aligned, high-performing network of economic development partners that make Arvada a world-class location for businesses and a community you want to call home.'",
-          "The session produced several actionable themes: improving how partner organizations share data with one another, since each currently holds different pieces of the economic picture; developing unified marketing and storytelling for the city as a whole rather than each organization promoting itself independently; strengthening coordination across the partner ecosystem; and building customer-focused problem-solving so that a business or resident is not told 'that's not my problem' but instead guided through the full system to a solution. The presenter noted that participants were creative but also pragmatic, wanting outcomes that were tangible and doable rather than aspirational.",
-          "The project is described as ongoing rather than concluded. No specific deliverables, timelines, or resource commitments were attached to the themes that emerged. The session was characterized as a beneficial initial experience that demonstrated how the innovation framework can be applied to inter-agency collaboration, not just internal city processes. Council was not asked to take any action."
-        ],
-        "presenter_quotes": [],
-        "external_resources": [
-          {
-            "title": "Arvada Chamber of Commerce (partner organization, no specific document cited)",
-            "url": "",
-            "kind": "organization"
+            "text": "projects that will have 50% or more of the dwelling units meeting the affordable housing definition per uh statute as amended from time to time and be deemed restricted to that definition shall be exempt from the conditional use process and are subject to an administrative process only.",
+            "timestamp_seconds": 691,
+            "context_excerpt": "So, the language of that footnote is uh projects that will have 50% or more of the dwelling units meeting the affordable housing definition per uh statute as amended from time to time and be deemed restricted to that definition shall be exempt from the conditional use process and are subject to an administrative process only. So, that would be the proposed language we would uh propose as part of the LDC amendment.",
+            "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=691s"
           },
           {
-            "title": "AURA — Arvada Urban Renewal Authority (partner organization, no specific document cited)",
+            "speaker": "Jessica Garner",
+            "text": "if we failed to render decision uh within those 90 days, that would result in the loss of funding under Proposition 123. Um and as well as we would have a minimum of one year to wait in order to apply for um any funding um and our development partners would also have to wait for a year as well.",
+            "timestamp_seconds": 630,
+            "context_excerpt": "Um, there are consequences to failing to comply. uh if we failed to render decision uh within those 90 days, that would result in the loss of funding under Proposition 123. Um and as well as we would have a minimum of one year to wait in order to apply for um any funding um and our development partners would also have to wait for a year as well.",
+            "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=630s"
+          }
+        ],
+        "external_resources": [
+          {
+            "title": "Colorado Proposition 123 (2022) — Affordable Housing Funding Ballot Measure",
             "url": "",
-            "kind": "organization"
+            "kind": "legislation"
           },
           {
-            "title": "Visit Arvada (partner organization, no specific document cited)",
+            "title": "City of Arvada Resolution 23-061 — Opt-In Commitment to Proposition 123",
             "url": "",
-            "kind": "organization"
+            "kind": "government resolution"
+          },
+          {
+            "title": "City of Arvada Land Development Code (LDC), Table 31-22 — Conditional Use Districts",
+            "url": "",
+            "kind": "government code"
+          },
+          {
+            "title": "Colorado Department of Local Affairs (DOLA) — Proposition 123 Program Guidance and Courtesy Pre-Review Process",
+            "url": "",
+            "kind": "government agency program"
+          },
+          {
+            "title": "Colorado Housing and Finance Authority (CHFA) — Proposition 123 Loan and Infusion Programs",
+            "url": "",
+            "kind": "government agency program"
+          },
+          {
+            "title": "City of Arvada Strategic Housing Plan — Affordable Housing Development Strategies",
+            "url": "",
+            "kind": "government plan"
+          },
+          {
+            "title": "City of Arvada Comprehensive Plan Update — Phase 1 Existing Conditions Process",
+            "url": "https://arvadaco.gov",
+            "kind": "government plan"
+          },
+          {
+            "title": "Colorado Municipal League (CML) Housing Committee — Municipal Expedited Review Practices",
+            "url": "",
+            "kind": "association resource"
+          },
+          {
+            "title": "Colorado HOME Act — Land Use Provisions for Churches, Schools, and Nonprofits",
+            "url": "",
+            "kind": "legislation"
           }
         ],
         "video_deep_link": null
       }
     ],
     "questions_raised": [
-      "Council Member Fifer indicated he felt the projects already underway were on the right track and asked for continued updates rather than adding new topics to the innovation portfolio.",
-      "Council Member Davis asked that staff coordinate internally so that questions raised separately by different council members can be combined and addressed together, avoiding duplicative or siloed responses.",
-      "Council Member Ambrose asked how innovation processes can be better aligned with the city's strategic plan and its resource-prioritization framework.",
-      "Council Member Lovisone asked how council itself can participate more creatively in study sessions and workshops — potentially using innovation tools like Post-it notes — so that discussions are more efficient and inclusive.",
-      "Mayor Simpson suggested that the city's ongoing infrastructure and roads conversation with residents could be a strong candidate for applying innovation practices, given its alignment with strategic plan priorities and wildly important goals."
+      "How much Prop 123 funding does Arvada stand to lose — and for how long — if it fails to meet the 90-day expedited review deadline?",
+      "Since Arvada already exceeded its unit-count commitment without a formal 90-day process in place, does the city remain permanently obligated to the expedited review even after meeting future unit targets?",
+      "Is the elimination of the public hearing process a legal requirement of Prop 123, or is it merely an assumed consequence of the 90-day timeline — and have any other cities found a way to preserve public engagement within that window?",
+      "Can the city retain its call-up authority for qualifying affordable housing projects in mixed-use zones while still complying with the 90-day shot clock?",
+      "Are there specific mixed-use zoned parcels in Arvada — such as the Welby Gardens site — that were misclassified and should be reconsidered through the comprehensive plan update to prevent incompatible high-density development?",
+      "What is the realistic volume of new Prop 123 projects the city would actually see, given its limited affordable housing fund capacity, project-based voucher supply, and the highly oversubscribed nature of state funding rounds?",
+      "What is the new unit-count target under DOLA's revised methodology, and when will the calculation tool be released?",
+      "What are the 127 municipalities that have already adopted the 90-day fast track actually doing about public engagement, and can the CML housing committee provide examples?",
+      "Would neighborhood meeting requirements still apply to projects reviewed administratively under the expedited process?",
+      "Is the city's mixed-use zoning accurately calibrated across all parcels, and should a fine-tooth review be conducted before the expedited review framework takes effect?"
     ]
   },
-  "meeting_summary": "Arvada City Council received an informal briefing on the city's participation in the Bloomberg Harvard City Leadership Innovation Track, a free nine-month program that taught staff a structured innovation framework. Presenters from across city departments and the Arvada Economic Development Association described how they applied the methodology to four ongoing challenges: paid parking in Olde Town, homelessness response, the comprehensive plan community engagement process, and economic development partnerships. No votes were taken and no public comment was accepted.",
+  "meeting_summary": "Arvada City Council received a study session briefing on the city's obligations under Colorado Proposition 123, which requires the city to adopt a 90-day expedited review process for qualifying affordable housing projects by December 31, 2026. Staff reported that Arvada has already exceeded its unit-count commitment of 417 affordable units, reaching 515 accepted units, making it one of fewer than 10 communities statewide to have met that threshold early. Council members raised concerns about the potential loss of public hearing processes under the expedited review framework and asked staff to research how other municipalities have preserved public engagement within the 90-day timeline.",
   "alerts": [],
   "key_decisions": [],
   "notable_quotes": [
     {
-      "speaker": "Dawn Cariela",
-      "quote": "prototyping is a good tool to have in the toolbox because it allows us to fail quickly.",
-      "context": "Um we prototyping is a good tool to have in the toolbox because it allows us to fail quickly. Um, so how what can we test that we can um see if this is going to work, if people are going to respond to it before we invest a lot of time, effort, and money to find out that it's not as effective as we had hoped.",
-      "timestamp_seconds": 818,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=818s",
+      "speaker": "Sam Bradley",
+      "quote": "we are now sitting at 515 units counting towards our commitment.",
+      "context": "Um and finally, we participate in the uh Brothers Redevelopment uh program, which is that essential home repair program for low-income homeowners. Um there is an income verification process, and at this point, up 31 units have been uh rehabbed and accepted by Doula. So, we are now sitting at 515 units counting towards our commitment. So, I really want two more.",
+      "timestamp_seconds": 295,
+      "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=295s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Dawn Cariela",
-      "quote": "we heard from residents do it with us not to us. Um so they want to be part of the process and not feel like we're imposing decisions on them.",
-      "context": "So one insight that we um shared and we shared this with residents who participated in an ideation session um is that we heard from residents do it with us not to us. Um so they want to be part of the process and not feel like we're imposing decisions on them. And when we shared it during our innovation workshop with residents they really resonated with those research insights.",
-      "timestamp_seconds": 593,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=593s",
+      "speaker": "Sam Bradley",
+      "quote": "This project would collapse without Prop 123 financing.",
+      "context": "Um the total development cost on that building is about 35ish million dollars and 6.7 is coming from Chaffa. This this project would collapse without Prop 123 financing. Um the other thing is because these capital stocks they c they don't go together in 90 days. It could take years and I'm talking like five years, six years.",
+      "timestamp_seconds": 1564,
+      "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=1564s",
       "speaker_profile_url": null
     },
     {
-      "speaker": "Dawn Cariela",
-      "quote": "Not every problem is a good fit for innovation. Some problems are process problems and they need a process improvement approach.",
-      "context": "Not every problem is a good fit for innovation. Some problems are process problems and they need a process improvement approach. Um the most difficult and complicated problems are good fits for innovation. Um but you can't take on all of those all at once.",
-      "timestamp_seconds": 2074,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=2074s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Jacqueline Rhodess",
-      "quote": "how might we ensure that paid parking feels like a tool for access in managing turnover and not a barrier for customers and employees.",
-      "context": "Um, and one of the questions we focused on in our sessions here together were how might we ensure that paid parking feels like a tool for access in managing turnover and not a barrier for customers and employees. Um, so those are some of the things that help generate our ideas.",
-      "timestamp_seconds": 1068,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1068s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Jacqueline Rhodess",
-      "quote": "one of the benefits of this for our team specifically is that design thinking mindset. So using the how might we questions has been really powerful with us across the team.",
-      "context": "Um, and I want to back up and just say um that one of the benefits of this for our team specifically is that design thinking mindset. So using the how might we questions has been really powerful with us across the team.",
-      "timestamp_seconds": 1051,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1051s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Dawn Cariela",
-      "quote": "some things are um like high impact and really easy to do and those are kind of called no-brainers. So like if it's really easy to do and it would be high impact like you don't need to prototype, you don't need to like keep researching, just go.",
-      "context": "Um, where you take like a group of concepts and um the the chart is hard to read, but like um there's high impact, low impact, um and then uh ease of doing this. So some things are um like high impact and really easy to do and those are kind of called no-brainers. So like if it's really easy to do and it would be high impact like you don't need to prototype, you don't need to like keep researching, just go.",
-      "timestamp_seconds": 1259,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1259s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Dawn Cariela",
-      "quote": "how might we leverage what we have where our strengths are um and work together.",
-      "context": "Um, but we did some quick uh sort of like SWAT analysis of what are your strengths, what are your weaknesses and then asked them how might we questions that basically got to like how might we leverage what we have where our strengths are um and work together.",
-      "timestamp_seconds": 1527,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1527s",
+      "speaker": "Sam Bradley",
+      "quote": "the new uh methodology is going to be based on um average number of permits issued um times a multiplier that's going to be determined by job growth in the city.",
+      "context": "they're changing the formulation of how many units each community needs to do because previously some of the some of the counts with certain communities were just completely astronomical they didn't make too much sense. So the new uh methodology is going to be based on um average number of permits issued um times a multiplier that's going to be determined by job growth in the city. So they haven't released the tool of how to do it.",
+      "timestamp_seconds": 1067,
+      "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=1067s",
       "speaker_profile_url": null
     },
     {
       "speaker": "Jessica Garner",
-      "quote": "you're not asking us the hard enough questions. We want to really be engaged more deeply.",
-      "context": "really what we were told from the high school students that came to meet with us is you're not asking us the hard enough questions. We want to really be engaged more deeply. They were upset that they didn't get enough time with the council when when they were here for lunch.",
-      "timestamp_seconds": 1764,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1764s",
+      "quote": "projects that will have 50% or more of the dwelling units meeting the affordable housing definition per uh statute as amended from time to time and be deemed restricted to that definition shall be exempt from the conditional use process and are subject to an administrative process only.",
+      "context": "So, the language of that footnote is uh projects that will have 50% or more of the dwelling units meeting the affordable housing definition per uh statute as amended from time to time and be deemed restricted to that definition shall be exempt from the conditional use process and are subject to an administrative process only. So, that would be the proposed language we would uh propose as part of the LDC amendment.",
+      "timestamp_seconds": 691,
+      "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=691s",
       "speaker_profile_url": null
     },
     {
       "speaker": "Jessica Garner",
-      "quote": "thinking about those third spaces and how do you really bring in the youth voice into these kind of grown-up problems that they're by the way about to inherit.",
-      "context": "Housing affordability, being able to get from point A to point B safely. um thinking about those third spaces and how do you really bring in the youth voice into these kind of grown-up problems that they're by the way about to inherit. So we really learned a lot from them and we also learned that we have a lot more to go.",
-      "timestamp_seconds": 1794,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1794s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Nancy Faulk",
-      "quote": "A surprising immediate result of this work was witnessing the strategic business relationships that were happening right in front of us. We were overhearing ideas of potential product cross collaborations and other creative ways that these industries could come together and build resilience.",
-      "context": "A surprising immediate result of this work was witnessing the strategic business relationships that were happening right in front of us. We were overhearing ideas of potential product cross collaborations and other creative ways that these industries could come together and build resilience. Part of the limitations with this work though are balancing the resources to deliver on those needs that were identified.",
-      "timestamp_seconds": 1908,
-      "video_url": "https://www.youtube.com/watch?v=LqbrSpMtSW0&t=1908s",
+      "quote": "if we failed to render decision uh within those 90 days, that would result in the loss of funding under Proposition 123. Um and as well as we would have a minimum of one year to wait in order to apply for um any funding um and our development partners would also have to wait for a year as well.",
+      "context": "Um, there are consequences to failing to comply. uh if we failed to render decision uh within those 90 days, that would result in the loss of funding under Proposition 123. Um and as well as we would have a minimum of one year to wait in order to apply for um any funding um and our development partners would also have to wait for a year as well.",
+      "timestamp_seconds": 630,
+      "video_url": "https://www.youtube.com/watch?v=gng3BcdRxK0&t=630s",
       "speaker_profile_url": null
     }
   ],
   "topics_discussed": [
-    "Bloomberg Harvard City Leadership Innovation Track — Overview & Methodology",
-    "Paid Parking Innovation Project — Olde Town Arvada",
-    "Homelessness Innovation Project",
-    "Comprehensive Plan Community Engagement — Innovation Framework Integration",
-    "Business Retention Innovation — AEDA Industry Roundtables",
-    "Economic Development Partnership Innovation — Aligned Network Project"
+    "Proposition 123: Affordable Housing Commitments & Expedited Review Requirement"
   ],
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
   "recent_news": [
+    {
+      "title": "FrontLine Farming Lease Information",
+      "url": "https://www.arvadaco.gov/1542"
+    },
     {
       "title": "Inside Arvada Podcast",
       "url": "https://www.arvadaco.gov/1009"
@@ -366,10 +201,6 @@
     {
       "title": "Movies Around Town",
       "url": "https://www.arvadaco.gov/1260"
-    },
-    {
-      "title": "Bulky Item Drop-Off Event",
-      "url": "https://www.arvadaco.gov/728/Bulky-Item-Events"
     }
   ],
   "council_members": [
