@@ -3,130 +3,104 @@
   "city": "Arvada",
   "state": "CO",
   "meeting_date": "2026-06-09",
-  "generated_at": "2026-06-11T10:27:24.590919+00:00",
-  "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto",
-  "meeting_type": "study_session",
-  "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
-  "lead_headline": "Consultants Find Arvada Center Strong, Recommend Targeted Growth Steps",
+  "generated_at": "2026-06-11T16:03:47.953521+00:00",
+  "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ",
+  "meeting_type": "business",
+  "meeting_purpose_blurb": "Council makes official decisions in the form of ordinances, resolutions, or motions. Open to the public with public comment at designated times.",
+  "lead_headline": "Arvada ADA Plan Shows 67–72% Compliance in Buildings and Parks; Right-of-Way Lags at 24%",
   "schedule_portal_url": "https://arvadaco.portal.civicclerk.com/?category_id=26",
   "newsletter_subscribe_url": "https://eyes-on-arvada.beehiiv.com/",
   "type_specific": {
-    "meeting_type": "study_session",
-    "meeting_summary": "Arvada City Council received a briefing from consultants at Turner Towns and Huri on an organizational assessment of the Arvada Center for the Arts and Humanities. The study examined four areas: organizational structure and staffing, performing arts programming, development and fundraising, and facility utilization. Consultants found the Center to be fundamentally strong with a passionate staff and identified targeted opportunities for growth in earned revenue, donor development, facility use, and staff retention.",
-    "lead_headline": "Consultants Find Arvada Center Strong, Recommend Targeted Growth Steps",
-    "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
-    "briefings": [
+    "meeting_type": "business",
+    "meeting_summary": "The Arvada City Council held a single-item workshop on the city's Americans with Disabilities Act (ADA) Transition Plan, receiving a progress update from the Infrastructure Department. Staff reported significant compliance gains in city facilities (67%) and parks (72%), while the public right-of-way — particularly curb ramps — remains at roughly 24% compliance under newly adopted, more stringent standards. No formal votes were taken; council direction gathered at this workshop will be incorporated into a final plan for adoption later in 2026.",
+    "lead_headline": "Arvada ADA Plan Shows 67–72% Compliance in Buildings and Parks; Right-of-Way Lags at 24%",
+    "meeting_purpose_blurb": "Council makes official decisions in the form of ordinances, resolutions, or motions. Open to the public with public comment at designated times.",
+    "tonight_at_a_glance": {
+      "synopsis": "Council received a workshop briefing on Arvada's updated ADA Transition Plan, with staff reporting major progress in facilities and parks while acknowledging substantial remaining work on sidewalks, curb ramps, and pedestrian crossings.",
+      "highlights": [
+        "City facilities now 67% ADA-compliant; parks at 72%, with more than 11,400 combined barriers removed since 2020",
+        "Public right-of-way curb ramps only 24% compliant under newly adopted, stricter PROWAG standards — about 2,300 of nearly 10,000 ramps re-inspected and cleared",
+        "Staff exploring formation of a community ADA advisory board; council urged moving quickly, potentially tying it to plan adoption",
+        "Council members pressed for detailed sidewalk gap data, better coordination with Jefferson County, and a more programmatic approach to accessible parking enforcement",
+        "Final updated ADA Transition Plan expected to return to council later in 2026 for formal adoption"
+      ]
+    },
+    "presentations": [
       {
-        "topic": "Arvada Center Organizational & Facility Assessment — Turner Towns and Huri Report",
-        "presenter_name": "Jenna Buer",
-        "presenter_role": "National Sector Lead for Cultural Projects, Turner Towns and Huri (Turner & Townsend Hiri)",
-        "duration_minutes": 36,
+        "topic": "ADA Program and ADA Transition Plan Update",
+        "presenter_name": "Eric Leuen, Anne Foster, Jaclyn Rhodess, Claudia (last name not stated in transcript)",
+        "presenter_role": "Deputy Director of Infrastructure; ADA Coordinator; Director of Infrastructure; Unidentified staff member — City of Arvada Infrastructure Department",
+        "duration_minutes": null,
         "prose_paragraphs": [
-          "Consultants Jenna Buer (presenting virtually) and Vicki Infenito (in person) from Turner Towns and Huri delivered findings from a roughly five-month organizational assessment of the Arvada Center for the Arts and Humanities, a city-owned facility operated by a nonprofit that is approximately 10 years old. The study was commissioned with the city's financial support and focused on four defined areas: organizational structure and staffing; performing arts programming and the presenting series; development and fundraising; and facility utilization. The methodology included on-site visits beginning in January, interviews with staff and leadership, a multi-year financial review conducted with the Center's finance team, national peer benchmarking, and facility review with architect Chris Weinman of Simple Brown Design — who provided a familiarity-based assessment of code and infrastructure considerations but did not perform a structural review. The consultants noted the Center's model is difficult to benchmark precisely because few peer organizations combine producing theater, a presenting series, extensive classes and camps, school outreach, and arts education under one roof at the same scale.",
-          "The report's overall finding was that the Arvada Center is fundamentally strong, with no critical mismanagement identified. Key data points include approximately 12,000 annual participants in classes and camps, and nearly 70,000 school children reached through bus-in and community group programs. The consultants described staffing as lean but appropriately sized, with strong retention at the mid-management-and-above level but a gap in onboarding and retention at lower levels. On the performing arts side, the main stage was identified as the primary driver of ticket revenue, and fiscal year 2026 was flagged as an exceptionally strong year — driven by productions including 'Come From Away' and 'Frozen,' the Center's 50th anniversary, and individual giving tied to the outgoing director — with a caution that FY26 should not be used as a new baseline for future projections. On the development side, the report noted that while city funding and SCFD (Scientific and Cultural Facilities District) funding remain critical, the nonprofit's 10-year fundraising history has built a diverse and growing donor base with meaningful room to grow, particularly in mid-level and corporate giving.",
-          "Consultants organized recommendations into near-term and long-term categories. Near-term priorities include: coordinating removal of the Hannes cabin from interior programming space to free up room for high-demand education classes; piloting ballroom programming using a conference room conversion; benchmarking and refining ticket pricing using dynamic pricing strategies; segmenting the mid-level donor pipeline to move donors up a 'giving ladder'; commissioning a staff compensation benchmarking study to address retention; and evaluating and implementing venue management software for operational efficiency. Longer-term recommendations include a formal, comprehensive fundraising capacity study — encompassing both annual and capital giving potential — to identify untapped donor wealth in the metro Denver area; continued rebalancing of the mainstage programming mix; protecting and growing education program earned revenue as a financial 'workhorse'; phased multi-year activation of the ballrooms as a new performance space; and building toward a strong financial reserve. A specific board evolution process was recommended, tied to the arrival of the new CEO (identified as Noel), involving mapping current board member competencies and planning succession to fill identified gaps over time. The issue of the Hannes cabin prompted an immediate comment from Councilmember Ambrose, who noted the Arvada Historical Society owns the cabin and its contents and that the society has been receiving only secondhand information about relocation plans; she indicated that she and Councilmember Lovisone, who both sit on the historical society board, would work to bring stakeholders together to find an appropriate site for the cabin."
+          "Staff from the Infrastructure Department presented an update on Arvada's ADA Transition Plan, which began in 2020 with a comprehensive citywide accessibility evaluation conducted in partnership with Meeting the Challenge. The evaluation identified approximately 4,800 barriers in city facilities (now 67% resolved), more than 11,000 barriers in the park system (now 72% resolved), and nearly 10,000 curb ramps in the public right-of-way, of which roughly 2,300 have been re-inspected and confirmed compliant (24%) using the more stringent Public Right-of-Way Accessibility Guidelines (PROWAG). Staff described a three-tier implementation strategy — near-term, mid-term, and long-term projects — and noted that dedicated ADA funding within each operational area allows rapid response to grievances, citing a curb ramp at 80th and Gray repaired within approximately one month of a resident complaint. The presentation sought council feedback before staff finalizes the plan for formal adoption later in 2026."
         ],
         "presenter_quotes": [
           {
-            "speaker": "Jenna Buer",
-            "text": "We didn't find a lot of fat as it came down to it. But we also didn't find a model that was too lean. Sometimes when it's too lean, you're just not able to deliver. You're having a lot of problems. So there's a nice balance in there without being too big.",
-            "timestamp_seconds": 506,
-            "context_excerpt": "We had so many discussions with staff that were saying, 'We're able to achieve this because we're being efficient in these ways. If we could grow, this is the resourcing that we would need, but we didn't find a lot of fat as it came down to it.' But we also didn't find a model that was too lean. Sometimes when it's too lean, you're just not able to deliver. You're having a lot of problems. So there's a nice balance in there without being too big.",
-            "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=506s"
+            "speaker": "Eric Leuen",
+            "text": "This work began in 2020 when the city partnered with Meeting the Challenge to complete a comprehensive ADA evaluation of our city's facilities, park system, and public rightway. That effort created a baseline inventory and identified accessibility barriers throughout our community.",
+            "timestamp_seconds": 71,
+            "context_excerpt": "So tonight we'll provide an update on the city's ADA transition plan, the progress we've made, and the work that remains ahead. This work began in 2020 when the city partnered with Meeting the Challenge to complete a comprehensive ADA evaluation of our city's facilities, park system, and public rightway. That effort created a baseline inventory and identified accessibility barriers throughout our community.",
+            "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ&t=71s"
           },
           {
-            "speaker": "Jenna Buer",
-            "text": "You have a very talented and focused staff and organization who has come together to really make something phenomenal for this community. And they're really truly being stewards of every single dollar that they spend, every decision that they're making. And that comes through very clearly in conversations. If Philip's not in the room, they are saying the same thing that they would say when he's in the room.",
-            "timestamp_seconds": 939,
-            "context_excerpt": "That's not what you have here at the Arvvada Center. You have a very talented and focused staff and organization who has come together to really make something phenomenal for this community. And they're really truly being stewards of every single dollar that they spend, every decision that they're making. And that comes through very clearly in conversations. If Philip's not in the room, they are saying the same thing that they would say when he's in the room.",
-            "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=939s"
+            "speaker": "Eric Leuen",
+            "text": "as of today, approximately 3,200 of those barriers have now been removed and are now compliant. That would put our facility system at approximately 67% compliance.",
+            "timestamp_seconds": 569,
+            "context_excerpt": "from that original evaluation, we identified approximately 4,800 barriers throughout all of our city-owned facilities. As of today, approximately 3,200 of those barriers have now been removed and are now compliant. That would put our facility system at approximately 67% compliance.",
+            "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ&t=569s"
           },
           {
-            "speaker": "Jenna Buer",
-            "text": "Nobody really knows how much is possible because the data is not there. I'm a big fan of if you can show me the data and you can show me the path to get to where I need to, then we can be strategic about that and go find those resources and go find those relationships.",
-            "timestamp_seconds": 1466,
-            "context_excerpt": "We are recommending that there's a formal fundraising capacity study done. Nobody really knows how much is possible because the data is not there. I'm a big fan of if you can show me the data and you can show me the path to get to where I need to, then we can be strategic about that and go find those resources and go find those relationships.",
-            "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=1466s"
+            "speaker": "Eric Leuen",
+            "text": "more than 8,200 of those have now been removed. This would put parks compliance at approximately 72%.",
+            "timestamp_seconds": 638,
+            "context_excerpt": "of the original transition plan, we'd identified more than 11,000 barriers throughout all of our park systems. And as of today, I'm happy to report that more than 8,200 of those have now been removed. This would put parks compliance at approximately 72%.",
+            "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ&t=638s"
           },
           {
-            "speaker": "Jenna Buer",
-            "text": "Capital campaigns take, you know, 5 10 years sometimes within that. So they'll be able to get both answers so that then for strategic you know sort of roadmap planning they'll know both sides.",
-            "timestamp_seconds": 1868,
-            "context_excerpt": "It may be that as they're going through the capacity study, they say you're never going to get a capital campaign done because people are going to say X, Y, and Z. Or they may say, here's this availability for ongoing annual, but there's something really interesting here. If you would ever need to do capital, this is what this is. Capital campaigns take, you know, 5 10 years sometimes within that.",
-            "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=1868s"
+            "speaker": "Eric Leuen",
+            "text": "as of January 2026, approximately 2,300 of these nearly 10,000 city-owned and managed curb ramps have been reinspected and are now considered compliant, putting that system at approximately 24%.",
+            "timestamp_seconds": 734,
+            "context_excerpt": "Using these guidelines helped ensure that we applied a consistent standard citywide. Um, as of January 2026, approximately 2,300 of these nearly 10,000 city-owned and managed curb ramps have been reinspected and are now considered compliant, putting that system at approximately 24%.",
+            "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ&t=734s"
+          },
+          {
+            "speaker": "Anne Foster",
+            "text": "A woman had um some difficulty pushing her husband who uses a wheelchair and was worried that he was going to fall on the days that he could use a walker and it was just going to be a dangerous situation.",
+            "timestamp_seconds": 213,
+            "context_excerpt": "This came to our attention via an ADA grievance. A woman had um some difficulty pushing her husband who uses a wheelchair and was worried that he was going to fall on the days that he could use a walker and it was just going to be a dangerous situation. When I went out to survey the area, I also saw that the inlet had heaved.",
+            "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ&t=213s"
+          },
+          {
+            "speaker": "Anne Foster",
+            "text": "think of the ADA transition plan as a roadmap. It helps us understand where we are today by identifying existing accessibility barriers, puts us on a path to where we want to be. an inclusive Arvvada where residents and visitors of all abilities can access city facilities, programs, and services.",
+            "timestamp_seconds": 357,
+            "context_excerpt": "So, think of the ADA transition plan as a roadmap. It helps us understand where we are today by identifying existing accessibility barriers, puts us on a path to where we want to be. an inclusive Arvvada where residents and visitors of all abilities can access city facilities, programs, and services.",
+            "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ&t=357s"
+          },
+          {
+            "speaker": "Anne Foster",
+            "text": "if you're talking ADA grievances, um, in that instance, I have 14 calendar days to respond to the person, not necessarily fix, and it's case-byase basis.",
+            "timestamp_seconds": 2450,
+            "context_excerpt": "what is the average response time when we have a broken sidewalk or a heaved uh plate or something to be able to fix those issues once they're identified? Um, if you're talking ADA grievances, um, in that instance, I have 14 calendar days to respond to the person, not necessarily fix, and it's case-byase basis.",
+            "video_url": "https://www.youtube.com/watch?v=TxyfbxzgQoQ&t=2450s"
           }
         ],
-        "external_resources": [
-          {
-            "title": "Arvada Center Organizational Assessment and Recommendations Report (Turner Towns and Huri, 2025)",
-            "url": "",
-            "kind": "report"
-          },
-          {
-            "title": "Americans for the Arts — Prosperity 6 Economic Impact Calculator",
-            "url": "https://www.americansforthearts.org/by-program/reports-and-data/research-studies-publications/arts-economic-prosperity-6",
-            "kind": "dataset"
-          },
-          {
-            "title": "Multi-Year Financial Review — Arvada Center (prepared with Andy Go and Clark, referenced in methodology)",
-            "url": "",
-            "kind": "report"
-          },
-          {
-            "title": "Facility Infrastructure and Code Review — Simple Brown Design (Chris Weinman, advisor to the study)",
-            "url": "",
-            "kind": "report"
-          }
-        ],
+        "external_resources": [],
         "video_deep_link": null
       }
     ],
-    "questions_raised": [
-      "Whether a capital feasibility study and the recommended fundraising capacity study are the same thing, and whether the Arvada Center had previously conducted one before pausing a planned capital campaign post-pandemic.",
-      "Whether the recommended comprehensive fundraising capacity study could simultaneously assess both capital giving potential and ongoing annual giving potential, rather than requiring separate studies.",
-      "Where an economic impact study of the Arvada Center fits within the recommended scope of work, and whether such a study is already underway through the board.",
-      "Whether the Hannes cabin relocation plan is being coordinated with the Arvada Historical Society, which owns the cabin and its contents."
-    ]
+    "non_scheduled_public_comment": [],
+    "consent_agenda": [],
+    "resolutions": [],
+    "ordinances": [],
+    "public_hearings": []
   },
-  "meeting_summary": "Arvada City Council received a briefing from consultants at Turner Towns and Huri on an organizational assessment of the Arvada Center for the Arts and Humanities. The study examined four areas: organizational structure and staffing, performing arts programming, development and fundraising, and facility utilization. Consultants found the Center to be fundamentally strong with a passionate staff and identified targeted opportunities for growth in earned revenue, donor development, facility use, and staff retention.",
+  "meeting_summary": "The Arvada City Council held a single-item workshop on the city's Americans with Disabilities Act (ADA) Transition Plan, receiving a progress update from the Infrastructure Department. Staff reported significant compliance gains in city facilities (67%) and parks (72%), while the public right-of-way — particularly curb ramps — remains at roughly 24% compliance under newly adopted, more stringent standards. No formal votes were taken; council direction gathered at this workshop will be incorporated into a final plan for adoption later in 2026.",
   "alerts": [],
   "key_decisions": [],
-  "notable_quotes": [
-    {
-      "speaker": "Jenna Buer",
-      "quote": "We didn't find a lot of fat as it came down to it. But we also didn't find a model that was too lean. Sometimes when it's too lean, you're just not able to deliver. You're having a lot of problems. So there's a nice balance in there without being too big.",
-      "context": "We had so many discussions with staff that were saying, 'We're able to achieve this because we're being efficient in these ways. If we could grow, this is the resourcing that we would need, but we didn't find a lot of fat as it came down to it.' But we also didn't find a model that was too lean. Sometimes when it's too lean, you're just not able to deliver. You're having a lot of problems. So there's a nice balance in there without being too big.",
-      "timestamp_seconds": 506,
-      "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=506s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Jenna Buer",
-      "quote": "You have a very talented and focused staff and organization who has come together to really make something phenomenal for this community. And they're really truly being stewards of every single dollar that they spend, every decision that they're making. And that comes through very clearly in conversations. If Philip's not in the room, they are saying the same thing that they would say when he's in the room.",
-      "context": "That's not what you have here at the Arvvada Center. You have a very talented and focused staff and organization who has come together to really make something phenomenal for this community. And they're really truly being stewards of every single dollar that they spend, every decision that they're making. And that comes through very clearly in conversations. If Philip's not in the room, they are saying the same thing that they would say when he's in the room.",
-      "timestamp_seconds": 939,
-      "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=939s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Jenna Buer",
-      "quote": "Nobody really knows how much is possible because the data is not there. I'm a big fan of if you can show me the data and you can show me the path to get to where I need to, then we can be strategic about that and go find those resources and go find those relationships.",
-      "context": "We are recommending that there's a formal fundraising capacity study done. Nobody really knows how much is possible because the data is not there. I'm a big fan of if you can show me the data and you can show me the path to get to where I need to, then we can be strategic about that and go find those resources and go find those relationships.",
-      "timestamp_seconds": 1466,
-      "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=1466s",
-      "speaker_profile_url": null
-    },
-    {
-      "speaker": "Jenna Buer",
-      "quote": "Capital campaigns take, you know, 5 10 years sometimes within that. So they'll be able to get both answers so that then for strategic you know sort of roadmap planning they'll know both sides.",
-      "context": "It may be that as they're going through the capacity study, they say you're never going to get a capital campaign done because people are going to say X, Y, and Z. Or they may say, here's this availability for ongoing annual, but there's something really interesting here. If you would ever need to do capital, this is what this is. Capital campaigns take, you know, 5 10 years sometimes within that.",
-      "timestamp_seconds": 1868,
-      "video_url": "https://www.youtube.com/watch?v=nDmWLFCicto&t=1868s",
-      "speaker_profile_url": null
-    }
-  ],
+  "notable_quotes": [],
   "topics_discussed": [
-    "Arvada Center Organizational & Facility Assessment — Turner Towns and Huri Report"
+    "ADA Program and ADA Transition Plan Update"
   ],
   "consistency_flags": [],
   "on_the_horizon": "",
