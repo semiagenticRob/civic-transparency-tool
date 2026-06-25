@@ -330,14 +330,7 @@
     "public_hearings": []
   },
   "meeting_summary": "The Arvada City Council held its June 16, 2026 business meeting, featuring extensive public comment on three major community topics: the proposed Frontline Farming lease termination at Majestic View Nature Center, the pending Climate and Sustainability Action Plan (KSAP), and the Avalon/Wellby Gardens conditional use permit reconsideration request. The council approved three resolutions — a waste hauling fee increase, a CDBG annual action plan submission, and an Arvada Center funding release (with one recusal) — and passed two consent agenda items. Council members declined to intervene in the Frontline Farming lease decision, citing the city manager's operational authority under city code.",
-  "alerts": [
-    {
-      "title": "Water restrictions in effect.",
-      "body": "The City has declared a drought and Stage 1 watering restrictions will be effective April 15. The City's rules, including assigned watering days, are available on the drought watering restrictions web",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/1499"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [
     {
       "motion": "R26-042, a resolution accepting an annexation petition for annexing certain land into the city of Arvvada, Revival Industrial, a 5.3980 acre parcel of land approximately located south of State Highway 72 east of 15350 State Highway 72 in the city of Arvvada, county of Jefferson, state of Colorado, finding said petition substantially compliant with CRS31-12-1071 and setting a public hearing for July 21st 2026 at 6:15 p.m. for city council to determine whether the area meets requirements of CRS 31-12-104 and 105 and is considered eligible for annexation",
@@ -385,32 +378,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Olde Town Murals",
-      "url": "https://www.arvadaco.gov/1553"
-    },
-    {
-      "title": "Join us for the 2026 Pollinator Garden Tour!",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=246"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Stage 1 Drought Water Restrictions",
-      "url": "https://www.arvadaco.gov/1499"
-    },
-    {
-      "title": "July 4th Fireworks",
-      "url": "https://www.arvadaco.gov/494"
-    },
-    {
-      "title": "Nonprofits can promote opportunities on City channels",
-      "url": "https://www.arvadaco.gov/1514/Request-to-Post-Content-on-City-of-Arvad"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
