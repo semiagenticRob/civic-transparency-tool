@@ -586,14 +586,7 @@
     ]
   },
   "meeting_summary": "The Arvada City Council held its July 7, 2026 business meeting, taking several significant votes including unanimous adoption of the city's first Climate and Sustainability Action Plan (CASP) and advancing four ordinances to first reading. The council also heard public comment on a potential motion to reconsider the previously denied Avalon Bay conditional use permit at Welby Gardens, but none of the three eligible council members made such a motion, leaving the April 21 denial in place. The meeting also included a public hearing on rezoning requests for three undeveloped Candelas parcels from commercial/industrial PUD to residential and commercial designations.",
-  "alerts": [
-    {
-      "title": "Water restrictions in effect.",
-      "body": "The City has declared a drought and Stage 1 watering restrictions will be effective April 15. The City's rules, including assigned watering days, are available on the drought watering restrictions web",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/1499"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [
     {
       "motion": "No motion was made. Mayor Simpson, Council Member Leon, and Council Member Feifer — the three eligible members — declined to make a motion to reconsider. The matter was closed with the April 21, 2026 denial standing.",
@@ -938,32 +931,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Weiland honored with Lifetime Achievement Award",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=353"
-    },
-    {
-      "title": "Movies Around Town: Labyrinth",
-      "url": "https://www.arvadaco.gov/Calendar.aspx?EID=3565"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Park and Recreation Month",
-      "url": "https://www.arvadaco.gov/912"
-    },
-    {
-      "title": "60th Avenue Improvements",
-      "url": "https://www.arvadaco.gov/666"
-    },
-    {
-      "title": "Pavement Program",
-      "url": "https://www.arvadaco.gov/629/Pavement-Program"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
