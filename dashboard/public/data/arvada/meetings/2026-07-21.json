@@ -551,14 +551,7 @@
     ]
   },
   "meeting_summary": "The Arvada City Council met on July 21, 2026, beginning with a meeting of the Arvada Housing Authority, which approved its annual report, 2027 PHA plan, and Housing Choice Voucher Program administrative plan updates. The council then addressed a range of business items including an unscheduled external audit presentation, multiple public hearings on topics spanning a Comcast franchise renewal to a gravel driveway variance and an industrial annexation, and approved an intergovernmental agreement establishing the Clear Creek Trail Collaborative. Multiple public commenters spoke in support of Frontline Farming, an urban farm operating at Majestic View Park whose lease status appears to be under dispute.",
-  "alerts": [
-    {
-      "title": "Wetland Restoration Trail Closures",
-      "body": "The southern spur of the Cattail trail will be closed to public access during the construction phase of the wetland restoration project.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/1169"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [
     {
       "motion": "No vote required.",
@@ -795,32 +788,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Wetland restoration trail closures",
-      "url": "https://www.arvadaco.gov/1169"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Weiland honored with Lifetime Achievement Award",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=353"
-    },
-    {
-      "title": "Park and Recreation Month",
-      "url": "https://www.arvadaco.gov/912"
-    },
-    {
-      "title": "60th Avenue Improvements",
-      "url": "https://www.arvadaco.gov/666"
-    },
-    {
-      "title": "Pavement Program",
-      "url": "https://www.arvadaco.gov/629/Pavement-Program"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
