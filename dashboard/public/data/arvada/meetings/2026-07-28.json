@@ -258,14 +258,7 @@
     ]
   },
   "meeting_summary": "Arvada City Council held a special business meeting followed by a workshop on July 28, 2026. During the special meeting, council voted 6-0 on two separate motions related to pending ethics investigations involving Councilmember Davis—dismissing one complaint on a technical deficiency and directing a hearing on a second. The workshop covered two topics: proposed 2027 water, wastewater, and stormwater rate increases (totaling roughly $11.73/month per average household), and annual human services grant recommendations distributing $260,000 to 19 local nonprofits.",
-  "alerts": [
-    {
-      "title": "Wetland Restoration Trail Closures",
-      "body": "The southern spur of the Cattail trail will be closed to public access during the construction phase of the wetland restoration project.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/1169"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [],
   "notable_quotes": [
     {
@@ -388,24 +381,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Wetland restoration trail closures",
-      "url": "https://www.arvadaco.gov/1169"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Weiland honored with Lifetime Achievement Award",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=353"
-    },
-    {
-      "title": "Park and Recreation Month",
-      "url": "https://www.arvadaco.gov/912"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
