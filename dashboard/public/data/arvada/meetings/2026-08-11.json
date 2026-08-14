@@ -119,14 +119,7 @@
     ]
   },
   "meeting_summary": "Arvada City Council held a study session on August 11, 2026, to learn about data centers — what they are, how they are categorized by size and power demand, where they exist in Colorado, and how other municipalities have responded. Staff presented a recommendation for an 18-month moratorium on new data center applications, explaining that current land-use codes lack adequate definitions and that infrastructure capacity questions around water, energy, and fiber have not been analyzed. Council discussed how to craft the moratorium to avoid inadvertently blocking smaller, ancillary uses such as cell towers, hospital campuses, and government facilities, and directed staff to proceed with an 18-month moratorium focused on primary-use data centers with explicit carve-outs for those ancillary uses.",
-  "alerts": [
-    {
-      "title": "Wetland Restoration Trail Closures",
-      "body": "The southern spur of the Cattail trail will be closed to public access during the construction phase of the wetland restoration project.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/1169"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [],
   "notable_quotes": [
     {
@@ -184,24 +177,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Wetland restoration trail closures",
-      "url": "https://www.arvadaco.gov/1169"
-    },
-    {
-      "title": "Movies Around Town: Little Shop of Horrors",
-      "url": "https://www.arvadaco.gov/Calendar.aspx?EID=3566"
-    },
-    {
-      "title": "Bulky Item Drop-Off Event",
-      "url": "https://www.arvadaco.gov/728/Bulky-Item-Events"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
