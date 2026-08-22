@@ -314,14 +314,7 @@
     ]
   },
   "meeting_summary": "The Arvada City Council held its August 18, 2026 business meeting, recognizing faith organizations for their homelessness response, receiving a midyear financial report and drought update, and hearing from the Transportation Advisory Committee. The council passed several resolutions including two affordable housing bond allocations, an emergency preparedness agreement, and a Vision Zero traffic safety commitment, and advanced a second ethics complaint against Councilmember Sharon Davis to a public hearing.",
-  "alerts": [
-    {
-      "title": "Temporary Closure Due to Plumbing Issue",
-      "body": "The Majestic View Nature Center is temporarily closed due to plumbing issue",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/AlertCenter.aspx?AID=78"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [
     {
       "motion": "Item removed from agenda — no vote taken.",
@@ -411,20 +404,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Wetland restoration trail closures",
-      "url": "https://www.arvadaco.gov/1169"
-    },
-    {
-      "title": "Movies Around Town: Little Shop of Horrors",
-      "url": "https://www.arvadaco.gov/Calendar.aspx?EID=3566"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
