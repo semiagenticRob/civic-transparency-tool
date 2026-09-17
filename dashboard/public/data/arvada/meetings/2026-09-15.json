@@ -274,14 +274,7 @@
     "public_hearings": []
   },
   "meeting_summary": "The Arvada City Council, meeting without Mayor Simpson (excused), approved three proclamations, passed several consent and resolution items, and advanced five ordinances to first reading — including a moratorium on large data center applications. The council also voted to have an independent third party conduct a pending ethics hearing involving Council Member Davis, and heard public comment on topics ranging from park maintenance and short-term rentals to Amendment 83 and Proposition 123 affordable housing procedures.",
-  "alerts": [
-    {
-      "title": "Water restrictions in effect - lawn watering ends 10/1",
-      "body": "The City has declared a Stage 1 drought and watering restrictions are in effect. The City's rules, including assigned watering days, are available on the drought watering restrictions webpage.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/1499"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [
     {
       "motion": "R26-069, a resolution authorizing a second amendment to the intergovernmental agreement by and between the urban drainage and flood control district DBA mile high flood district and the city of Arvvada regarding design and construction of drainage and flood control improvements for hidden lake drainage way at Arvvada Center",
@@ -352,28 +345,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Short detour planned for Ralston Creek Trail",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=362"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Inside Arvada Podcast: Traffic Signal Timing",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Wetland restoration project updates",
-      "url": "https://www.arvadaco.gov/1169"
-    },
-    {
-      "title": "Movies Around Town: GOAT",
-      "url": "https://www.arvadaco.gov/Calendar.aspx?EID=3567"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
