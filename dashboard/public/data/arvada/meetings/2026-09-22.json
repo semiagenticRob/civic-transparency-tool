@@ -155,14 +155,7 @@
     ]
   },
   "meeting_summary": "The Arvada City Council held a budget workshop in which City Manager Don Wiek and Finance Director Brian Archer presented the proposed 2027–2028 two-year budget framework, covering the decision-making criteria used to prioritize spending, a conservative approach to new hires, and rising health care costs. Human Resources Director Gabriela Palmer detailed a recommended 3.86% overall compensation increase for 2027, while department directors from Community Development, Infrastructure, Organizational Services & Effectiveness, Police, and Vibrant Communities & Neighborhoods each outlined their priorities, funded requests, and emerging challenges. No formal votes were taken; the workshop was designed to inform future budget adoption at a regular business meeting.",
-  "alerts": [
-    {
-      "title": "Water restrictions in effect - lawn watering ends 10/1",
-      "body": "The City has declared a Stage 1 drought and watering restrictions are in effect. The City's rules, including assigned watering days, are available on the drought watering restrictions webpage.",
-      "severity": "warning",
-      "url": "https://www.arvadaco.gov/1499"
-    }
-  ],
+  "alerts": [],
   "key_decisions": [],
   "notable_quotes": [],
   "topics_discussed": [
@@ -180,32 +173,7 @@
   "consistency_flags": [],
   "on_the_horizon": "",
   "upcoming": [],
-  "recent_news": [
-    {
-      "title": "Ambassadors coming to Olde Town",
-      "url": "https://www.arvadaco.gov/1613"
-    },
-    {
-      "title": "Food Trucks and Fireworks",
-      "url": "https://www.arvadaco.gov/1589"
-    },
-    {
-      "title": "Short detour planned for Ralston Creek Trail",
-      "url": "https://www.arvadaco.gov/CivicAlerts.aspx?aid=362"
-    },
-    {
-      "title": "Inside Arvada Podcast",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Inside Arvada Podcast: Traffic Signal Timing",
-      "url": "https://www.arvadaco.gov/1009"
-    },
-    {
-      "title": "Wetland restoration project updates",
-      "url": "https://www.arvadaco.gov/1169"
-    }
-  ],
+  "recent_news": [],
   "council_members": [
     {
       "name": "Lauren Simpson",
