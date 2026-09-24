@@ -2,159 +2,95 @@
   "schema_version": 1,
   "city": "Arvada",
   "state": "CO",
-  "meeting_date": "2026-09-22",
-  "generated_at": "2026-09-24T16:40:16.775762+00:00",
-  "video_url": "https://www.youtube.com/watch?v=hfm3zbNzaBI",
-  "meeting_type": "workshop",
-  "meeting_purpose_blurb": "Council examines particular topics in depth. No official decisions are made and no public comment is taken.",
-  "lead_headline": "Arvada Reviews $412M Proposed Budget for 2027–2028",
+  "meeting_date": "2026-09-24",
+  "generated_at": "2026-09-24T21:13:58.982388+00:00",
+  "video_url": "https://www.youtube.com/watch?v=1B67c5BIq_M",
+  "meeting_type": "study_session",
+  "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
+  "lead_headline": "AURA Pitches Three Urban Renewal Study Areas to Arvada Council",
   "schedule_portal_url": "https://arvadaco.portal.civicclerk.com/?category_id=26",
   "newsletter_subscribe_url": "https://eyes-on-arvada.beehiiv.com/",
   "type_specific": {
-    "meeting_type": "workshop",
-    "meeting_summary": "The Arvada City Council held a budget workshop in which City Manager Don Wiek and Finance Director Brian Archer presented the proposed 2027–2028 two-year budget framework, covering the decision-making criteria used to prioritize spending, a conservative approach to new hires, and rising health care costs. Human Resources Director Gabriela Palmer detailed a recommended 3.86% overall compensation increase for 2027, while department directors from Community Development, Infrastructure, Organizational Services & Effectiveness, Police, and Vibrant Communities & Neighborhoods each outlined their priorities, funded requests, and emerging challenges. No formal votes were taken; the workshop was designed to inform future budget adoption at a regular business meeting.",
-    "lead_headline": "Arvada Reviews $412M Proposed Budget for 2027–2028",
-    "meeting_purpose_blurb": "Council examines particular topics in depth. No official decisions are made and no public comment is taken.",
-    "members_present": [
-      "Lauren Simpson",
-      "Randy Moorman",
-      "Rebecka Lovisone",
-      "Bob Fifer",
-      "Sharon Davis",
-      "Michael Griffith"
-    ],
-    "workshop_topics": [
+    "meeting_type": "study_session",
+    "meeting_summary": "Arvada's Urban Renewal Authority (AURA) Executive Director Peri Prisco presented a strategic planning update and proposed three areas for deeper feasibility study as potential future urban renewal zones: the Arvada K-8 school site and Ralston Road corridor, the Marshall Street corridor, and the Squire Lake sub-area. Council members discussed concerns about displacement of affordable housing residents, preserving employment uses, and which projects should be prioritized given staff capacity. No formal votes were taken; this was an informational study session.",
+    "lead_headline": "AURA Pitches Three Urban Renewal Study Areas to Arvada Council",
+    "meeting_purpose_blurb": "Council learns about topics in a more informal meeting. The public may observe via Zoom; no public comment is taken.",
+    "briefings": [
       {
-        "title": "2027–2028 Budget Framework & Decision Stack",
-        "tagline": "City manager lays out the philosophy behind this year's spending priorities",
-        "lede": "City Manager Don Wiek opened the workshop by describing two frameworks guiding the proposed budget: a 'decision stack' that ranks spending requests against mandatory costs, prior commitments, revenue trends, Council strategic alignment, and public value; and a set of staffing principles aimed at avoiding future layoffs. He noted that 106 positions had been added over the past six years and that staff reviewed every one of those roles before recommending only six new positions out of 32 requests.",
-        "options": [],
-        "member_positions": [],
-        "feeds_into": "Future business meeting for formal budget adoption, expected late 2026"
-      },
-      {
-        "title": "Compensation & Health Care Costs",
-        "tagline": "Staff recommends 3.86% overall pay increase while health care costs surge nearly 16%",
-        "lede": "HR Director Gabriela Palmer and Finance Director Brian Archer presented the proposed 2027 compensation plan, which includes a 2% market-range adjustment for all employees in January, step increases for eligible staff (roughly 70% of the workforce), and larger step increases for police officers (7.25%). Health care costs originally projected to rise 22% were reduced to 15.9% through plan design changes negotiated with the benefits consultant; a portion of the health care fund reserve will be used to offset the remaining increase without eliminating any covered services.",
-        "options": [
+        "topic": "AURA Strategic Planning Update and Three Proposed Study Areas",
+        "presenter_name": "Peri Prisco",
+        "presenter_role": "Executive Director, Arvada Urban Renewal Authority (AURA)",
+        "duration_minutes": 23,
+        "prose_paragraphs": [
+          "AURA Executive Director Peri Prisco, joined by colleagues Alex Vanzante and Brien Hall, presented the results of AURA's ongoing strategic planning process and proposed three geographic areas that staff and the AURA board believe warrant deeper study as potential future urban renewal zones. Prisco framed the presentation around four strategic priorities that AURA has identified in alignment with the City Council's broader strategic plan: strategic alignment with city initiatives, supporting durable improvements, catalyzing private investment by addressing blighted conditions, and creating innovative place-making. She emphasized that the request was not for council to approve the creation of any urban renewal areas, but simply to endorse further study. She also noted that any new urban renewal work must comply with Colorado House Bill 15-1348, which expands AURA's board composition and adds negotiation requirements for Tax Increment Financing (TIF) in new project areas.",
+          "The three proposed study areas are distinct in character and timeline. The Arvada K-8 elementary and middle school site and the adjacent Ralston Road corridor represent the fastest-moving opportunity: Jefferson County School District has declared the K-8 school surplus, the City holds a right of first refusal, and Prisco estimated a study could produce an adopted area plan within nine to twelve months. The site sits adjacent to City Hall, Wolff Park, and Ralston Road, and the question raised was whether coordinated public investment could achieve broader civic outcomes — connectivity, public amenities, infrastructure — beyond what the private market would produce on its own. The Marshall Street corridor between Grandview and 52nd Avenue is an established employment area containing offices, light industrial, and some residential uses; AURA sees an opportunity to proactively manage how employment and residential uses coexist and to reduce barriers to reinvestment, with a study estimated at two to three years. The Squire Lake sub-area at the Sheridan/I-76 gateway is the most complex, with an estimated study timeline of three to five years; its primary challenge is the Ralston Creek and Clear Creek floodplains, which have historically fragmented infrastructure and limited development, and AURA's question is whether an urban renewal economic model could generate enough value to fund the large public infrastructure improvements the existing Squire Lake Sub-Area Plan envisions.",
+          "Council discussion surfaced several substantive concerns. Councilmember Ambrose pressed hard on anti-displacement protections, particularly for the Marshall Street corridor, which she identified as home to some of the city's most naturally occurring affordable housing; she noted that redevelopment pressure could spill over into unincorporated Adams County neighborhoods across Sheridan whose children attend Arvada schools. Multiple councilmembers expressed skepticism that urban renewal tools, in practice, tend to produce predominantly residential outcomes rather than preserving employment uses, citing prior experience along Ralston Road. Several councilmembers signaled a preference for prioritizing the Squire Lake sub-area, which one member described as a place where urban renewal is most clearly the right tool because infrastructure barriers are too large for the market to clear alone. There was also discussion of AURA's staff capacity to pursue all three areas simultaneously. Prisco indicated she would follow up individually with each councilmember to capture their input."
+        ],
+        "presenter_quotes": [
           {
-            "number": 1,
-            "label": "Recommended compensation plan (3.86% overall increase)",
-            "cost": "3.86% increase to total payroll budget",
-            "summary": "All employees receive a 2% market range adjustment; roughly 70% also receive step increases of 2%–3.75% (police steps up to 7.25%); 32 employees receive reclassification adjustments. Health care premium increase held to 15.9% via plan redesign and partial draw on the health care fund reserve.",
-            "endorsement": "Staff recommendation; no council member opposed"
+            "speaker": "Peri Prisco",
+            "text": "أود التأكيد على أنني لا أطلب منكم اليوم إنشاء مناطق للتجديد الحضري في أي من هذه المواقع. نحن فقط نطلب آراءكم حول ما إذا كانت هذه فرصًا مناسبة لمجتمعنا لمزيد من البحث.",
+            "timestamp_seconds": 156,
+            "context_excerpt": "أود التأكيد على أنني لا أطلب منكم اليوم إنشاء مناطق للتجديد الحضري في أي من هذه المواقع. نحن فقط نطلب آراءكم حول ما إذا كانت هذه فرصًا مناسبة لمجتمعنا لمزيد من البحث. في حال وجود دعم، ستكون الخطوات التالية هي إجراء دراسة متأنية لفهم الظروف والفرص وأولويات المجتمع.",
+            "video_url": "https://www.youtube.com/watch?v=1B67c5BIq_M&t=156s"
+          },
+          {
+            "speaker": "Peri Prisco",
+            "text": "مع تزايد ضغط الميزانيات، العامة والخاصة، تُعد هذه الأداة المالية وسيلةً لتخفيف الضغط على الموارد العامة، التي تعاني أصلاً من نقص التمويل، وتوفير جسر مالي للاستثمار الخاص في مجتمعنا.",
+            "timestamp_seconds": 648,
+            "context_excerpt": "هدفنا هو التفكير ملياً في استخدام هذه الأداة، والتأكد من توافقها مع أولويات المدينة، وتوجيه موارد أورا حيث يكون لها أكبر الأثر على المجتمع. مع تزايد ضغط الميزانيات، العامة والخاصة، تُعد هذه الأداة المالية وسيلةً لتخفيف الضغط على الموارد العامة، التي تعاني أصلاً من نقص التمويل، وتوفير جسر مالي للاستثمار الخاص في مجتمعنا.",
+            "video_url": "https://www.youtube.com/watch?v=1B67c5BIq_M&t=648s"
           }
         ],
-        "member_positions": [],
-        "feeds_into": "Future business meeting for formal budget and salary plan adoption, expected late 2026"
-      },
-      {
-        "title": "New Position Requests (Six Funded Roles)",
-        "tagline": "Staff recommends six new positions out of 32 requests, plus three COPS-grant officers",
-        "lede": "Finance Director Brian Archer reviewed the six positions recommended for funding in the 2027–2028 budget: a Homelessness Resolution Case Manager (moved from HODAG fund to General Fund for permanent funding), a Records Management System Consortium coordinator (shared with Lakewood, also supports body camera program), an Emergency Management Specialist (grant-funded for up to three years), a Parks Maintenance Worker for graffiti abatement, three police officers funded via a federal COPS grant (covering 75% of salary for three years up to $125,000 each), and a Stormwater Inspector Supervisor. City Manager Wiek noted that all 106 positions added over the past six years are being reviewed before any additional hires are approved.",
-        "options": [
+        "external_resources": [
           {
-            "number": 1,
-            "label": "Six recommended new positions (plus 3 COPS-grant officers)",
-            "cost": "Cost TBD (embedded in departmental budget lines)",
-            "summary": "Adds a permanent Homelessness Case Manager to the General Fund, a Records Management System coordinator, a grant-funded Emergency Management Specialist, a Parks graffiti worker, three COPS-grant police officers, and a Stormwater Inspector Supervisor.",
-            "endorsement": "Staff recommendation; council members did not object"
+            "title": "Colorado House Bill 15-1348 (AURA Board Expansion and TIF Negotiation Requirements)",
+            "url": "",
+            "kind": "legislation"
+          },
+          {
+            "title": "Squire Lake Sub-Area Plan (Arvada)",
+            "url": "",
+            "kind": "plan"
+          },
+          {
+            "title": "AURA Strategic Plan (current cycle)",
+            "url": "",
+            "kind": "report"
+          },
+          {
+            "title": "City of Arvada Strategic Plan (referenced as alignment framework)",
+            "url": "",
+            "kind": "plan"
+          },
+          {
+            "title": "Ralston Road Corridor Urban Renewal Area (prior AURA project area, referenced for context)",
+            "url": "",
+            "kind": "report"
+          },
+          {
+            "title": "Jefferson County School District Surplus Property Declaration — Arvada K-8 School",
+            "url": "",
+            "kind": "report"
           }
         ],
-        "member_positions": [],
-        "feeds_into": "Future business meeting for formal budget adoption, expected late 2026"
-      },
-      {
-        "title": "Community Development Department Budget",
-        "tagline": "Focus on permitting software upgrade, housing services funding shift, and development coordination",
-        "lede": "Community Development Director Jessica Garner outlined the department's priorities, including implementation of the new SPARK permitting software (launching June or July 2027 with Nebulogic), a new Development Liaison Coordinator position (created through reclassification) to guide applicants through the permitting process, and a shift of a portion of CDBG grant funding to the General Fund to better support Human Services grants. Staff also flagged that the HODAG fund is nearly depleted and will need ongoing council attention.",
-        "options": [
-          {
-            "number": 1,
-            "label": "Funded requests as proposed",
-            "cost": "Includes $25,000/yr for part-time permits tech, SPARK annual maintenance, and Human Services grant funding shift",
-            "summary": "Approves annual SPARK software maintenance fees, continues a 30-hr/week temporary permits technician, shifts Human Services grants from CDBG to the General Fund, and permanently funds the Homelessness Case Manager from the General Fund instead of HODAG.",
-            "endorsement": "Staff recommendation; no opposition expressed"
-          }
-        ],
-        "member_positions": [],
-        "feeds_into": "Future business meeting for formal budget adoption, expected late 2026"
-      },
-      {
-        "title": "Infrastructure Department Budget",
-        "tagline": "Street repaving milestone near, street light acquisition studied, utility costs rising",
-        "lede": "Infrastructure Director Jaclyn Rhodes reported that the city has repaved 73 of 75 targeted trail miles and is close to completing that strategic goal. She described ongoing work on traffic signal timing improvements, a multi-disciplinary team studying the potential purchase of Xcel Energy street lights (a decision expected within the coming year), rising utility and parking enforcement costs, and a proposed new Stormwater Inspector Supervisor position to improve inspection speed and accuracy. Staff also noted that capital funds from the 98-101 program are being used for the first time to supplement street maintenance funding, growing from $500,000 to $1 million.",
-        "options": [],
-        "member_positions": [],
-        "feeds_into": "Future business meeting for formal budget adoption and potential street light acquisition presentation, expected 2027"
-      },
-      {
-        "title": "Organizational Services & Effectiveness (OSE) Budget",
-        "tagline": "AI threats, workforce succession, federal funding uncertainty, and $1.85M in new requests",
-        "lede": "OSE Director (name not stated in transcript, identified as 'Miss Cheek' by Mayor Simpson) presented $1.85 million in new General Fund expenditures covering continuation of the 40X strategic plan, a future ballot-measure engagement process, lobbying contract renewals, an Emergency Management Specialist (funded from General Fund in 2028), homelessness case management software, the Block-by-Block Olde Town ambassador program (launching October 1), a new City Attorney case management system (2028), and IT investments including a temporary applications systems officer to cover work during SPARK implementation and a new computer deployment tool replacing a Microsoft product going end-of-life.",
-        "options": [
-          {
-            "number": 1,
-            "label": "Funded OSE requests as proposed",
-            "cost": "$1.85 million total new expenditures (General Fund and IT Fund combined)",
-            "summary": "Funds strategic plan continuation, ballot engagement preparation, lobbying, Olde Town ambassadors, homelessness data system, prosecutorial case management (2028), temporary IT staffing during SPARK rollout, and a new endpoint deployment tool.",
-            "endorsement": "Staff recommendation; no opposition expressed"
-          }
-        ],
-        "member_positions": [],
-        "feeds_into": "IGA for Lakewood Navigation Center expected to come before council as a formal action item; ballot measure engagement timeline subject to council direction"
-      },
-      {
-        "title": "Police & Municipal Court Budget",
-        "tagline": "Court caseload doubled; police flag training space, tech evaluation, and state mandate costs",
-        "lede": "Police Deputy Chief Todd Reeves and Municipal Court Judge Kurtz presented funding needs driven by mandatory cost increases: court-appointed attorney fees rose $10/hour under a legislative mandate, annual case volume roughly doubled from about 5,000 to 10,000 cases requiring more attorney and interpreter hours and additional case-management software subscriptions, and the Jeffco Crime Lab and Victim Outreach Incorporated contracts increased. Reeves also highlighted a shortage of training space at the Bickford Center, challenges obtaining federal grants due to conflicts between Colorado state law and federal requirements, and the department's ongoing work to evaluate community sentiment before deploying new technology.",
-        "options": [
-          {
-            "number": 1,
-            "label": "Funded mandatory and contractual increases",
-            "cost": "$40,000 additional for court subscriptions and attorney/interpreter contracts; additional amounts for VOI and Jeffco Crime Lab (amounts stated as mandatory increases)",
-            "summary": "Covers required increases in court-appointed attorney rates, interpreter fees, case management software subscriptions for two courtrooms, and contractual increases for Victim Outreach Inc. and the Jeffco Crime Lab.",
-            "endorsement": "Staff recommendation; council expressed no opposition"
-          }
-        ],
-        "member_positions": [],
-        "feeds_into": "Bailiff/court security officer solution expected to return as a staffing recommendation; formal budget adoption at a future business meeting"
-      },
-      {
-        "title": "Vibrant Communities & Neighborhoods (VCN) Budget",
-        "tagline": "Graffiti crew, drone fireworks, goats for vegetation management, and Kendall Whittenberg transition planning",
-        "lede": "VCN Director Greg Stevenson presented approximately $1 million in funded requests covering parks operations ($475,000), golf operations ($590,000), and several new initiatives: a graffiti abatement team modeled on the Adams County IGA program, a drone light-show pilot for the Fourth of July in place of traditional fireworks, a small goat herd for eco-friendly vegetation management, and long-range planning for the 2035 Kendall Whittenberg open-space transfer. Staff also flagged the near-depletion of the HODAG housing fund and the ongoing Apex parks services integration.",
-        "options": [
-          {
-            "number": 1,
-            "label": "Funded VCN requests as proposed (~$1M)",
-            "cost": "Approximately $1,065,000 total (parks ~$475K, golf ~$590K)",
-            "summary": "Funds graffiti abatement workers, a drone fireworks program, goat vegetation management pilot, golf operations costs (insurance, software, seasonal wages, credit card fees), and ongoing parks maintenance expenses.",
-            "endorsement": "Staff recommendation; council broadly supportive"
-          }
-        ],
-        "member_positions": [],
-        "feeds_into": "Median/Wadsworth corridor improvement funding expected to be addressed through capital and 98-101 programs; formal budget adoption at a future business meeting"
-      },
-      {
-        "title": "Ten-Year Financial Model Outlook",
-        "tagline": "General Fund deficit projected by 2034–2036, but seven years of runway remain",
-        "lede": "Finance Director Brian Archer closed the budget presentation with the updated ten-year financial models for all eleven city funds. For the General Fund, the prior model showed a roughly $21 million deficit by 2034; the proposed 2027–2028 budget reduces that projected deficit to approximately $9 million, though adding two more model years (2035–2036) shows a return to negative territory in the final year. Archer noted the city is not currently in a negative fund-balance position and has until approximately 2033 before it would exceed its reserve target, providing seven years to make adjustments.",
-        "options": [],
-        "member_positions": [],
-        "feeds_into": "Future business meeting for formal budget adoption, expected late 2026"
-      },
-      {
-        "title": "Drought Update & Water Restrictions",
-        "tagline": "Lawn watering ends October 1; city has achieved 18% reduction over recent months",
-        "lede": "Infrastructure Director Jaclyn Rhodes provided a brief drought update at the close of the meeting: under the city's raw water contract with Denver Water, all lawn irrigation must cease by October 1, 2026. Staff is coordinating with schools and internal VCN teams to monitor high-use areas during the transition. Rhodes reported the city has achieved an 18% water use reduction over the most recent two months (and 14% averaged over the full season since April 15). Denver Water is also considering a drought emergency raw water rate, which its board will consider in October; staff will report to council on the pricing implications for 2027.",
-        "options": [],
-        "member_positions": [],
-        "feeds_into": "Denver Water drought pricing decision expected October 2026; council briefing on 2027 rate impact to follow"
+        "video_deep_link": null
       }
+    ],
+    "questions_raised": [
+      "How has AURA historically managed demographic displacement and provided anti-displacement protections for residents in areas it has studied or redeveloped?",
+      "Given that the Marshall Street corridor contains some of Arvada's most affordable naturally-occurring housing, how will AURA ensure that commercial redevelopment does not indirectly displace residents in adjacent neighborhoods, including unincorporated Adams County?",
+      "In prior urban renewal projects along Ralston Road, commercial and employment uses largely gave way to residential development — how will AURA prevent the same outcome in Marshall Street, which is intended to preserve an employment center?",
+      "Does AURA have sufficient staff capacity to pursue all three study areas simultaneously, or should council prioritize one or two?",
+      "Should the Squire Lake sub-area be treated as the highest priority given the scale of infrastructure barriers and the existing community vision already documented in the Sub-Area Plan?",
+      "For the K-8 site, does the City need AURA as a tool at all, given the City already holds a right of first refusal — could the City simply secure the property and decide later whether to designate it an urban renewal area?",
+      "What is the timeline pressure on the K-8 site decision, given the school district's surplus declaration and competing buyer interest?",
+      "Does using AURA for the K-8 site give the City meaningful additional leverage over what gets built there, compared to acting through the right of first refusal alone?",
+      "What is the current status of the facilities master plan for the K-8 site and how will planned police/justice facility needs inform whether any portion of the site is available for redevelopment?",
+      "Is part of the Ralston Road corridor already within an existing AURA project area, and would a new K-8/Ralston study area overlap with or duplicate that coverage?"
     ]
   },
-  "meeting_summary": "The Arvada City Council held a budget workshop in which City Manager Don Wiek and Finance Director Brian Archer presented the proposed 2027–2028 two-year budget framework, covering the decision-making criteria used to prioritize spending, a conservative approach to new hires, and rising health care costs. Human Resources Director Gabriela Palmer detailed a recommended 3.86% overall compensation increase for 2027, while department directors from Community Development, Infrastructure, Organizational Services & Effectiveness, Police, and Vibrant Communities & Neighborhoods each outlined their priorities, funded requests, and emerging challenges. No formal votes were taken; the workshop was designed to inform future budget adoption at a regular business meeting.",
+  "meeting_summary": "Arvada's Urban Renewal Authority (AURA) Executive Director Peri Prisco presented a strategic planning update and proposed three areas for deeper feasibility study as potential future urban renewal zones: the Arvada K-8 school site and Ralston Road corridor, the Marshall Street corridor, and the Squire Lake sub-area. Council members discussed concerns about displacement of affordable housing residents, preserving employment uses, and which projects should be prioritized given staff capacity. No formal votes were taken; this was an informational study session.",
   "alerts": [
     {
       "title": "Water restrictions in effect - lawn watering ends 10/1",
@@ -164,18 +100,26 @@
     }
   ],
   "key_decisions": [],
-  "notable_quotes": [],
+  "notable_quotes": [
+    {
+      "speaker": "Peri Prisco",
+      "quote": "أود التأكيد على أنني لا أطلب منكم اليوم إنشاء مناطق للتجديد الحضري في أي من هذه المواقع. نحن فقط نطلب آراءكم حول ما إذا كانت هذه فرصًا مناسبة لمجتمعنا لمزيد من البحث.",
+      "context": "أود التأكيد على أنني لا أطلب منكم اليوم إنشاء مناطق للتجديد الحضري في أي من هذه المواقع. نحن فقط نطلب آراءكم حول ما إذا كانت هذه فرصًا مناسبة لمجتمعنا لمزيد من البحث. في حال وجود دعم، ستكون الخطوات التالية هي إجراء دراسة متأنية لفهم الظروف والفرص وأولويات المجتمع.",
+      "timestamp_seconds": 156,
+      "video_url": "https://www.youtube.com/watch?v=1B67c5BIq_M&t=156s",
+      "speaker_profile_url": null
+    },
+    {
+      "speaker": "Peri Prisco",
+      "quote": "مع تزايد ضغط الميزانيات، العامة والخاصة، تُعد هذه الأداة المالية وسيلةً لتخفيف الضغط على الموارد العامة، التي تعاني أصلاً من نقص التمويل، وتوفير جسر مالي للاستثمار الخاص في مجتمعنا.",
+      "context": "هدفنا هو التفكير ملياً في استخدام هذه الأداة، والتأكد من توافقها مع أولويات المدينة، وتوجيه موارد أورا حيث يكون لها أكبر الأثر على المجتمع. مع تزايد ضغط الميزانيات، العامة والخاصة، تُعد هذه الأداة المالية وسيلةً لتخفيف الضغط على الموارد العامة، التي تعاني أصلاً من نقص التمويل، وتوفير جسر مالي للاستثمار الخاص في مجتمعنا.",
+      "timestamp_seconds": 648,
+      "video_url": "https://www.youtube.com/watch?v=1B67c5BIq_M&t=648s",
+      "speaker_profile_url": null
+    }
+  ],
   "topics_discussed": [
-    "2027–2028 Budget Framework & Decision Stack",
-    "Compensation & Health Care Costs",
-    "New Position Requests (Six Funded Roles)",
-    "Community Development Department Budget",
-    "Infrastructure Department Budget",
-    "Organizational Services & Effectiveness (OSE) Budget",
-    "Police & Municipal Court Budget",
-    "Vibrant Communities & Neighborhoods (VCN) Budget",
-    "Ten-Year Financial Model Outlook",
-    "Drought Update & Water Restrictions"
+    "AURA Strategic Planning Update and Three Proposed Study Areas"
   ],
   "consistency_flags": [],
   "on_the_horizon": "",
